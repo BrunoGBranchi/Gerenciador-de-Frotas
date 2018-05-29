@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="850.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal.png/'); -fx-background-position: center; -fx-background-size: cover;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.CadMovimentosController">
+   <children>
+      <ScrollPane layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="851.0">
+        <content>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="1131.0">
+               <children>
+                  <TableView fx:id="tblMovimentos" layoutX="-4.0" layoutY="-3.0" onMouseClicked="#selecionaMovimento" prefHeight="355.0" prefWidth="1149.0">
+                    <columns>
+                      <TableColumn fx:id="tbcCodigo" prefWidth="75.0" text="Codigo" />
+                      <TableColumn fx:id="tbcNumNota" prefWidth="74.0" text="Nº Nota" />
+                        <TableColumn fx:id="tbcCodVeiculo" prefWidth="84.0" text="Cod. Veiculo" />
+                        <TableColumn fx:id="tbcCodManutencao" prefWidth="108.0" text="Cod. Manutencao" />
+                        <TableColumn fx:id="tbcKmVeiculo" prefWidth="108.0" text="KM Veiculo" />
+                        <TableColumn fx:id="tbcQuantidade" prefWidth="108.0" text="Quantidade" />
+                        <TableColumn fx:id="tbcValor" prefWidth="75.33331298828125" text="Valor" />
+                        <TableColumn fx:id="tbcDtEmissao" prefWidth="103.66668701171875" text="Data de Emissão " />
+                        <TableColumn fx:id="tbcDtMovimento" prefWidth="100.66668701171875" text="Data Movimento" />
+                        <TableColumn fx:id="tbcObservacao" prefWidth="300.0" text="Observação" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Label layoutX="171.0" layoutY="30.0" text="Nº Nota:" />
+      <TextField fx:id="tfNumNota" layoutX="221.0" layoutY="27.0" prefHeight="25.0" prefWidth="158.0" />
+      <Label layoutX="100.0" layoutY="61.0" text="Data de emissão nota:" />
+      <DatePicker fx:id="dtEmissaoNota" layoutX="221.0" layoutY="58.0" prefHeight="25.0" prefWidth="158.0" />
+      <Label layoutX="124.0" layoutY="92.0" text="Data Movimento:" />
+      <DatePicker fx:id="dtMovimento" layoutX="221.0" layoutY="89.0" prefHeight="25.0" prefWidth="158.0" />
+      <Label layoutX="147.0" layoutY="123.0" text="Cod. Veiculo:" />
+      <TextField fx:id="tfCodVeiculo" layoutX="221.0" layoutY="120.0" prefHeight="25.0" prefWidth="158.0" />
+      <Label layoutX="445.0" layoutY="30.0" text="KM Veiculo:" />
+      <TextField fx:id="tfKmVeiculo" layoutX="516.0" layoutY="27.0" prefHeight="25.0" prefWidth="158.0" />
+      <Label layoutX="414.0" layoutY="61.0" text="Cod.Manutenção:" />
+      <TextField fx:id="tfCodManutencao" layoutX="516.0" layoutY="58.0" prefHeight="25.0" prefWidth="158.0" />
+      <Label layoutX="442.0" layoutY="91.0" text="Quantidade:" />
+      <TextField fx:id="tfQuantidade" layoutX="517.0" layoutY="88.0" prefHeight="25.0" prefWidth="158.0" />
+      <Label layoutX="476.0" layoutY="121.0" text="Valor:" />
+      <TextField fx:id="tfValor" layoutX="517.0" layoutY="119.0" prefHeight="25.0" prefWidth="158.0" />
+      <Label layoutX="150.0" layoutY="157.0" text="Observação:" />
+      <TextField fx:id="tfObservacao" layoutX="221.0" layoutY="153.0" prefHeight="25.0" prefWidth="454.0" />
+      <Button fx:id="btnIncluir" layoutX="279.0" layoutY="218.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
+      <Button fx:id="btnExcluir" layoutX="336.0" layoutY="218.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+      <Button fx:id="btnLimpar" layoutX="396.0" layoutY="218.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+      <Button fx:id="btnFechar" layoutX="458.0" layoutY="218.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" />
+   </children>
+</AnchorPane>

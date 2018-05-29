@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="apPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal.png/'); -fx-background-position: center; -fx-background-size: auto;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.CadEmpresaController">
+   <children>
+      <Label layoutX="361.0" layoutY="33.0" text="Razão Social: " />
+      <TextField fx:id="tfRazao" layoutX="361.0" layoutY="50.0" prefHeight="25.0" prefWidth="383.0" />
+      <Label layoutX="361.0" layoutY="75.0" text="Nome Fantasia:" />
+      <TextField fx:id="tfFantasia" layoutX="361.0" layoutY="91.0" prefHeight="25.0" prefWidth="383.0" />
+      <Label layoutX="361.0" layoutY="122.0" text="CNPJ:" />
+      <TextField fx:id="tfCNPJ" layoutX="361.0" layoutY="139.0" prefHeight="25.0" prefWidth="383.0" />
+      <Label layoutX="361.0" layoutY="168.0" text="Endereço:" />
+      <TextField fx:id="tfRua" layoutX="361.0" layoutY="185.0" prefHeight="25.0" prefWidth="314.0" />
+      <Label layoutX="683.0" layoutY="167.0" text="Numero:" />
+      <TextField fx:id="tfNum" layoutX="681.0" layoutY="185.0" prefHeight="25.0" prefWidth="62.0" />
+      <Label layoutX="361.0" layoutY="215.0" text="Bairro:" />
+      <TextField fx:id="tfBairro" layoutX="361.0" layoutY="235.0" prefHeight="25.0" prefWidth="383.0" />
+      <Label layoutX="361.0" layoutY="267.0" text="CEP:" />
+      <TextField fx:id="tfCEP" layoutX="361.0" layoutY="287.0" prefHeight="25.0" prefWidth="82.0" />
+      <Label layoutX="450.0" layoutY="266.0" text="Cidade:" />
+      <TextField fx:id="tfCidade" layoutX="449.0" layoutY="287.0" prefHeight="25.0" prefWidth="225.0" />
+      <ComboBox fx:id="cbxUF" layoutX="681.0" layoutY="287.0" prefHeight="25.0" prefWidth="62.0" promptText="UF" />
+      <Button fx:id="btnCad" layoutX="441.0" layoutY="359.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25.0" prefWidth="72.0" text="Cadastrar" />
+      <Button fx:id="btnExcluir" layoutX="517.0" layoutY="359.0" mnemonicParsing="false" onAction="#excluir" prefHeight="25.0" prefWidth="72.0" text="Excluir" />
+      <Button fx:id="btnCancel" layoutX="592.0" layoutY="359.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="25.0" prefWidth="72.0" text="Cancelar" />
+      <TableView fx:id="tblEmpresa" layoutX="52.0" layoutY="432.0" onMouseClicked="#selecionarEmpresa" prefHeight="80.0" prefWidth="1001.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal2.png/'); -fx-background-position: center; -fx-background-size: auto;">
+         <columns>
+            <TableColumn fx:id="tbcCodigo" prefWidth="50.0" text="Codigo" />
+            <TableColumn fx:id="tbcCNPJ" prefWidth="171.0" text="CNPJ" />
+            <TableColumn fx:id="tbcNomeFantasia" minWidth="0.0" prefWidth="164.0" text="Nome Fantasia" />
+            <TableColumn fx:id="tbcRazao" prefWidth="218.0" text="Razão Social" />
+            <TableColumn fx:id="tbcEndereco" prefWidth="229.0" text="Endereço" />
+            <TableColumn fx:id="tbcNumero" prefWidth="60.0" text="Numero" />
+            <TableColumn fx:id="tbcBairro" prefWidth="133.0" text="Bairro" />
+            <TableColumn fx:id="tbcCEP" prefWidth="95.0" text="CEP" />
+            <TableColumn fx:id="tbcCidade" prefWidth="196.0" text="Cidade" />
+            <TableColumn fx:id="tbcUF" prefWidth="42.0" text="UF" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+   <padding>
+      <Insets left="50.0" top="50.0" />
+   </padding>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>

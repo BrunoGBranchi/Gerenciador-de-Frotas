@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal.png/'); -fx-background-size: cover; -fx-background-position: center;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.CadVeiculosController">
+   <children>
+      <TableView fx:id="tblVeiculos" fixedCellSize="0.0" focusTraversable="false" layoutX="2.0" layoutY="206.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#selecionaVeiculo">
+        <columns>
+          <TableColumn fx:id="tbcMarca" prefWidth="100.0" resizable="false" text="Marca" />
+            <TableColumn fx:id="tbcModelo" prefWidth="93.0" text="Modelo" />
+            <TableColumn fx:id="tbcMotor" prefWidth="93.0" text="Motor" />
+            <TableColumn fx:id="tbcPlaca" prefWidth="93.0" text="Placa" />
+            <TableColumn fx:id="tbcCategoria" prefWidth="93.0" text="Categoria" />
+            <TableColumn fx:id="tbcRenavam" resizable="false" text="Renavam" />
+            <TableColumn fx:id="tbcChassi" prefWidth="200.0" resizable="false" text="Chassi" />
+            <TableColumn fx:id="tbcData" prefWidth="75.0" text="Data Cad." />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TextField fx:id="tfMarca" layoutX="115.0" layoutY="32.0" prefHeight="25.0" prefWidth="272.0" />
+      <Label layoutX="62.0" layoutY="36.0" text="Marca:" />
+      <TextField fx:id="tfModelo" layoutX="115.0" layoutY="63.0" prefHeight="25.0" prefWidth="272.0" />
+      <Label layoutX="62.0" layoutY="67.0" text="Modelo:" />
+      <TextField fx:id="tfChassi" layoutX="115.0" layoutY="95.0" prefHeight="25.0" prefWidth="272.0" />
+      <Label layoutX="62.0" layoutY="99.0" text="Chassi" />
+      <Label layoutX="447.0" layoutY="35.0" text="Motor:" />
+      <TextField fx:id="tfRenavam" layoutX="116.0" layoutY="126.0" prefHeight="25.0" prefWidth="272.0" />
+      <Label layoutX="58.0" layoutY="130.0" text="Renavam" />
+      <TextField fx:id="tfMotor" layoutX="505.0" layoutY="31.0" />
+      <Label layoutX="447.0" layoutY="98.0" text="Categoria:" />
+      <TextField fx:id="tfPlaca" layoutX="505.0" layoutY="63.0" />
+      <ComboBox fx:id="cbxCategoria" layoutX="505.0" layoutY="94.0" prefWidth="150.0" promptText="Selecionar" />
+      <Label layoutX="447.0" layoutY="67.0" text="Placa:" />
+      <Button fx:id="btnIncluir" layoutX="78.0" layoutY="162.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
+      <Button fx:id="btnAlterar" layoutX="174.0" layoutY="162.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#alterar" text="Alterar" />
+      <Button fx:id="btnExcluir" layoutX="274.0" layoutY="162.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+      <Button fx:id="btnLimpar" layoutX="379.0" layoutY="162.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+      <Button fx:id="btnRelatorio" layoutX="483.0" layoutY="162.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#relatorio" text="Relatório" />
+      <Button fx:id="btnFechar" layoutX="580.0" layoutY="162.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" />
+   </children>
+</AnchorPane>

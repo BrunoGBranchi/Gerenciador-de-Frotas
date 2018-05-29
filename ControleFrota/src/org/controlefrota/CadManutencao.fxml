@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="611.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal.png/'); -fx-background-position: center; -fx-background-size: cover;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.CadManutencaoController">
+   <children>
+      <ScrollPane layoutX="1.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="610.0">
+        <content>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+               <children>
+                  <TableView fx:id="tblManutencao" layoutX="-2.0" onMouseClicked="#selecionarManutencao" prefHeight="343.0" prefWidth="610.0">
+                    <columns>
+                      <TableColumn fx:id="tbcCodigo" prefWidth="75.0" text="Codigo" />
+                      <TableColumn fx:id="tbcDescricao" prefWidth="130.0" text="Descrição" />
+                        <TableColumn fx:id="tbcTipoPeca" prefWidth="82.0" text="Tipo Peça" />
+                        <TableColumn fx:id="tbcMarcaPeca" prefWidth="104.0" text="Marca Peça" />
+                        <TableColumn fx:id="tbcAplicacao" prefWidth="108.0" text="Aplicação" />
+                        <TableColumn fx:id="tbcDataCad" prefWidth="96.0" text="Data Cad." />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Label layoutX="66.0" layoutY="53.0" text="Descrição:" />
+      <TextField fx:id="tfDesc" layoutX="127.0" layoutY="50.0" prefHeight="25.0" prefWidth="346.0" />
+      <Label layoutX="65.0" layoutY="84.0" text="Tipo Peça:" />
+      <TextField fx:id="tfTipo" layoutX="127.0" layoutY="81.0" prefHeight="25.0" prefWidth="346.0" />
+      <Label layoutX="55.0" layoutY="115.0" text="Marca Peça:" />
+      <TextField fx:id="tfMarca" layoutX="127.0" layoutY="112.0" prefHeight="25.0" prefWidth="346.0" />
+      <Label layoutX="65.0" layoutY="146.0" text="Aplicação:" />
+      <TextField fx:id="tfAplica" layoutX="127.0" layoutY="143.0" prefHeight="25.0" prefWidth="346.0" />
+      <Button fx:id="btnIncluir" layoutX="127.0" layoutY="194.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
+      <Button fx:id="btnExcluir" layoutX="184.0" layoutY="194.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+      <Button fx:id="btnLimpar" layoutX="244.0" layoutY="194.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+      <Button fx:id="btnFechar" layoutX="306.0" layoutY="194.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" />
+   </children>
+</AnchorPane>

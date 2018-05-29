@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane fx:id="bpPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal2.png/'); -fx-background-position: center; -fx-background-size: cover;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.PrincipalController">
+   <center>
+      <Pane layoutX="1380.0" layoutY="768.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="mnCad" mnemonicParsing="false" onAction="#mncad" text="Cadastros">
+            <items>
+              <MenuItem fx:id="mnimpresa" mnemonicParsing="false" onAction="#menuEmpresa" text="Empresa" />
+                  <MenuItem fx:id="mniveiculos" mnemonicParsing="false" onAction="#menuVeiculos" text="Veiculos" />
+                  <MenuItem fx:id="mniFuncionarios" mnemonicParsing="false" onAction="#menuFuncionarios" text="Funcionarios" />
+                  <MenuItem fx:id="mniManutencao" mnemonicParsing="false" onAction="#menuManutencao" text="Manutenção" />
+                  <MenuItem fx:id="mniUsuarios" mnemonicParsing="false" onAction="#menuUsuarios" text="Usuarios" />
+                  <MenuItem fx:id="mniMovimentos" disable="true" mnemonicParsing="false" onAction="#menuMovimentos" text="Movimentos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Movimentos">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Relatorios">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu fx:id="mnFechar" mnemonicParsing="false" onAction="#fechar" text="Sair" />
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

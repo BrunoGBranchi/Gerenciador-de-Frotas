@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.ListarFuncionariosController">
+   <children>
+      <Button fx:id="btnIncluir" layoutX="138.0" layoutY="27.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
+      <Button fx:id="btnExcluir" layoutX="195.0" layoutY="27.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+      <Button fx:id="btnEditCad" layoutX="253.0" layoutY="27.0" mnemonicParsing="false" onAction="#editarCadastro" text="Editar cadastro" />
+      <Button fx:id="btAtualizar" layoutX="357.0" layoutY="27.0" mnemonicParsing="false" onAction="#atualizar" text="Atualizar" />
+      <Button fx:id="btnVoltar" layoutX="427.0" layoutY="27.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <ScrollPane layoutY="85.0" prefHeight="313.0" prefWidth="600.0">
+         <content>
+            <TableView fx:id="tblFuncionarios" onMouseClicked="#SelecionaFuncionario" prefHeight="313.0" prefWidth="598.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal2.png/'); -fx-background-position: center; -fx-background-size: auto;">
+              <columns>
+                <TableColumn fx:id="tbcCPF" prefWidth="126.0" text="CPF" />
+                <TableColumn fx:id="tbcNome" prefWidth="339.0" text="Nome Funcionario" />
+                  <TableColumn fx:id="tbcCargo" prefWidth="132.0" text="Cargo" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
