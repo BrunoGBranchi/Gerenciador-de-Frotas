@@ -5,127 +5,127 @@ import java.io.Serializable;
 public class Empresa  implements Serializable{
 	
 	private static final long serialVersionUID = 3751261266164180335L;
-	private static Integer nextEmpr_codigo = 0;
-	private Integer empr_codigo;
-	private String  empr_razaoSocial;
-	private String  empr_nomeFantasia;
-	private String  empr_cnpj;
-	private String  empr_endereco;
-	private String  empr_numero;
-	private String  empr_bairro;
-	private String  empr_cep;
-	private String  empr_muni_codigo;
-	private String  empr_muni_uf;
+	private static Integer nextcodigo = 0;
+	private Integer codigo;
+	private String  razaoSocial;
+	private String  nomeFantasia;
+	private String  cnpj;
+	private String  endereco;
+	private String  numero;
+	private String  bairro;
+	private String  cep;
+	private String  muni_codigo;
+	private String  muni_uf;
 	
 	
-	public static Integer getNextEmpr_codigo(){
-		nextEmpr_codigo += 1;
-		return nextEmpr_codigo;
+	public static Integer getNextcodigo(){
+		nextcodigo += 1;
+		return nextcodigo;
 		}
 	
 	
-	public Integer getEmpr_codigo() {
-		return empr_codigo;
+	public Integer getcodigo() {
+		return codigo;
 	}
 
 
-	public void setEmpr_codigo(Integer empr_codigo) {
-		this.empr_codigo = empr_codigo;
+	public void setcodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
 
 
-	public String getEmpr_razaoSocial() {
-		return empr_razaoSocial;
+	public String getrazaoSocial() {
+		return razaoSocial;
 	}
 
 
-	public void setEmpr_razaoSocial(String empr_razaoSocial) {
-		this.empr_razaoSocial = empr_razaoSocial;
+	public void setrazaoSocial(String razaoSocial) {
+		this.razaoSocial = razaoSocial;
 	}
 
 
-	public String getEmpr_nomeFantasia() {
-		return empr_nomeFantasia;
+	public String getnomeFantasia() {
+		return nomeFantasia;
 	}
 
 
-	public void setEmpr_nomeFantasia(String empr_nomeFantasia) {
-		this.empr_nomeFantasia = empr_nomeFantasia;
+	public void setnomeFantasia(String nomeFantasia) {
+		this.nomeFantasia = nomeFantasia;
 	}
 
 
-	public String getEmpr_cnpj() {
-		return empr_cnpj;
+	public String getcnpj() {
+		return cnpj;
 	}
 
 
-	public void setEmpr_cnpj(String empr_cnpj) {
-		this.empr_cnpj = empr_cnpj;
+	public void setcnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
 
-	public String getEmpr_endereco() {
-		return empr_endereco;
+	public String getendereco() {
+		return endereco;
 	}
 
 
-	public void setEmpr_endereco(String empr_endereco) {
-		this.empr_endereco = empr_endereco;
+	public void setendereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 
-	public String getEmpr_numero() {
-		return empr_numero;
+	public String getnumero() {
+		return numero;
 	}
 
 
-	public void setEmpr_numero(String empr_numero) {
-		this.empr_numero = empr_numero;
+	public void setnumero(String numero) {
+		this.numero = numero;
 	}
 
 
-	public String getEmpr_bairro() {
-		return empr_bairro;
+	public String getbairro() {
+		return bairro;
 	}
 
 
-	public void setEmpr_bairro(String empr_bairro) {
-		this.empr_bairro = empr_bairro;
+	public void setbairro(String bairro) {
+		this.bairro = bairro;
 	}
 
 
-	public String getEmpr_cep() {
-		return empr_cep;
+	public String getcep() {
+		return cep;
 	}
 
 
-	public void setEmpr_cep(String empr_cep) {
-		this.empr_cep = empr_cep;
+	public void setcep(String cep) {
+		this.cep = cep;
 	}
 
 
-	public String getEmpr_muni_codigo() {
-		return empr_muni_codigo;
+	public String getmuni_codigo() {
+		return muni_codigo;
 	}
 
 
-	public void setEmpr_muni_codigo(String empr_muni_codigo) {
-		this.empr_muni_codigo = empr_muni_codigo;
+	public void setmuni_codigo(String muni_codigo) {
+		this.muni_codigo = muni_codigo;
 	}
 
 
-	public String getEmpr_muni_uf() {
-		return empr_muni_uf;
+	public String getmuni_uf() {
+		return muni_uf;
 	}
 
 
-	public void setEmpr_muni_uf(String empr_muni_uf) {
-		this.empr_muni_uf = empr_muni_uf;
+	public void setmuni_uf(String muni_uf) {
+		this.muni_uf = muni_uf;
 	}
 
 
-	public static void setNextEmpr_codigo(Integer nextEmpr_codigo) {
-		Empresa.nextEmpr_codigo = nextEmpr_codigo;
+	public static void setNextcodigo(Integer nextcodigo) {
+		Empresa.nextcodigo = nextcodigo;
 	}
 
 
@@ -138,55 +138,55 @@ public class Empresa  implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Empresa other = (Empresa) obj;
-		if (empr_bairro == null) {
-			if (other.empr_bairro != null)
+		if (bairro == null) {
+			if (other.bairro != null)
 				return false;
-		} else if (!empr_bairro.equals(other.empr_bairro))
+		} else if (!bairro.equals(other.bairro))
 			return false;
-		if (empr_cep == null) {
-			if (other.empr_cep != null)
+		if (cep == null) {
+			if (other.cep != null)
 				return false;
-		} else if (!empr_cep.equals(other.empr_cep))
+		} else if (!cep.equals(other.cep))
 			return false;
-		if (empr_cnpj == null) {
-			if (other.empr_cnpj != null)
+		if (cnpj == null) {
+			if (other.cnpj != null)
 				return false;
-		} else if (!empr_cnpj.equals(other.empr_cnpj))
+		} else if (!cnpj.equals(other.cnpj))
 			return false;
-		if (empr_codigo == null) {
-			if (other.empr_codigo != null)
+		if (codigo == null) {
+			if (other.codigo != null)
 				return false;
-		} else if (!empr_codigo.equals(other.empr_codigo))
+		} else if (!codigo.equals(other.codigo))
 			return false;
-		if (empr_endereco == null) {
-			if (other.empr_endereco != null)
+		if (endereco == null) {
+			if (other.endereco != null)
 				return false;
-		} else if (!empr_endereco.equals(other.empr_endereco))
+		} else if (!endereco.equals(other.endereco))
 			return false;
-		if (empr_muni_codigo == null) {
-			if (other.empr_muni_codigo != null)
+		if (muni_codigo == null) {
+			if (other.muni_codigo != null)
 				return false;
-		} else if (!empr_muni_codigo.equals(other.empr_muni_codigo))
+		} else if (!muni_codigo.equals(other.muni_codigo))
 			return false;
-		if (empr_muni_uf == null) {
-			if (other.empr_muni_uf != null)
+		if (muni_uf == null) {
+			if (other.muni_uf != null)
 				return false;
-		} else if (!empr_muni_uf.equals(other.empr_muni_uf))
+		} else if (!muni_uf.equals(other.muni_uf))
 			return false;
-		if (empr_nomeFantasia == null) {
-			if (other.empr_nomeFantasia != null)
+		if (nomeFantasia == null) {
+			if (other.nomeFantasia != null)
 				return false;
-		} else if (!empr_nomeFantasia.equals(other.empr_nomeFantasia))
+		} else if (!nomeFantasia.equals(other.nomeFantasia))
 			return false;
-		if (empr_numero == null) {
-			if (other.empr_numero != null)
+		if (numero == null) {
+			if (other.numero != null)
 				return false;
-		} else if (!empr_numero.equals(other.empr_numero))
+		} else if (!numero.equals(other.numero))
 			return false;
-		if (empr_razaoSocial == null) {
-			if (other.empr_razaoSocial != null)
+		if (razaoSocial == null) {
+			if (other.razaoSocial != null)
 				return false;
-		} else if (!empr_razaoSocial.equals(other.empr_razaoSocial))
+		} else if (!razaoSocial.equals(other.razaoSocial))
 			return false;
 		return true;
 	}
@@ -194,39 +194,39 @@ public class Empresa  implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((empr_bairro == null) ? 0 : empr_bairro.hashCode());
-		result = prime * result + ((empr_cep == null) ? 0 : empr_cep.hashCode());
-		result = prime * result + ((empr_cnpj == null) ? 0 : empr_cnpj.hashCode());
-		result = prime * result + ((empr_codigo == null) ? 0 : empr_codigo.hashCode());
-		result = prime * result + ((empr_endereco == null) ? 0 : empr_endereco.hashCode());
-		result = prime * result + ((empr_muni_codigo == null) ? 0 : empr_muni_codigo.hashCode());
-		result = prime * result + ((empr_muni_uf == null) ? 0 : empr_muni_uf.hashCode());
-		result = prime * result + ((empr_nomeFantasia == null) ? 0 : empr_nomeFantasia.hashCode());
-		result = prime * result + ((empr_numero == null) ? 0 : empr_numero.hashCode());
-		result = prime * result + ((empr_razaoSocial == null) ? 0 : empr_razaoSocial.hashCode());
+		result = prime * result + ((bairro == null) ? 0 : bairro.hashCode());
+		result = prime * result + ((cep == null) ? 0 : cep.hashCode());
+		result = prime * result + ((cnpj == null) ? 0 : cnpj.hashCode());
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
+		result = prime * result + ((muni_codigo == null) ? 0 : muni_codigo.hashCode());
+		result = prime * result + ((muni_uf == null) ? 0 : muni_uf.hashCode());
+		result = prime * result + ((nomeFantasia == null) ? 0 : nomeFantasia.hashCode());
+		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
+		result = prime * result + ((razaoSocial == null) ? 0 : razaoSocial.hashCode());
 		return result;
 	}
 	@Override
 	public String toString() {
-		return "Empresa [empr_codigo=" + empr_codigo + ", empr_razaoSocial=" + empr_razaoSocial + ", empr_nomeFantasia="
-				+ empr_nomeFantasia + ", empr_cnpj=" + empr_cnpj + ", empr_endereco=" + empr_endereco + ", empr_numero="
-				+ empr_numero + ", empr_bairro=" + empr_bairro + ", empr_cep=" + empr_cep + ", empr_muni_codigo="
-				+ empr_muni_codigo + ", empr_muni_uf=" + empr_muni_uf + "]";
+		return "Empresa [codigo=" + codigo + ", razaoSocial=" + razaoSocial + ", nomeFantasia="
+				+ nomeFantasia + ", cnpj=" + cnpj + ", endereco=" + endereco + ", numero="
+				+ numero + ", bairro=" + bairro + ", cep=" + cep + ", muni_codigo="
+				+ muni_codigo + ", muni_uf=" + muni_uf + "]";
 	}
-	public Empresa(Integer empr_codigo, String empr_razaoSocial, String empr_nomeFantasia, String empr_cnpj,
-			String empr_endereco, String empr_numero, String empr_bairro, String empr_cep, String empr_muni_codigo,
-			String empr_muni_uf) {
+	public Empresa(Integer codigo, String razaoSocial, String nomeFantasia, String cnpj,
+			String endereco, String numero, String bairro, String cep, String muni_codigo,
+			String muni_uf) {
 		super();
-		this.empr_codigo = empr_codigo;
-		this.empr_razaoSocial = empr_razaoSocial;
-		this.empr_nomeFantasia = empr_nomeFantasia;
-		this.empr_cnpj = empr_cnpj;
-		this.empr_endereco = empr_endereco;
-		this.empr_numero = empr_numero;
-		this.empr_bairro = empr_bairro;
-		this.empr_cep = empr_cep;
-		this.empr_muni_codigo = empr_muni_codigo;
-		this.empr_muni_uf = empr_muni_uf;
+		this.codigo = codigo;
+		this.razaoSocial = razaoSocial;
+		this.nomeFantasia = nomeFantasia;
+		this.cnpj = cnpj;
+		this.endereco = endereco;
+		this.numero = numero;
+		this.bairro = bairro;
+		this.cep = cep;
+		this.muni_codigo = muni_codigo;
+		this.muni_uf = muni_uf;
 	}
 	public Empresa() {
 		super();

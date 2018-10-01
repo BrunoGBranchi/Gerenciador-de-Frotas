@@ -9,46 +9,46 @@ public class Usuarios  implements Serializable{
 
 	private static final long serialVersionUID = -5685505098542059847L;
 	
-	private static Integer nextUsua_codigo = 0;
-	private Integer   usua_codigo;
-	private String    usua_nome;
-	private String    usua_usuario;
-	private String    usua_senha;
-	private LocalDate usua_datacad;
+	private static Integer nextcodigo = 0;
+	private Integer   codigo;
+	private String    nome;
+	private String    usuario;
+	private String    senha;
+	private LocalDate datacad;
 	
-	public static Integer getNextUsua_codigo(){
-		nextUsua_codigo += 1;
-		return nextUsua_codigo;
+	public static Integer getNextcodigo(){
+		nextcodigo += 1;
+		return nextcodigo;
 		}
-	public Integer getUsua_codigo() {
-		return usua_codigo;
+	public Integer getcodigo() {
+		return codigo;
 	}
-	public void setUsua_codigo(Integer usua_codigo) {
-		this.usua_codigo = usua_codigo;
+	public void setcodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
-	public String getUsua_nome() {
-		return usua_nome;
+	public String getnome() {
+		return nome;
 	}
-	public void setUsua_nome(String usua_nome) {
-		this.usua_nome = usua_nome;
+	public void setnome(String nome) {
+		this.nome = nome;
 	}
-	public String getUsua_usuario() {
-		return usua_usuario;
+	public String getusuario() {
+		return usuario;
 	}
-	public void setUsua_usuario(String usua_usuario) {
-		this.usua_usuario = usua_usuario;
+	public void setusuario(String usuario) {
+		this.usuario = usuario;
 	}
-	public String getUsua_senha() {
-		return usua_senha;
+	public String getsenha() {
+		return senha;
 	}
-	public void setUsua_senha(String usua_senha) {
-		this.usua_senha = usua_senha;
+	public void setsenha(String senha) {
+		this.senha = senha;
 	}
-	public LocalDate getUsua_datacad() {
-		return usua_datacad;
+	public LocalDate getdatacad() {
+		return datacad;
 	}
-	public void setUsua_datacad(LocalDate usua_datacad) {
-		this.usua_datacad = usua_datacad;
+	public void setdatacad(LocalDate datacad) {
+		this.datacad = datacad;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -63,30 +63,30 @@ public class Usuarios  implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Usuarios other = (Usuarios) obj;
-		if (usua_codigo == null) {
-			if (other.usua_codigo != null)
+		if (codigo == null) {
+			if (other.codigo != null)
 				return false;
-		} else if (!usua_codigo.equals(other.usua_codigo))
+		} else if (!codigo.equals(other.codigo))
 			return false;
-		if (usua_datacad == null) {
-			if (other.usua_datacad != null)
+		if (datacad == null) {
+			if (other.datacad != null)
 				return false;
-		} else if (!usua_datacad.equals(other.usua_datacad))
+		} else if (!datacad.equals(other.datacad))
 			return false;
-		if (usua_nome == null) {
-			if (other.usua_nome != null)
+		if (nome == null) {
+			if (other.nome != null)
 				return false;
-		} else if (!usua_nome.equals(other.usua_nome))
+		} else if (!nome.equals(other.nome))
 			return false;
-		if (usua_senha == null) {
-			if (other.usua_senha != null)
+		if (senha == null) {
+			if (other.senha != null)
 				return false;
-		} else if (!usua_senha.equals(other.usua_senha))
+		} else if (!senha.equals(other.senha))
 			return false;
-		if (usua_usuario == null) {
-			if (other.usua_usuario != null)
+		if (usuario == null) {
+			if (other.usuario != null)
 				return false;
-		} else if (!usua_usuario.equals(other.usua_usuario))
+		} else if (!usuario.equals(other.usuario))
 			return false;
 		return true;
 	}
@@ -94,27 +94,27 @@ public class Usuarios  implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((usua_codigo == null) ? 0 : usua_codigo.hashCode());
-		result = prime * result + ((usua_datacad == null) ? 0 : usua_datacad.hashCode());
-		result = prime * result + ((usua_nome == null) ? 0 : usua_nome.hashCode());
-		result = prime * result + ((usua_senha == null) ? 0 : usua_senha.hashCode());
-		result = prime * result + ((usua_usuario == null) ? 0 : usua_usuario.hashCode());
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+		result = prime * result + ((datacad == null) ? 0 : datacad.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
+		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
 		return result;
 	}
 	@Override
 	public String toString() {
-		return usua_usuario.toString()+";"+usua_senha.toString();
-//		return "Usuarios [usua_codigo=" + usua_codigo + ", usua_nome=" + usua_nome + ", usua_usuario=" + usua_usuario
-//				+ ", usua_senha=" + usua_senha + ", usua_datacad=" + usua_datacad + "]";
+		return usuario.toString()+";"+senha.toString();
+//		return "Usuarios [codigo=" + codigo + ", nome=" + nome + ", usuario=" + usuario
+//				+ ", senha=" + senha + ", datacad=" + datacad + "]";
 	}
-	public Usuarios(Integer usua_codigo, String usua_nome, String usua_usuario, String usua_senha,
-			LocalDate usua_datacad) {
+	public Usuarios(Integer codigo, String nome, String usuario, String senha,
+			LocalDate datacad) {
 		super();
-		this.usua_codigo = usua_codigo;
-		this.usua_nome = usua_nome;
-		this.usua_usuario = usua_usuario;
-		this.usua_senha = usua_senha;
-		this.usua_datacad = usua_datacad;
+		this.codigo = codigo;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.datacad = datacad;
 	}
 	public Usuarios() {
 		super();

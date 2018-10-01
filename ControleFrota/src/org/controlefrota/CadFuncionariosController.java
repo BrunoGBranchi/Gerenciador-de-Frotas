@@ -100,52 +100,52 @@ public class CadFuncionariosController {
 		};
 		funcionario = new Funcionarios();
         if (ListarFuncionariosController.edit) {
-			tfAgencia.setText(ListarFuncionariosController.v_Func_agencia);
-			tfBairro.setText(ListarFuncionariosController.v_Func_bairro);
-			tfBanco.setText(ListarFuncionariosController.v_Func_banco);
-			tfCargHoraria.setText(ListarFuncionariosController.v_Func_cargahoraria);
-			tfCargo.setText(ListarFuncionariosController.v_Func_cargo);
-			tfCEP.setText(ListarFuncionariosController.v_Func_cep);
-			tfCBancaria.setText(ListarFuncionariosController.v_Func_conta);
-			tfCPF.setText(ListarFuncionariosController.v_Func_cpf);
-			tfCTPS.setText(ListarFuncionariosController.v_Func_ctps);
-			dtpAdmissao.setValue((ListarFuncionariosController.v_Func_dtadmissao));
-			tfDtNasc.setText(ListarFuncionariosController.v_Func_dtnasc);
-			tfEndereco.setText(ListarFuncionariosController.v_Func_endereco);
-			tfNumero.setText(ListarFuncionariosController.v_Func_endnumero.toString());
-			tfCidade.setText(ListarFuncionariosController.v_Func_muni_codigo);
-			cbxUF.getSelectionModel().select(ListarFuncionariosController.v_Func_muni_uf);
-			tfNomeFunc.setText(ListarFuncionariosController.v_Func_nome);
-			tfRG.setText(ListarFuncionariosController.v_Func_rg);
-			tfSalario.setText(ListarFuncionariosController.v_Func_salario.toString());
+			tfAgencia.setText(ListarFuncionariosController.agencia);
+			tfBairro.setText(ListarFuncionariosController.bairro);
+			tfBanco.setText(ListarFuncionariosController.banco);
+			tfCargHoraria.setText(ListarFuncionariosController.cargahoraria);
+			tfCargo.setText(ListarFuncionariosController.cargo);
+			tfCEP.setText(ListarFuncionariosController.cep);
+			tfCBancaria.setText(ListarFuncionariosController.conta);
+			tfCPF.setText(ListarFuncionariosController.cpf);
+			tfCTPS.setText(ListarFuncionariosController.ctps);
+			dtpAdmissao.setValue((ListarFuncionariosController.dtadmissao));
+			tfDtNasc.setText(ListarFuncionariosController.dtnasc);
+			tfEndereco.setText(ListarFuncionariosController.endereco);
+			tfNumero.setText(ListarFuncionariosController.endnumero.toString());
+			tfCidade.setText(ListarFuncionariosController.muni_codigo);
+			cbxUF.getSelectionModel().select(ListarFuncionariosController.muni_uf);
+			tfNomeFunc.setText(ListarFuncionariosController.nome);
+			tfRG.setText(ListarFuncionariosController.rg);
+			tfSalario.setText(ListarFuncionariosController.salario.toString());
 			
 			
 			};
 	} 
 
 	public void populaFuncionario() {
-		//novocodigo=funcionario.getnextFunc_codigo();
-		//funcionario.setFunc_codigo(Integer.valueOf(novocodigo));
-		funcionario.setFunc_codigo(123);
-		funcionario.setFunc_agencia(tfAgencia.getText());
-		funcionario.setFunc_bairro(tfBairro.getText());
-		funcionario.setFunc_banco(tfBanco.getText());
-		funcionario.setFunc_cargahoraria(tfCargHoraria.getText());
-		funcionario.setFunc_cargo(tfCargo.getText());
-		funcionario.setFunc_cep(tfCEP.getText());
-		funcionario.setFunc_conta(tfCBancaria.getText());
-		funcionario.setFunc_cpf(tfCPF.getText());
-		funcionario.setFunc_ctps(tfCTPS.getText());
-		funcionario.setFunc_datacad(LocalDate.now());
-		funcionario.setFunc_dtadmissao(funcionario.getFunc_datacad());
-		funcionario.setFunc_dtnasc(tfDtNasc.getText());
-		funcionario.setFunc_endereco(tfEndereco.getText());
-		funcionario.setFunc_endnumero(tfNumero.getText());
-		funcionario.setFunc_muni_codigo(tfCidade.getText());
-		funcionario.setFunc_muni_uf(cbxUF.getSelectionModel().getSelectedItem());
-		funcionario.setFunc_nome(tfNomeFunc.getText());
-		funcionario.setFunc_rg(tfRG.getText());
-		funcionario.setFunc_salario(Double.valueOf(tfSalario.getText()));
+		//novocodigo=funcionario.getnextcodigo();
+		//funcionario.setcodigo(Integer.valueOf(novocodigo));
+		funcionario.setcodigo(123);
+		funcionario.setagencia(tfAgencia.getText());
+		funcionario.setbairro(tfBairro.getText());
+		funcionario.setbanco(tfBanco.getText());
+		funcionario.setcargahoraria(tfCargHoraria.getText());
+		funcionario.setcargo(tfCargo.getText());
+		funcionario.setcep(tfCEP.getText());
+		funcionario.setconta(tfCBancaria.getText());
+		funcionario.setcpf(tfCPF.getText());
+		funcionario.setctps(tfCTPS.getText());
+		funcionario.setdatacad(LocalDate.now());
+		funcionario.setdtadmissao(funcionario.getdatacad());
+		funcionario.setdtnasc(tfDtNasc.getText());
+		funcionario.setendereco(tfEndereco.getText());
+		funcionario.setendnumero(tfNumero.getText());
+		funcionario.setmuni_codigo(tfCidade.getText());
+		funcionario.setmuni_uf(cbxUF.getSelectionModel().getSelectedItem());
+		funcionario.setnome(tfNomeFunc.getText());
+		funcionario.setrg(tfRG.getText());
+		funcionario.setsalario(Double.valueOf(tfSalario.getText()));
 		
 		}
 
@@ -170,10 +170,10 @@ public class CadFuncionariosController {
 	}
 
 	public void populaTela(Funcionarios funcionarios) {
-		tfCPF.setText(funcionarios.getFunc_cpf());
-		tfNomeFunc.setText(funcionarios.getFunc_nome());
-		tfCargo.setText(funcionarios.getFunc_cargo());
-		cbxUF.getSelectionModel().select(funcionarios.getFunc_muni_uf());
+		tfCPF.setText(funcionarios.getcpf());
+		tfNomeFunc.setText(funcionarios.getnome());
+		tfCargo.setText(funcionarios.getcargo());
+		cbxUF.getSelectionModel().select(funcionarios.getmuni_uf());
 	}
 
 }

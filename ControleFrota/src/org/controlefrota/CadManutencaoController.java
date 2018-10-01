@@ -77,12 +77,12 @@ public class CadManutencaoController {
     
     @FXML
     public void initialize() {	
-    	tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("manu_codigo"));
-    	tbcDescricao.setCellValueFactory(new PropertyValueFactory<>("manu_descricao"));
-    	tbcTipoPeca.setCellValueFactory(new PropertyValueFactory<>("manu_tipo"));
-    	tbcMarcaPeca.setCellValueFactory(new PropertyValueFactory<>("manu_marca"));
-    	tbcAplicacao.setCellValueFactory(new PropertyValueFactory<>("manu_aplicacao"));
-    	tbcDataCad.setCellValueFactory(new PropertyValueFactory<>("manu_datacad"));
+    	tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+    	tbcDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+    	tbcTipoPeca.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+    	tbcMarcaPeca.setCellValueFactory(new PropertyValueFactory<>("marca"));
+    	tbcAplicacao.setCellValueFactory(new PropertyValueFactory<>("aplicacao"));
+    	tbcDataCad.setCellValueFactory(new PropertyValueFactory<>("datacad"));
     	novaManutencao();
     }
     
@@ -124,20 +124,20 @@ public class CadManutencaoController {
     }
     
     public void populaManutencao() {
-    	novocodigo = manutencao.getnextManu_codigo();
-    	manutencao.setManu_codigo(Integer.valueOf(novocodigo));
-    	manutencao.setManu_descricao(tfDesc.getText());
-    	manutencao.setManu_tipo(tfTipo.getText());
-    	manutencao.setManu_marca(tfMarca.getText());
-    	manutencao.setManu_aplicacao(tfAplica.getText());
-    	manutencao.setManu_datacad(LocalDate.now());
+    	novocodigo = manutencao.getnextcodigo();
+    	manutencao.setcodigo(Integer.valueOf(novocodigo));
+    	manutencao.setdescricao(tfDesc.getText());
+    	manutencao.settipo(tfTipo.getText());
+    	manutencao.setmarca(tfMarca.getText());
+    	manutencao.setaplicacao(tfAplica.getText());
+    	manutencao.setdatacad(LocalDate.now());
     }
     
     public void populaTela(Manutencao manutencao) {
-    	tfDesc.setText(manutencao.getManu_descricao());
-    	tfTipo.setText(manutencao.getManu_tipo());
-    	tfMarca.setText(manutencao.getManu_marca());
-    	tfAplica.setText(manutencao.getManu_aplicacao());
+    	tfDesc.setText(manutencao.getdescricao());
+    	tfTipo.setText(manutencao.gettipo());
+    	tfMarca.setText(manutencao.getmarca());
+    	tfAplica.setText(manutencao.getaplicacao());
     }
     
     public void novaManutencao() {

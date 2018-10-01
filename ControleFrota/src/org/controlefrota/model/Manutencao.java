@@ -6,73 +6,73 @@ import java.time.LocalDate;
 public class Manutencao  implements Serializable{
 
 	private static final long serialVersionUID = -438531982840090109L;
-	public static Integer nextManu_codigo = 0;
-	private Integer	  manu_codigo;
-	private String    manu_descricao;
-	private String    manu_tipo;
-	private String    manu_marca;
-	private String    manu_aplicacao;
-	private LocalDate manu_datacad;  
+	public static Integer nextcodigo = 0;
+	private Integer	  codigo;
+	private String    descricao;
+	private String    tipo;
+	private String    marca;
+	private String    aplicacao;
+	private LocalDate datacad;  
 	
-	public Integer getnextManu_codigo() {
-		nextManu_codigo += 1;
-		return nextManu_codigo;
+	public Integer getnextcodigo() {
+		nextcodigo += 1;
+		return nextcodigo;
 	}
 
-	public static Integer getNextManu_codigo() {
-		return nextManu_codigo;
+	public static Integer getNextcodigo() {
+		return nextcodigo;
 	}
 
-	public static void setNextManu_codigo(Integer nextManu_codigo) {
-		Manutencao.nextManu_codigo = nextManu_codigo;
+	public static void setNextcodigo(Integer nextcodigo) {
+		Manutencao.nextcodigo = nextcodigo;
 	}
 
-	public Integer getManu_codigo() {
-		return manu_codigo;
+	public Integer getcodigo() {
+		return codigo;
 	}
 
-	public void setManu_codigo(Integer manu_codigo) {
-		this.manu_codigo = manu_codigo;
+	public void setcodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
 
-	public String getManu_descricao() {
-		return manu_descricao;
+	public String getdescricao() {
+		return descricao;
 	}
 
-	public void setManu_descricao(String manu_descricao) {
-		this.manu_descricao = manu_descricao;
+	public void setdescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public String getManu_tipo() {
-		return manu_tipo;
+	public String gettipo() {
+		return tipo;
 	}
 
-	public void setManu_tipo(String manu_tipo) {
-		this.manu_tipo = manu_tipo;
+	public void settipo(String tipo) {
+		this.tipo = tipo;
 	}
 
-	public String getManu_marca() {
-		return manu_marca;
+	public String getmarca() {
+		return marca;
 	}
 
-	public void setManu_marca(String manu_marca) {
-		this.manu_marca = manu_marca;
+	public void setmarca(String marca) {
+		this.marca = marca;
 	}
 
-	public String getManu_aplicacao() {
-		return manu_aplicacao;
+	public String getaplicacao() {
+		return aplicacao;
 	}
 
-	public void setManu_aplicacao(String manu_aplicacao) {
-		this.manu_aplicacao = manu_aplicacao;
+	public void setaplicacao(String aplicacao) {
+		this.aplicacao = aplicacao;
 	}
 
-	public LocalDate getManu_datacad() {
-		return manu_datacad;
+	public LocalDate getdatacad() {
+		return datacad;
 	}
 
-	public void setManu_datacad(LocalDate manu_datacad) {
-		this.manu_datacad = manu_datacad;
+	public void setdatacad(LocalDate datacad) {
+		this.datacad = datacad;
 	}
 
 	public static long getSerialversionuid() {
@@ -83,12 +83,12 @@ public class Manutencao  implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((manu_aplicacao == null) ? 0 : manu_aplicacao.hashCode());
-		result = prime * result + ((manu_codigo == null) ? 0 : manu_codigo.hashCode());
-		result = prime * result + ((manu_datacad == null) ? 0 : manu_datacad.hashCode());
-		result = prime * result + ((manu_descricao == null) ? 0 : manu_descricao.hashCode());
-		result = prime * result + ((manu_marca == null) ? 0 : manu_marca.hashCode());
-		result = prime * result + ((manu_tipo == null) ? 0 : manu_tipo.hashCode());
+		result = prime * result + ((aplicacao == null) ? 0 : aplicacao.hashCode());
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+		result = prime * result + ((datacad == null) ? 0 : datacad.hashCode());
+		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
+		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
+		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		return result;
 	}
 
@@ -101,55 +101,55 @@ public class Manutencao  implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Manutencao other = (Manutencao) obj;
-		if (manu_aplicacao == null) {
-			if (other.manu_aplicacao != null)
+		if (aplicacao == null) {
+			if (other.aplicacao != null)
 				return false;
-		} else if (!manu_aplicacao.equals(other.manu_aplicacao))
+		} else if (!aplicacao.equals(other.aplicacao))
 			return false;
-		if (manu_codigo == null) {
-			if (other.manu_codigo != null)
+		if (codigo == null) {
+			if (other.codigo != null)
 				return false;
-		} else if (!manu_codigo.equals(other.manu_codigo))
+		} else if (!codigo.equals(other.codigo))
 			return false;
-		if (manu_datacad == null) {
-			if (other.manu_datacad != null)
+		if (datacad == null) {
+			if (other.datacad != null)
 				return false;
-		} else if (!manu_datacad.equals(other.manu_datacad))
+		} else if (!datacad.equals(other.datacad))
 			return false;
-		if (manu_descricao == null) {
-			if (other.manu_descricao != null)
+		if (descricao == null) {
+			if (other.descricao != null)
 				return false;
-		} else if (!manu_descricao.equals(other.manu_descricao))
+		} else if (!descricao.equals(other.descricao))
 			return false;
-		if (manu_marca == null) {
-			if (other.manu_marca != null)
+		if (marca == null) {
+			if (other.marca != null)
 				return false;
-		} else if (!manu_marca.equals(other.manu_marca))
+		} else if (!marca.equals(other.marca))
 			return false;
-		if (manu_tipo == null) {
-			if (other.manu_tipo != null)
+		if (tipo == null) {
+			if (other.tipo != null)
 				return false;
-		} else if (!manu_tipo.equals(other.manu_tipo))
+		} else if (!tipo.equals(other.tipo))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Manutencao [manu_codigo=" + manu_codigo + ", manu_descricao=" + manu_descricao + ", manu_tipo="
-				+ manu_tipo + ", manu_marca=" + manu_marca + ", manu_aplicacao=" + manu_aplicacao + ", manu_datacad="
-				+ manu_datacad + "]";
+		return "Manutencao [codigo=" + codigo + ", descricao=" + descricao + ", tipo="
+				+ tipo + ", marca=" + marca + ", aplicacao=" + aplicacao + ", datacad="
+				+ datacad + "]";
 	}
 
-	public Manutencao(Integer manu_codigo, String manu_descricao, String manu_tipo, String manu_marca,
-			String manu_aplicacao, LocalDate manu_datacad) {
+	public Manutencao(Integer codigo, String descricao, String tipo, String marca,
+			String aplicacao, LocalDate datacad) {
 		super();
-		this.manu_codigo = manu_codigo;
-		this.manu_descricao = manu_descricao;
-		this.manu_tipo = manu_tipo;
-		this.manu_marca = manu_marca;
-		this.manu_aplicacao = manu_aplicacao;
-		this.manu_datacad = manu_datacad;
+		this.codigo = codigo;
+		this.descricao = descricao;
+		this.tipo = tipo;
+		this.marca = marca;
+		this.aplicacao = aplicacao;
+		this.datacad = datacad;
 	}
 
 	public Manutencao() {

@@ -69,10 +69,10 @@ public class CadUsuariosController {
     private Integer novocodigo;
     
 	public void initialize() {
-		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("usua_codigo"));
-		tbcNome.setCellValueFactory(new PropertyValueFactory<>("usua_nome"));
-		tbcUsuario.setCellValueFactory(new PropertyValueFactory<>("usua_usuario"));
-		tbcDatacad.setCellValueFactory(new PropertyValueFactory<>("usua_datacad"));
+		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+		tbcNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		tbcUsuario.setCellValueFactory(new PropertyValueFactory<>("usuario"));
+		tbcDatacad.setCellValueFactory(new PropertyValueFactory<>("datacad"));
 		tblUsuarios.setItems(FXCollections.observableArrayList(usuariosDao.listar()));
 		novoUsuario();
 	}
@@ -123,18 +123,18 @@ public class CadUsuariosController {
     }
     
     public void populaUsuario() {
-    	novocodigo=Usuarios.getNextUsua_codigo();
-		usuario.setUsua_codigo(Integer.valueOf(novocodigo));
-		usuario.setUsua_nome(tfNome.getText());
-		usuario.setUsua_usuario(tfUsuario.getText());
-		usuario.setUsua_senha(pfSenha.getText());
-		usuario.setUsua_datacad(LocalDate.now());
+    	novocodigo=Usuarios.getNextcodigo();
+		usuario.setcodigo(Integer.valueOf(novocodigo));
+		usuario.setnome(tfNome.getText());
+		usuario.setusuario(tfUsuario.getText());
+		usuario.setsenha(pfSenha.getText());
+		usuario.setdatacad(LocalDate.now());
     }
     
     public void populaTela(Usuarios usuario) {
-		tfNome.setText(usuario.getUsua_nome());
-		tfUsuario.setText(usuario.getUsua_usuario());
-		pfSenha.setText(usuario.getUsua_senha());
-		pfSenhaConf.setText(usuario.getUsua_senha());
+		tfNome.setText(usuario.getnome());
+		tfUsuario.setText(usuario.getusuario());
+		pfSenha.setText(usuario.getsenha());
+		pfSenhaConf.setText(usuario.getsenha());
 	}
 }

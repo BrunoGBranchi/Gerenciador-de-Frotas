@@ -9,145 +9,145 @@ public class Funcionarios  implements Serializable{
 
 	private static final long serialVersionUID = 269601728039247486L;
 
-	private Integer   func_codigo;
-	private String    func_nome;
-	private String    func_cpf;
-	private String    func_rg;
-	private String    func_ctps;
-	private String    func_dtnasc;
-	private String    func_endereco;
-	private String    func_endnumero;
-	private String    func_bairro;
-	private String    func_cep;
-    private String    func_muni_codigo;
-	private String    func_muni_uf;
-	private String    func_cargo;
-	private Double    func_salario;
-	private LocalDate func_dtadmissao;
-	private String    func_cargahoraria;
-	private String    func_banco;
-	private String    func_agencia;
-	private String    func_conta;
-	private LocalDate func_datacad;
-	public Integer getFunc_codigo() {
-		return func_codigo;
+	private Integer   codigo;
+	private String    nome;
+	private String    cpf;
+	private String    rg;
+	private String    ctps;
+	private String    dtnasc;
+	private String    endereco;
+	private String    endnumero;
+	private String    bairro;
+	private String    cep;
+    private String    muni_codigo;
+	private String    muni_uf;
+	private String    cargo;
+	private Double    salario;
+	private LocalDate dtadmissao;
+	private String    cargahoraria;
+	private String    banco;
+	private String    agencia;
+	private String    conta;
+	private LocalDate datacad;
+	public Integer getcodigo() {
+		return codigo;
 	}
-	public void setFunc_codigo(Integer func_codigo) {
-		this.func_codigo = func_codigo;
+	public void setcodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
-	public String getFunc_nome() {
-		return func_nome;
+	public String getnome() {
+		return nome;
 	}
-	public void setFunc_nome(String func_nome) {
-		this.func_nome = func_nome;
+	public void setnome(String nome) {
+		this.nome = nome;
 	}
-	public String getFunc_cpf() {
-		return func_cpf;
+	public String getcpf() {
+		return cpf;
 	}
-	public void setFunc_cpf(String func_cpf) {
-		this.func_cpf = func_cpf;
+	public void setcpf(String cpf) {
+		this.cpf = cpf;
 	}
-	public String getFunc_rg() {
-		return func_rg;
+	public String getrg() {
+		return rg;
 	}
-	public void setFunc_rg(String func_rg) {
-		this.func_rg = func_rg;
+	public void setrg(String rg) {
+		this.rg = rg;
 	}
-	public String getFunc_ctps() {
-		return func_ctps;
+	public String getctps() {
+		return ctps;
 	}
-	public void setFunc_ctps(String func_ctps) {
-		this.func_ctps = func_ctps;
+	public void setctps(String ctps) {
+		this.ctps = ctps;
 	}
-	public String getFunc_dtnasc() {
-		return func_dtnasc;
+	public String getdtnasc() {
+		return dtnasc;
 	}
-	public void setFunc_dtnasc(String func_dtnasc) {
-		this.func_dtnasc = func_dtnasc;
+	public void setdtnasc(String dtnasc) {
+		this.dtnasc = dtnasc;
 	}
-	public String getFunc_endereco() {
-		return func_endereco;
+	public String getendereco() {
+		return endereco;
 	}
-	public void setFunc_endereco(String func_endereco) {
-		this.func_endereco = func_endereco;
+	public void setendereco(String endereco) {
+		this.endereco = endereco;
 	}
-	public String getFunc_endnumero() {
-		return func_endnumero;
+	public String getendnumero() {
+		return endnumero;
 	}
-	public void setFunc_endnumero(String func_endnumero) {
-		this.func_endnumero = func_endnumero;
+	public void setendnumero(String endnumero) {
+		this.endnumero = endnumero;
 	}
-	public String getFunc_bairro() {
-		return func_bairro;
+	public String getbairro() {
+		return bairro;
 	}
-	public void setFunc_bairro(String func_bairro) {
-		this.func_bairro = func_bairro;
+	public void setbairro(String bairro) {
+		this.bairro = bairro;
 	}
-	public String getFunc_cep() {
-		return func_cep;
+	public String getcep() {
+		return cep;
 	}
-	public void setFunc_cep(String func_cep) {
-		this.func_cep = func_cep;
+	public void setcep(String cep) {
+		this.cep = cep;
 	}
-	public String getFunc_muni_codigo() {
-		return func_muni_codigo;
+	public String getmuni_codigo() {
+		return muni_codigo;
 	}
-	public void setFunc_muni_codigo(String func_muni_codigo) {
-		this.func_muni_codigo = func_muni_codigo;
+	public void setmuni_codigo(String muni_codigo) {
+		this.muni_codigo = muni_codigo;
 	}
-	public String getFunc_muni_uf() {
-		return func_muni_uf;
+	public String getmuni_uf() {
+		return muni_uf;
 	}
-	public void setFunc_muni_uf(String func_muni_uf) {
-		this.func_muni_uf = func_muni_uf;
+	public void setmuni_uf(String muni_uf) {
+		this.muni_uf = muni_uf;
 	}
-	public String getFunc_cargo() {
-		return func_cargo;
+	public String getcargo() {
+		return cargo;
 	}
-	public void setFunc_cargo(String func_cargo) {
-		this.func_cargo = func_cargo;
+	public void setcargo(String cargo) {
+		this.cargo = cargo;
 	}
-	public Double getFunc_salario() {
-		return func_salario;
+	public Double getsalario() {
+		return salario;
 	}
-	public void setFunc_salario(Double func_salario) {
-		this.func_salario = func_salario;
+	public void setsalario(Double salario) {
+		this.salario = salario;
 	}
-	public LocalDate getFunc_dtadmissao() {
-		return func_dtadmissao;
+	public LocalDate getdtadmissao() {
+		return dtadmissao;
 	}
-	public void setFunc_dtadmissao(LocalDate func_dtadmissao) {
-		this.func_dtadmissao = func_dtadmissao;
+	public void setdtadmissao(LocalDate dtadmissao) {
+		this.dtadmissao = dtadmissao;
 	}
-	public String getFunc_cargahoraria() {
-		return func_cargahoraria;
+	public String getcargahoraria() {
+		return cargahoraria;
 	}
-	public void setFunc_cargahoraria(String func_cargahoraria) {
-		this.func_cargahoraria = func_cargahoraria;
+	public void setcargahoraria(String cargahoraria) {
+		this.cargahoraria = cargahoraria;
 	}
-	public String getFunc_banco() {
-		return func_banco;
+	public String getbanco() {
+		return banco;
 	}
-	public void setFunc_banco(String func_banco) {
-		this.func_banco = func_banco;
+	public void setbanco(String banco) {
+		this.banco = banco;
 	}
-	public String getFunc_agencia() {
-		return func_agencia;
+	public String getagencia() {
+		return agencia;
 	}
-	public void setFunc_agencia(String func_agencia) {
-		this.func_agencia = func_agencia;
+	public void setagencia(String agencia) {
+		this.agencia = agencia;
 	}
-	public String getFunc_conta() {
-		return func_conta;
+	public String getconta() {
+		return conta;
 	}
-	public void setFunc_conta(String func_conta) {
-		this.func_conta = func_conta;
+	public void setconta(String conta) {
+		this.conta = conta;
 	}
-	public LocalDate getFunc_datacad() {
-		return func_datacad;
+	public LocalDate getdatacad() {
+		return datacad;
 	}
-	public void setFunc_datacad(LocalDate func_datacad) {
-		this.func_datacad = func_datacad;
+	public void setdatacad(LocalDate datacad) {
+		this.datacad = datacad;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -156,26 +156,26 @@ public class Funcionarios  implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((func_agencia == null) ? 0 : func_agencia.hashCode());
-		result = prime * result + ((func_bairro == null) ? 0 : func_bairro.hashCode());
-		result = prime * result + ((func_banco == null) ? 0 : func_banco.hashCode());
-		result = prime * result + ((func_cargahoraria == null) ? 0 : func_cargahoraria.hashCode());
-		result = prime * result + ((func_cargo == null) ? 0 : func_cargo.hashCode());
-		result = prime * result + ((func_cep == null) ? 0 : func_cep.hashCode());
-		result = prime * result + ((func_codigo == null) ? 0 : func_codigo.hashCode());
-		result = prime * result + ((func_conta == null) ? 0 : func_conta.hashCode());
-		result = prime * result + ((func_cpf == null) ? 0 : func_cpf.hashCode());
-		result = prime * result + ((func_ctps == null) ? 0 : func_ctps.hashCode());
-		result = prime * result + ((func_datacad == null) ? 0 : func_datacad.hashCode());
-		result = prime * result + ((func_dtadmissao == null) ? 0 : func_dtadmissao.hashCode());
-		result = prime * result + ((func_dtnasc == null) ? 0 : func_dtnasc.hashCode());
-		result = prime * result + ((func_endereco == null) ? 0 : func_endereco.hashCode());
-		result = prime * result + ((func_endnumero == null) ? 0 : func_endnumero.hashCode());
-		result = prime * result + ((func_muni_codigo == null) ? 0 : func_muni_codigo.hashCode());
-		result = prime * result + ((func_muni_uf == null) ? 0 : func_muni_uf.hashCode());
-		result = prime * result + ((func_nome == null) ? 0 : func_nome.hashCode());
-		result = prime * result + ((func_rg == null) ? 0 : func_rg.hashCode());
-		result = prime * result + ((func_salario == null) ? 0 : func_salario.hashCode());
+		result = prime * result + ((agencia == null) ? 0 : agencia.hashCode());
+		result = prime * result + ((bairro == null) ? 0 : bairro.hashCode());
+		result = prime * result + ((banco == null) ? 0 : banco.hashCode());
+		result = prime * result + ((cargahoraria == null) ? 0 : cargahoraria.hashCode());
+		result = prime * result + ((cargo == null) ? 0 : cargo.hashCode());
+		result = prime * result + ((cep == null) ? 0 : cep.hashCode());
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+		result = prime * result + ((conta == null) ? 0 : conta.hashCode());
+		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
+		result = prime * result + ((ctps == null) ? 0 : ctps.hashCode());
+		result = prime * result + ((datacad == null) ? 0 : datacad.hashCode());
+		result = prime * result + ((dtadmissao == null) ? 0 : dtadmissao.hashCode());
+		result = prime * result + ((dtnasc == null) ? 0 : dtnasc.hashCode());
+		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
+		result = prime * result + ((endnumero == null) ? 0 : endnumero.hashCode());
+		result = prime * result + ((muni_codigo == null) ? 0 : muni_codigo.hashCode());
+		result = prime * result + ((muni_uf == null) ? 0 : muni_uf.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((rg == null) ? 0 : rg.hashCode());
+		result = prime * result + ((salario == null) ? 0 : salario.hashCode());
 		return result;
 	}
 	@Override
@@ -187,146 +187,146 @@ public class Funcionarios  implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Funcionarios other = (Funcionarios) obj;
-		if (func_agencia == null) {
-			if (other.func_agencia != null)
+		if (agencia == null) {
+			if (other.agencia != null)
 				return false;
-		} else if (!func_agencia.equals(other.func_agencia))
+		} else if (!agencia.equals(other.agencia))
 			return false;
-		if (func_bairro == null) {
-			if (other.func_bairro != null)
+		if (bairro == null) {
+			if (other.bairro != null)
 				return false;
-		} else if (!func_bairro.equals(other.func_bairro))
+		} else if (!bairro.equals(other.bairro))
 			return false;
-		if (func_banco == null) {
-			if (other.func_banco != null)
+		if (banco == null) {
+			if (other.banco != null)
 				return false;
-		} else if (!func_banco.equals(other.func_banco))
+		} else if (!banco.equals(other.banco))
 			return false;
-		if (func_cargahoraria == null) {
-			if (other.func_cargahoraria != null)
+		if (cargahoraria == null) {
+			if (other.cargahoraria != null)
 				return false;
-		} else if (!func_cargahoraria.equals(other.func_cargahoraria))
+		} else if (!cargahoraria.equals(other.cargahoraria))
 			return false;
-		if (func_cargo == null) {
-			if (other.func_cargo != null)
+		if (cargo == null) {
+			if (other.cargo != null)
 				return false;
-		} else if (!func_cargo.equals(other.func_cargo))
+		} else if (!cargo.equals(other.cargo))
 			return false;
-		if (func_cep == null) {
-			if (other.func_cep != null)
+		if (cep == null) {
+			if (other.cep != null)
 				return false;
-		} else if (!func_cep.equals(other.func_cep))
+		} else if (!cep.equals(other.cep))
 			return false;
-		if (func_codigo == null) {
-			if (other.func_codigo != null)
+		if (codigo == null) {
+			if (other.codigo != null)
 				return false;
-		} else if (!func_codigo.equals(other.func_codigo))
+		} else if (!codigo.equals(other.codigo))
 			return false;
-		if (func_conta == null) {
-			if (other.func_conta != null)
+		if (conta == null) {
+			if (other.conta != null)
 				return false;
-		} else if (!func_conta.equals(other.func_conta))
+		} else if (!conta.equals(other.conta))
 			return false;
-		if (func_cpf == null) {
-			if (other.func_cpf != null)
+		if (cpf == null) {
+			if (other.cpf != null)
 				return false;
-		} else if (!func_cpf.equals(other.func_cpf))
+		} else if (!cpf.equals(other.cpf))
 			return false;
-		if (func_ctps == null) {
-			if (other.func_ctps != null)
+		if (ctps == null) {
+			if (other.ctps != null)
 				return false;
-		} else if (!func_ctps.equals(other.func_ctps))
+		} else if (!ctps.equals(other.ctps))
 			return false;
-		if (func_datacad == null) {
-			if (other.func_datacad != null)
+		if (datacad == null) {
+			if (other.datacad != null)
 				return false;
-		} else if (!func_datacad.equals(other.func_datacad))
+		} else if (!datacad.equals(other.datacad))
 			return false;
-		if (func_dtadmissao == null) {
-			if (other.func_dtadmissao != null)
+		if (dtadmissao == null) {
+			if (other.dtadmissao != null)
 				return false;
-		} else if (!func_dtadmissao.equals(other.func_dtadmissao))
+		} else if (!dtadmissao.equals(other.dtadmissao))
 			return false;
-		if (func_dtnasc == null) {
-			if (other.func_dtnasc != null)
+		if (dtnasc == null) {
+			if (other.dtnasc != null)
 				return false;
-		} else if (!func_dtnasc.equals(other.func_dtnasc))
+		} else if (!dtnasc.equals(other.dtnasc))
 			return false;
-		if (func_endereco == null) {
-			if (other.func_endereco != null)
+		if (endereco == null) {
+			if (other.endereco != null)
 				return false;
-		} else if (!func_endereco.equals(other.func_endereco))
+		} else if (!endereco.equals(other.endereco))
 			return false;
-		if (func_endnumero == null) {
-			if (other.func_endnumero != null)
+		if (endnumero == null) {
+			if (other.endnumero != null)
 				return false;
-		} else if (!func_endnumero.equals(other.func_endnumero))
+		} else if (!endnumero.equals(other.endnumero))
 			return false;
-		if (func_muni_codigo == null) {
-			if (other.func_muni_codigo != null)
+		if (muni_codigo == null) {
+			if (other.muni_codigo != null)
 				return false;
-		} else if (!func_muni_codigo.equals(other.func_muni_codigo))
+		} else if (!muni_codigo.equals(other.muni_codigo))
 			return false;
-		if (func_muni_uf == null) {
-			if (other.func_muni_uf != null)
+		if (muni_uf == null) {
+			if (other.muni_uf != null)
 				return false;
-		} else if (!func_muni_uf.equals(other.func_muni_uf))
+		} else if (!muni_uf.equals(other.muni_uf))
 			return false;
-		if (func_nome == null) {
-			if (other.func_nome != null)
+		if (nome == null) {
+			if (other.nome != null)
 				return false;
-		} else if (!func_nome.equals(other.func_nome))
+		} else if (!nome.equals(other.nome))
 			return false;
-		if (func_rg == null) {
-			if (other.func_rg != null)
+		if (rg == null) {
+			if (other.rg != null)
 				return false;
-		} else if (!func_rg.equals(other.func_rg))
+		} else if (!rg.equals(other.rg))
 			return false;
-		if (func_salario == null) {
-			if (other.func_salario != null)
+		if (salario == null) {
+			if (other.salario != null)
 				return false;
-		} else if (!func_salario.equals(other.func_salario))
+		} else if (!salario.equals(other.salario))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return func_cpf.toString();
-//				return "Funcionarios [func_codigo=" + func_codigo + ", func_nome=" + func_nome + ", func_cpf=" + func_cpf
-//				+ ", func_rg=" + func_rg + ", func_ctps=" + func_ctps + ", func_dtnasc=" + func_dtnasc
-//				+ ", func_endereco=" + func_endereco + ", func_endnumero=" + func_endnumero + ", func_bairro="
-//				+ func_bairro + ", func_cep=" + func_cep + ", func_muni_codigo=" + func_muni_codigo + ", func_muni_uf="
-//				+ func_muni_uf + ", func_cargo=" + func_cargo + ", func_salario=" + func_salario + ", func_dtadmissao="
-//				+ func_dtadmissao + ", func_cargahoraria=" + func_cargahoraria + ", func_banco=" + func_banco/
-//				+ ", func_agencia=" + func_agencia + ", func_conta=" + func_conta + ", func_datacad=" + func_datacad
+		return cpf.toString();
+//				return "Funcionarios [codigo=" + codigo + ", nome=" + nome + ", cpf=" + cpf
+//				+ ", rg=" + rg + ", ctps=" + ctps + ", dtnasc=" + dtnasc
+//				+ ", endereco=" + endereco + ", endnumero=" + endnumero + ", bairro="
+//				+ bairro + ", cep=" + cep + ", muni_codigo=" + muni_codigo + ", muni_uf="
+//				+ muni_uf + ", cargo=" + cargo + ", salario=" + salario + ", dtadmissao="
+//				+ dtadmissao + ", cargahoraria=" + cargahoraria + ", banco=" + banco/
+//				+ ", agencia=" + agencia + ", conta=" + conta + ", datacad=" + datacad
 //				+ "]";
 	}
-	public Funcionarios(Integer func_codigo, String func_nome, String func_cpf, String func_rg, String func_ctps,
-			String func_dtnasc, String func_endereco, String func_endnumero, String func_bairro, String func_cep,
-			String func_muni_codigo, String func_muni_uf, String func_cargo, Double func_salario,
-			LocalDate func_dtadmissao, String func_cargahoraria, String func_banco, String func_agencia,
-			String func_conta, LocalDate func_datacad) {
+	public Funcionarios(Integer codigo, String nome, String cpf, String rg, String ctps,
+			String dtnasc, String endereco, String endnumero, String bairro, String cep,
+			String muni_codigo, String muni_uf, String cargo, Double salario,
+			LocalDate dtadmissao, String cargahoraria, String banco, String agencia,
+			String conta, LocalDate datacad) {
 		super();
-		this.func_codigo = func_codigo;
-		this.func_nome = func_nome;
-		this.func_cpf = func_cpf;
-		this.func_rg = func_rg;
-		this.func_ctps = func_ctps;
-		this.func_dtnasc = func_dtnasc;
-		this.func_endereco = func_endereco;
-		this.func_endnumero = func_endnumero;
-		this.func_bairro = func_bairro;
-		this.func_cep = func_cep;
-		this.func_muni_codigo = func_muni_codigo;
-		this.func_muni_uf = func_muni_uf;
-		this.func_cargo = func_cargo;
-		this.func_salario = func_salario;
-		this.func_dtadmissao = func_dtadmissao;
-		this.func_cargahoraria = func_cargahoraria;
-		this.func_banco = func_banco;
-		this.func_agencia = func_agencia;
-		this.func_conta = func_conta;
-		this.func_datacad = func_datacad;
+		this.codigo = codigo;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.rg = rg;
+		this.ctps = ctps;
+		this.dtnasc = dtnasc;
+		this.endereco = endereco;
+		this.endnumero = endnumero;
+		this.bairro = bairro;
+		this.cep = cep;
+		this.muni_codigo = muni_codigo;
+		this.muni_uf = muni_uf;
+		this.cargo = cargo;
+		this.salario = salario;
+		this.dtadmissao = dtadmissao;
+		this.cargahoraria = cargahoraria;
+		this.banco = banco;
+		this.agencia = agencia;
+		this.conta = conta;
+		this.datacad = datacad;
 	}
 	public Funcionarios() {
 		super();

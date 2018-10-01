@@ -6,54 +6,54 @@ import java.io.Serializable;
 public class t_Veiculos implements Serializable {
 
 	private static final long serialVersionUID = -2170492535821015905L;
-	private Integer veic_renavam;
-	private String veic_marca;
-	private String veic_modelo;
-	private String veic_placa;
-	private String veic_motor;
-	private String veic_chassi;
-	private String veic_categoria;
-	public Integer getVeic_renavam() {
-		return veic_renavam;
+	private Integer renavam;
+	private String marca;
+	private String modelo;
+	private String placa;
+	private String motor;
+	private String chassi;
+	private String categoria;
+	public Integer getrenavam() {
+		return renavam;
 	}
-	public void setVeic_renavam(Integer veic_renavam) {
-		this.veic_renavam = veic_renavam;
+	public void setrenavam(Integer renavam) {
+		this.renavam = renavam;
 	}
-	public String getVeic_marca() {
-		return veic_marca;
+	public String getmarca() {
+		return marca;
 	}
-	public void setVeic_marca(String veic_marca) {
-		this.veic_marca = veic_marca;
+	public void setmarca(String marca) {
+		this.marca = marca;
 	}
-	public String getVeic_modelo() {
-		return veic_modelo;
+	public String getmodelo() {
+		return modelo;
 	}
-	public void setVeic_modelo(String veic_modelo) {
-		this.veic_modelo = veic_modelo;
+	public void setmodelo(String modelo) {
+		this.modelo = modelo;
 	}
-	public String getVeic_placa() {
-		return veic_placa;
+	public String getplaca() {
+		return placa;
 	}
-	public void setVeic_placa(String veic_placa) {
-		this.veic_placa = veic_placa;
+	public void setplaca(String placa) {
+		this.placa = placa;
 	}
-	public String getVeic_motor() {
-		return veic_motor;
+	public String getmotor() {
+		return motor;
 	}
-	public void setVeic_motor(String veic_motor) {
-		this.veic_motor = veic_motor;
+	public void setmotor(String motor) {
+		this.motor = motor;
 	}
-	public String getVeic_chassi() {
-		return veic_chassi;
+	public String getchassi() {
+		return chassi;
 	}
-	public void setVeic_chassi(String veic_chassi) {
-		this.veic_chassi = veic_chassi;
+	public void setchassi(String chassi) {
+		this.chassi = chassi;
 	}
-	public String getVeic_categoria() {
-		return veic_categoria;
+	public String getcategoria() {
+		return categoria;
 	}
-	public void setVeic_categoria(String veic_categoria) {
-		this.veic_categoria = veic_categoria;
+	public void setcategoria(String categoria) {
+		this.categoria = categoria;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -62,13 +62,13 @@ public class t_Veiculos implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((veic_categoria == null) ? 0 : veic_categoria.hashCode());
-		result = prime * result + ((veic_chassi == null) ? 0 : veic_chassi.hashCode());
-		result = prime * result + ((veic_marca == null) ? 0 : veic_marca.hashCode());
-		result = prime * result + ((veic_modelo == null) ? 0 : veic_modelo.hashCode());
-		result = prime * result + ((veic_motor == null) ? 0 : veic_motor.hashCode());
-		result = prime * result + ((veic_placa == null) ? 0 : veic_placa.hashCode());
-		result = prime * result + ((veic_renavam == null) ? 0 : veic_renavam.hashCode());
+		result = prime * result + ((categoria == null) ? 0 : categoria.hashCode());
+		result = prime * result + ((chassi == null) ? 0 : chassi.hashCode());
+		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
+		result = prime * result + ((modelo == null) ? 0 : modelo.hashCode());
+		result = prime * result + ((motor == null) ? 0 : motor.hashCode());
+		result = prime * result + ((placa == null) ? 0 : placa.hashCode());
+		result = prime * result + ((renavam == null) ? 0 : renavam.hashCode());
 		return result;
 	}
 	@Override
@@ -80,61 +80,61 @@ public class t_Veiculos implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		t_Veiculos other = (t_Veiculos) obj;
-		if (veic_categoria == null) {
-			if (other.veic_categoria != null)
+		if (categoria == null) {
+			if (other.categoria != null)
 				return false;
-		} else if (!veic_categoria.equals(other.veic_categoria))
+		} else if (!categoria.equals(other.categoria))
 			return false;
-		if (veic_chassi == null) {
-			if (other.veic_chassi != null)
+		if (chassi == null) {
+			if (other.chassi != null)
 				return false;
-		} else if (!veic_chassi.equals(other.veic_chassi))
+		} else if (!chassi.equals(other.chassi))
 			return false;
-		if (veic_marca == null) {
-			if (other.veic_marca != null)
+		if (marca == null) {
+			if (other.marca != null)
 				return false;
-		} else if (!veic_marca.equals(other.veic_marca))
+		} else if (!marca.equals(other.marca))
 			return false;
-		if (veic_modelo == null) {
-			if (other.veic_modelo != null)
+		if (modelo == null) {
+			if (other.modelo != null)
 				return false;
-		} else if (!veic_modelo.equals(other.veic_modelo))
+		} else if (!modelo.equals(other.modelo))
 			return false;
-		if (veic_motor == null) {
-			if (other.veic_motor != null)
+		if (motor == null) {
+			if (other.motor != null)
 				return false;
-		} else if (!veic_motor.equals(other.veic_motor))
+		} else if (!motor.equals(other.motor))
 			return false;
-		if (veic_placa == null) {
-			if (other.veic_placa != null)
+		if (placa == null) {
+			if (other.placa != null)
 				return false;
-		} else if (!veic_placa.equals(other.veic_placa))
+		} else if (!placa.equals(other.placa))
 			return false;
-		if (veic_renavam == null) {
-			if (other.veic_renavam != null)
+		if (renavam == null) {
+			if (other.renavam != null)
 				return false;
-		} else if (!veic_renavam.equals(other.veic_renavam))
+		} else if (!renavam.equals(other.renavam))
 			return false;
 		return true;
 	}
 	
 	@Override
 	public String toString() {
-	return veic_renavam.toString(); 
-//		return "t_Veiculos [veic_renavam=" + veic_renavam + ", veic_marca=" + veic_marca + ", veic_modelo="
-//				+ veic_modelo + ", veic_placa=" + veic_placa + ", veic_motor=" + veic_motor + ", veic_chassi="
-//				+ veic_chassi + ", veic_categoria=" + veic_categoria + "]";
+	return renavam.toString(); 
+//		return "t_Veiculos [renavam=" + renavam + ", marca=" + marca + ", modelo="
+//				+ modelo + ", placa=" + placa + ", motor=" + motor + ", chassi="
+//				+ chassi + ", categoria=" + categoria + "]";
 	}
-	public t_Veiculos(Integer veic_renavam, String veic_marca, String veic_modelo, String veic_placa, String veic_motor,
-			String veic_chassi, String veic_categoria) {
+	public t_Veiculos(Integer renavam, String marca, String modelo, String placa, String motor,
+			String chassi, String categoria) {
 		super();
-		this.veic_renavam = veic_renavam;
-		this.veic_marca = veic_marca;
-		this.veic_modelo = veic_modelo;
-		this.veic_placa = veic_placa;
-		this.veic_motor = veic_motor;
-		this.veic_chassi = veic_chassi;
-		this.veic_categoria = veic_categoria;
+		this.renavam = renavam;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.placa = placa;
+		this.motor = motor;
+		this.chassi = chassi;
+		this.categoria = categoria;
 	}
 	public t_Veiculos() {
 		super();

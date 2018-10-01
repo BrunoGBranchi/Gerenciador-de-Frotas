@@ -62,9 +62,9 @@ public class ListarFuncionariosController {
 	private Funcionarios funcionario;
 
 	public void initialize() {
-		tbcCPF.setCellValueFactory(new PropertyValueFactory<>("func_cpf"));
-		tbcNome.setCellValueFactory(new PropertyValueFactory<>("func_nome"));
-		tbcCargo.setCellValueFactory(new PropertyValueFactory<>("func_cargo"));
+		tbcCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+		tbcNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		tbcCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
 		tblFuncionarios.setItems(FXCollections.observableArrayList(funcionarioDao.listar()));
 	}
 
@@ -102,28 +102,28 @@ public class ListarFuncionariosController {
 			funcionario = tblFuncionarios.getSelectionModel().getSelectedItem();
 			// fncControl.populaTela(funcionario);
 			// PrincipalController.edit = true;
-			// PrincipalController.nome=funcionario.getFunc_nome();
+			// PrincipalController.nome=funcionario.getnome();
 
-			v_Func_codigo = funcionario.getFunc_codigo();
-			v_Func_agencia = funcionario.getFunc_agencia();
-			v_Func_bairro = funcionario.getFunc_bairro();
-			v_Func_banco = funcionario.getFunc_banco();
-			v_Func_cargahoraria = funcionario.getFunc_cargahoraria();
-			v_Func_cargo = funcionario.getFunc_cargo();
-			v_Func_cep = funcionario.getFunc_cep();
-			v_Func_conta = funcionario.getFunc_conta();
-			v_Func_cpf = funcionario.getFunc_cpf();
-			v_Func_ctps = funcionario.getFunc_ctps();
-			v_Func_datacad = funcionario.getFunc_datacad().toString();
-			v_Func_dtadmissao = funcionario.getFunc_dtadmissao();
-			v_Func_dtnasc = funcionario.getFunc_dtnasc();
-			v_Func_endereco = funcionario.getFunc_endnumero();
-			v_Func_endnumero = funcionario.getFunc_endnumero();
-			v_Func_muni_codigo = funcionario.getFunc_muni_codigo();
-			v_Func_muni_uf = funcionario.getFunc_muni_uf();
-			v_Func_nome = funcionario.getFunc_nome();
-			v_Func_rg = funcionario.getFunc_rg();
-			v_Func_salario = funcionario.getFunc_salario().toString();
+			codigo = funcionario.getcodigo();
+			agencia = funcionario.getagencia();
+			bairro = funcionario.getbairro();
+			banco = funcionario.getbanco();
+			cargahoraria = funcionario.getcargahoraria();
+			cargo = funcionario.getcargo();
+			cep = funcionario.getcep();
+			conta = funcionario.getconta();
+			cpf = funcionario.getcpf();
+			ctps = funcionario.getctps();
+			datacad = funcionario.getdatacad().toString();
+			dtadmissao = funcionario.getdtadmissao();
+			dtnasc = funcionario.getdtnasc();
+			endereco = funcionario.getendnumero();
+			endnumero = funcionario.getendnumero();
+			muni_codigo = funcionario.getmuni_codigo();
+			muni_uf = funcionario.getmuni_uf();
+			nome = funcionario.getnome();
+			rg = funcionario.getrg();
+			salario = funcionario.getsalario().toString();
 			edit = true;
 			try {
 				FXMLLoader fxmlLoader = new FXMLLoader();
@@ -157,7 +157,7 @@ public class ListarFuncionariosController {
 			funcionario = tblFuncionarios.getSelectionModel().getSelectedItem();
 			// fncControl.populaTela(funcionario);
 			// PrincipalController.edit = false;
-			// PrincipalController.nome=funcionario.getFunc_nome();
+			// PrincipalController.nome=funcionario.getnome();
 			edit = false;
 			tblFuncionarios.refresh();
 		}
@@ -176,25 +176,25 @@ public class ListarFuncionariosController {
 	
 	/* Variáveis que serão utilizadas na próxima tela */
 	public static boolean edit = false;
-	public static Integer v_Func_codigo = 0;
-	public static String v_Func_agencia = "";
-	public static String v_Func_bairro = "";
-	public static String v_Func_banco = "";
-	public static String v_Func_cargahoraria = "";
-	public static String v_Func_cargo = "";
-	public static String v_Func_cep = "";
-	public static String v_Func_conta = "";
-	public static String v_Func_cpf = "";
-	public static String v_Func_ctps = "";
-	public static String v_Func_datacad = "";
-	public static LocalDate v_Func_dtadmissao = LocalDate.MAX;
-	public static String v_Func_dtnasc = "";
-	public static String v_Func_endereco = "";
-	public static String v_Func_endnumero = "";
-	public static String v_Func_muni_codigo = "";
-	public static String v_Func_muni_uf = "";
-	public static String v_Func_nome = "";
-	public static String v_Func_rg = "";
-	public static String v_Func_salario = "";
+	public static Integer codigo = 0;
+	public static String agencia = "";
+	public static String bairro = "";
+	public static String banco = "";
+	public static String cargahoraria = "";
+	public static String cargo = "";
+	public static String cep = "";
+	public static String conta = "";
+	public static String cpf = "";
+	public static String ctps = "";
+	public static String datacad = "";
+	public static LocalDate dtadmissao = LocalDate.MAX;
+	public static String dtnasc = "";
+	public static String endereco = "";
+	public static String endnumero = "";
+	public static String muni_codigo = "";
+	public static String muni_uf = "";
+	public static String nome = "";
+	public static String rg = "";
+	public static String salario = "";
 
 }

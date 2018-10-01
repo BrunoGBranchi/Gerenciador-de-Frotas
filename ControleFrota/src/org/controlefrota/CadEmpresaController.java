@@ -106,16 +106,16 @@ public class CadEmpresaController {
 		
 		cbxUF.getItems().addAll("AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA",
 				"PB", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO");
-		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("empr_codigo"));
-		tbcCNPJ.setCellValueFactory(new PropertyValueFactory<>("empr_cnpj"));
-		tbcRazao.setCellValueFactory(new PropertyValueFactory<>("empr_razaoSocial"));
-		tbcNomeFantasia.setCellValueFactory(new PropertyValueFactory<>("empr_nomeFantasia"));
-		tbcEndereco.setCellValueFactory(new PropertyValueFactory<>("empr_endereco"));
-		tbcBairro.setCellValueFactory(new PropertyValueFactory<>("empr_bairro"));
-		tbcNumero.setCellValueFactory(new PropertyValueFactory<>("empr_numero"));
-		tbcCEP.setCellValueFactory(new PropertyValueFactory<>("empr_cep"));
-		tbcCidade.setCellValueFactory(new PropertyValueFactory<>("empr_muni_codigo"));
-		tbcUF.setCellValueFactory(new PropertyValueFactory<>("empr_muni_uf"));
+		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+		tbcCNPJ.setCellValueFactory(new PropertyValueFactory<>("cnpj"));
+		tbcRazao.setCellValueFactory(new PropertyValueFactory<>("razaoSocial"));
+		tbcNomeFantasia.setCellValueFactory(new PropertyValueFactory<>("nomeFantasia"));
+		tbcEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
+		tbcBairro.setCellValueFactory(new PropertyValueFactory<>("bairro"));
+		tbcNumero.setCellValueFactory(new PropertyValueFactory<>("numero"));
+		tbcCEP.setCellValueFactory(new PropertyValueFactory<>("cep"));
+		tbcCidade.setCellValueFactory(new PropertyValueFactory<>("muni_codigo"));
+		tbcUF.setCellValueFactory(new PropertyValueFactory<>("muni_uf"));
 		
 		novaEmpresa();
 
@@ -177,35 +177,35 @@ public class CadEmpresaController {
 	}
 
 	public void populaEmpresa() {
-		novocodigo=Empresa.getNextEmpr_codigo();
-		empresa.setEmpr_codigo(Integer.valueOf(novocodigo));
-		empresa.setEmpr_razaoSocial(tfRazao.getText());
-		empresa.setEmpr_nomeFantasia(tfFantasia.getText());
-		empresa.setEmpr_cnpj(tfCNPJ.getText());
-		empresa.setEmpr_endereco(tfRua.getText());
-		empresa.setEmpr_numero(tfNum.getText());
-		empresa.setEmpr_bairro(tfBairro.getText());
-		empresa.setEmpr_muni_codigo(tfCidade.getText());
-		empresa.setEmpr_muni_uf(cbxUF.getSelectionModel().getSelectedItem().toString());
-		empresa.setEmpr_cep(tfCEP.getText());
+		novocodigo=Empresa.getNextcodigo();
+		empresa.setcodigo(Integer.valueOf(novocodigo));
+		empresa.setrazaoSocial(tfRazao.getText());
+		empresa.setnomeFantasia(tfFantasia.getText());
+		empresa.setcnpj(tfCNPJ.getText());
+		empresa.setendereco(tfRua.getText());
+		empresa.setnumero(tfNum.getText());
+		empresa.setbairro(tfBairro.getText());
+		empresa.setmuni_codigo(tfCidade.getText());
+		empresa.setmuni_uf(cbxUF.getSelectionModel().getSelectedItem().toString());
+		empresa.setcep(tfCEP.getText());
 	}
 	
 	//private void populaCombo(){
 		//for(Empresa empresa: empresaDao.listar()){
-			//cbxUF.getItems().add(empresa.getEmpr_muni_uf());
+			//cbxUF.getItems().add(empresa.getmuni_uf());
 		//}
 	//}
 	
 	public void populaTela(Empresa empresa) {
-		tfRazao.setText(empresa.getEmpr_razaoSocial());
-		tfFantasia.setText(empresa.getEmpr_nomeFantasia());
-		tfCNPJ.setText(empresa.getEmpr_cnpj());
-		tfRua.setText(empresa.getEmpr_endereco());
-		tfNum.setText(empresa.getEmpr_numero());
-		tfBairro.setText(empresa.getEmpr_bairro());
-		tfCidade.setText(empresa.getEmpr_muni_codigo());
-		tfCEP.setText(empresa.getEmpr_cep());
-		cbxUF.getSelectionModel().select(empresa.getEmpr_muni_uf());
+		tfRazao.setText(empresa.getrazaoSocial());
+		tfFantasia.setText(empresa.getnomeFantasia());
+		tfCNPJ.setText(empresa.getcnpj());
+		tfRua.setText(empresa.getendereco());
+		tfNum.setText(empresa.getnumero());
+		tfBairro.setText(empresa.getbairro());
+		tfCidade.setText(empresa.getmuni_codigo());
+		tfCEP.setText(empresa.getcep());
+		cbxUF.getSelectionModel().select(empresa.getmuni_uf());
 		System.out.println("Popula");
 	}
 }

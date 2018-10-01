@@ -69,8 +69,8 @@ public class LoginController {
     			 JOptionPane.showMessageDialog(null, "Campos não podem ser nulos.");
     		   }
     		usuario = new Usuarios();
-    		usuario.setUsua_usuario(tfusuario.getText());
-    		usuario.setUsua_senha(pfsenha.getText());
+    		usuario.setusuario(tfusuario.getText());
+    		usuario.setsenha(pfsenha.getText());
     		
     		if (usuariosDao.comparaigual(usuario)==1) {
     			Node node = (Node) event.getSource();

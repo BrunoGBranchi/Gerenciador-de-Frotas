@@ -98,14 +98,14 @@ public class CadVeiculosController {
 	public void initialize() {
         btnExcluir.isDisable();
 		cbxCategoria.getItems().addAll("Passeio", "Convencional", "Executivo", "Leito", "Semi-Leito", "Urbano"); 
-		tbcMarca.setCellValueFactory(new PropertyValueFactory<>("veic_marca"));
-		tbcModelo.setCellValueFactory(new PropertyValueFactory<>("veic_modelo"));
-		tbcPlaca.setCellValueFactory(new PropertyValueFactory<>("veic_placa"));
-		tbcMotor.setCellValueFactory(new PropertyValueFactory<>("veic_motor"));
-		tbcChassi.setCellValueFactory(new PropertyValueFactory<>("veic_chassi"));
-		tbcRenavam.setCellValueFactory(new PropertyValueFactory<>("veic_renavam"));
-		tbcCategoria.setCellValueFactory(new PropertyValueFactory<>("veic_categoria"));
-		tbcData.setCellValueFactory(new PropertyValueFactory<>("veic_datacad"));
+		tbcMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
+		tbcModelo.setCellValueFactory(new PropertyValueFactory<>("modelo"));
+		tbcPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
+		tbcMotor.setCellValueFactory(new PropertyValueFactory<>("motor"));
+		tbcChassi.setCellValueFactory(new PropertyValueFactory<>("chassi"));
+		tbcRenavam.setCellValueFactory(new PropertyValueFactory<>("renavam"));
+		tbcCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
+		tbcData.setCellValueFactory(new PropertyValueFactory<>("datacad"));
 		novoVeiculo();
 	}
 		
@@ -160,26 +160,26 @@ public class CadVeiculosController {
 	}
 	
 	public void populaVeiculo() {
-		veiculo.setVeic_marca(tfMarca.getText());
-		veiculo.setVeic_modelo(tfModelo.getText());
-		veiculo.setVeic_chassi(tfChassi.getText());
-		veiculo.setVeic_motor(tfMotor.getText());
-		veiculo.setVeic_placa(tfPlaca.getText());
-		veiculo.setVeic_categoria(cbxCategoria.getSelectionModel().getSelectedItem());
-		veiculo.setVeic_renavam(Integer.valueOf(tfRenavam.getText()));
-//		veiculo.setVeic_datacad(LocalDate.now());
+		veiculo.setmarca(tfMarca.getText());
+		veiculo.setmodelo(tfModelo.getText());
+		veiculo.setchassi(tfChassi.getText());
+		veiculo.setmotor(tfMotor.getText());
+		veiculo.setplaca(tfPlaca.getText());
+		veiculo.setcategoria(cbxCategoria.getSelectionModel().getSelectedItem());
+		veiculo.setrenavam(Integer.valueOf(tfRenavam.getText()));
+//		veiculo.setdatacad(LocalDate.now());
 		
 		}
 
 	
 	public void populaTela(t_Veiculos veiculo) {
-		tfModelo.setText(veiculo.getVeic_modelo());
-		tfMarca.setText(veiculo.getVeic_marca());
-		tfChassi.setText(veiculo.getVeic_chassi());
-		tfMotor.setText(veiculo.getVeic_motor());
-		tfPlaca.setText(veiculo.getVeic_placa());
-		tfRenavam.setText(veiculo.getVeic_renavam().toString());
-		cbxCategoria.getSelectionModel().select(veiculo.getVeic_categoria());;
+		tfModelo.setText(veiculo.getmodelo());
+		tfMarca.setText(veiculo.getmarca());
+		tfChassi.setText(veiculo.getchassi());
+		tfMotor.setText(veiculo.getmotor());
+		tfPlaca.setText(veiculo.getplaca());
+		tfRenavam.setText(veiculo.getrenavam().toString());
+		cbxCategoria.getSelectionModel().select(veiculo.getcategoria());;
 	}
 
 	void novoVeiculo() {
