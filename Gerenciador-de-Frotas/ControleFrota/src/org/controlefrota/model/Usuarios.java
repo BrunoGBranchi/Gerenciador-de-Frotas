@@ -2,7 +2,9 @@ package org.controlefrota.model;
 
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 
 public class Usuarios  implements Serializable{
@@ -14,7 +16,7 @@ public class Usuarios  implements Serializable{
 	private String    nome;
 	private String    usuario;
 	private String    senha;
-	private LocalDate datacad;
+	private Date datacad;
 	
 	public static Integer getNextcodigo(){
 		nextcodigo += 1;
@@ -44,10 +46,10 @@ public class Usuarios  implements Serializable{
 	public void setsenha(String senha) {
 		this.senha = senha;
 	}
-	public LocalDate getdatacad() {
+	public Date getdatacad() {
 		return datacad;
 	}
-	public void setdatacad(LocalDate datacad) {
+	public void setdatacad(Date datacad) {
 		this.datacad = datacad;
 	}
 	public static long getSerialversionuid() {
@@ -108,7 +110,7 @@ public class Usuarios  implements Serializable{
 //				+ ", senha=" + senha + ", datacad=" + datacad + "]";
 	}
 	public Usuarios(Integer codigo, String nome, String usuario, String senha,
-			LocalDate datacad) {
+			Date datacad) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;

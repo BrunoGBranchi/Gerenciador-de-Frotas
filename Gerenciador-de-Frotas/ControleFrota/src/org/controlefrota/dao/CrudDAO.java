@@ -12,6 +12,8 @@ public interface CrudDAO<T> {
 	
 	void tabelas(T dado);
 	
+	void logar(T dado);
+	
 	List<T> listar();
    
 	Integer comparaigual(T dado);

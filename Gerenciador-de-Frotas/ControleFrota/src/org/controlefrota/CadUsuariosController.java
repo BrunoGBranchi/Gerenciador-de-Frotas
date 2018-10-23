@@ -128,7 +128,7 @@ public class CadUsuariosController {
 		usuario.setnome(tfNome.getText());
 		usuario.setusuario(tfUsuario.getText());
 		usuario.setsenha(pfSenha.getText());
-		usuario.setdatacad(LocalDate.now());
+	//	usuario.setdatacad(LocalDate.now());
     }
     
     public void populaTela(Usuarios usuario) {

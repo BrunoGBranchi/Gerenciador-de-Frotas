@@ -1,6 +1,5 @@
 package org.controlefrota;
 
-import org.controlefrota.dao.EmpresaArquivo;
 import org.controlefrota.dao.EmpresaDAO;
 import org.controlefrota.model.Empresa;
 
@@ -93,8 +92,6 @@ public class CadEmpresaController {
 
 	@FXML
 	private TableView<Empresa> tblEmpresa;
-
-	private EmpresaDAO empresaDao = new EmpresaArquivo();
 
 	private Empresa empresa;
 
