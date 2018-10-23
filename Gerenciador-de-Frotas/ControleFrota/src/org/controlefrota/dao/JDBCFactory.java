@@ -6,5 +6,10 @@ public class JDBCFactory implements DaoFactory{
 	public UsuariosDAO usuariosDao() {
 		return new UsuariosJDBC();
 	}
+	
+	@Override
+	public EmpresaDAO empresaDao() {
+		return new EmpresaJDBC();
+	}
 
 }

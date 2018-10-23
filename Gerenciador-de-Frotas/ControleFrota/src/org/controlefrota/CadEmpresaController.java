@@ -1,5 +1,6 @@
 package org.controlefrota;
 
+import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.EmpresaDAO;
 import org.controlefrota.model.Empresa;
 
@@ -96,6 +97,8 @@ public class CadEmpresaController {
 	private Empresa empresa;
 
 	private boolean editando;
+	
+	private EmpresaDAO empresaDao = AbstractFactory.get().empresaDao();
 	
 	private Integer novocodigo;
 	

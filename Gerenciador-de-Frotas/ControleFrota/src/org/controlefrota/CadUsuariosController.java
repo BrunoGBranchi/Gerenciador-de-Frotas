@@ -1,8 +1,6 @@
 package org.controlefrota;
 
-import java.time.LocalDate;
-
-import org.controlefrota.dao.UsuariosArquivo;
+import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.UsuariosDAO;
 import org.controlefrota.model.Usuarios;
 
@@ -60,7 +58,7 @@ public class CadUsuariosController {
     @FXML
     private TableView<Usuarios> tblUsuarios;
     
-    private UsuariosDAO usuariosDao = new UsuariosArquivo();
+    private UsuariosDAO usuariosDao = AbstractFactory.get().usuariosDao();
     
     private Usuarios usuario;
     
