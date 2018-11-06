@@ -75,12 +75,6 @@ public class VeiculoJDBC implements VeiculosDAO {
 	}
 
 	@Override
-	public void logar(t_Veiculos dado) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public List<t_Veiculos> listar() {
 		List<t_Veiculos> vec = new ArrayList<>();
 		try {

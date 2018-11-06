@@ -3,25 +3,17 @@ package org.controlefrota.model;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.time.LocalDate;
-import java.util.List;
-
 
 public class Usuarios  implements Serializable{
 
 	private static final long serialVersionUID = -5685505098542059847L;
 	
-	private static Integer nextcodigo = 0;
-	private Integer   codigo;
-	private String    nome;
-	private String    usuario;
-	private String    senha;
+	private Integer codigo;
+	private String nome;
+	private String usuario;
+	private String senha;
 	private Date datacad;
 	
-	public static Integer getNextcodigo(){
-		nextcodigo += 1;
-		return nextcodigo;
-		}
 	public Integer getcodigo() {
 		return codigo;
 	}

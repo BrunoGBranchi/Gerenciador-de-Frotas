@@ -84,12 +84,6 @@ public class EmpresaJDBC implements EmpresaDAO {
 	}
 
 	@Override
-	public void logar(Empresa dado) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public List<Empresa> listar() {
 	List<Empresa> emp = new ArrayList();
 	try {

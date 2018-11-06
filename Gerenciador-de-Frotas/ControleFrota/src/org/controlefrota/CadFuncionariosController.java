@@ -3,7 +3,7 @@ package org.controlefrota;
 
 import java.time.LocalDate;
 
-import org.controlefrota.dao.FuncionarioArquivo;
+import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.FuncionarioDAO;
 import org.controlefrota.model.Funcionarios;
 import org.controlefrota.ListarFuncionariosController;
@@ -82,7 +82,7 @@ public class CadFuncionariosController {
 
 	private Funcionarios funcionario;
 	
-	private FuncionarioDAO funcionariosDao = new FuncionarioArquivo();
+	private FuncionarioDAO funcionariosDao = AbstractFactory.get().funcionariosDao();
 
 	//private PrincipalController edit = new PrincipalController(); 
 	

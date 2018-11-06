@@ -68,12 +68,6 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 	}
 
 	@Override
-	public void logar(Manutencao dado) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public List<Manutencao> listar() {
 		List<Manutencao> manu = new ArrayList<>();
 		try {

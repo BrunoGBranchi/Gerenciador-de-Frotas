@@ -2,8 +2,12 @@ package org.controlefrota;
 
 import java.util.Date;
 
+import org.controlefrota.dao.AbstractFactory;
+import org.controlefrota.dao.MovimentosDAO;
 import org.controlefrota.model.Movimentos;
+import org.controlefrota.model.t_Veiculos;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,6 +15,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 //OK Edit
 
@@ -87,27 +92,80 @@ public class CadMovimentosController {
 
     @FXML
     private TextField tfQuantidade;
-
+    
+    private MovimentosDAO movimentosDao = AbstractFactory.get().movimentosDao();
+    
+    private Movimentos movimento;
+    
+    public void initialize() {
+        btnExcluir.isDisable();
+		//cbxCategoria.getItems().addAll("Passeio", "Convencional", "Executivo", "Leito", "Semi-Leito", "Urbano"); 
+		tbcNumNota.setCellValueFactory(new PropertyValueFactory<>("numeronota"));
+		tbcDtEmissao.setCellValueFactory(new PropertyValueFactory<>("dataemissnota"));
+		tbcDtMovimento.setCellValueFactory(new PropertyValueFactory<>("datamvto"));
+		tbcCodVeiculo.setCellValueFactory(new PropertyValueFactory<>("veic_codigo"));
+		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+		tbcKmVeiculo.setCellValueFactory(new PropertyValueFactory<>("veickm"));
+		tbcQuantidade.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
+		tbcValor.setCellValueFactory(new PropertyValueFactory<>("valor"));
+		tbcCodManutencao.setCellValueFactory(new PropertyValueFactory<>("codmanutencao"));
+		novoMovimento();
+	}
+    
     @FXML
     void incluir(ActionEvent event) {
-    	
+    	populaMovimento();
+		movimentosDao.inserir(movimento);
+		novoMovimento();
+		tblMovimentos.refresh();
     }
 
     @FXML
     void excluir(ActionEvent event) {
-    	
+    	movimentosDao.excluir(movimento);
+    	novoMovimento();
     }
 
     @FXML
     void limpar(ActionEvent event) {
-    	
+    	novoMovimento();
     }
     
     @FXML
     void selecionaMovimento(ActionEvent event) {
 
     }
-
+    
+    void novoMovimento() {
+		tfCodManutencao.clear();
+		tfCodVeiculo.clear();
+		tfKmVeiculo.clear();
+		tfNumNota.clear();
+		tfObservacao.clear();
+		tfQuantidade.clear();
+		tfValor.clear();
+		movimento = new Movimentos();
+		tblMovimentos.setItems(FXCollections.observableArrayList(movimentosDao.listar()));
+	}
+    
+    void populaMovimento() {
+    	movimento.setcodmanutencao(Integer.valueOf(tfCodManutencao.getText()));
+    	movimento.setdataemissnota(dtEmissaoNota.getValue());
+    	movimento.setdatamvto(dtMovimento.getValue());
+    	movimento.setnumeronota(Integer.valueOf(tfNumNota.getText()));
+    	movimento.setobservacao(tfObservacao.getText());
+    	movimento.setquantidade(Double.valueOf(tfQuantidade.getText()));
+    	movimento.setvalor(tfValor.getText());
+    }
+    void populaTela(Movimentos movimento) {
+    	tfCodManutencao.setText(movimento.getcodmanutencao().toString());
+    	tfCodVeiculo.setText(movimento.getveic_codigo().toString());
+    	tfKmVeiculo.setText(movimento.getveickm().toString());
+    	tfNumNota.setText(movimento.getnumeronota().toString());
+    	tfObservacao.setText(movimento.getobservacao());
+    	tfQuantidade.setText(movimento.getquantidade().toString());
+    	tfValor.setText(movimento.getvalor());    	
+    }
     
     @FXML
     void fechar(ActionEvent event) {

@@ -4,4 +4,6 @@ import org.controlefrota.model.Usuarios;
 
 public interface UsuariosDAO extends CrudDAO<Usuarios> {
 
+	
+
 }

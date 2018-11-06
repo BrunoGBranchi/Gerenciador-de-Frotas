@@ -3,7 +3,7 @@ package org.controlefrota;
 import java.time.LocalDate;
 import java.util.Date;
 
-import org.controlefrota.dao.ManutencaoArquivo;
+import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.ManutencaoDAO;
 import org.controlefrota.model.Manutencao;
 
@@ -67,7 +67,7 @@ public class CadManutencaoController {
     private TableView<Manutencao> tblManutencao;
 
     
-    ManutencaoDAO manutencaoDao = new ManutencaoArquivo();
+    ManutencaoDAO manutencaoDao = AbstractFactory.get().manutencaoDao();
     
     private boolean editando;
     

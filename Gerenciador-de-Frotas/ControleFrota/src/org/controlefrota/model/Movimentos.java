@@ -3,6 +3,7 @@ package org.controlefrota.model;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -15,16 +16,16 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of="forn_codigo")
-@ToString(of={"forn_codigo"})
+@EqualsAndHashCode(of="codigo")
+@ToString(of={"codigo"})
 
 public class Movimentos implements Serializable{
 
-	public Integer getforn_codigo() {
-		return forn_codigo;
+	public Integer getcodigo() {
+		return codigo;
 	}
-	public void setforn_codigo(Integer forn_codigo) {
-		this.forn_codigo = forn_codigo;
+	public void setcodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
 	public Integer getnumeronota() {
 		return numeronota;
@@ -32,16 +33,16 @@ public class Movimentos implements Serializable{
 	public void setnumeronota(Integer numeronota) {
 		this.numeronota = numeronota;
 	}
-	public Date getdataemissnota() {
+	public LocalDate getdataemissnota() {
 		return dataemissnota;
 	}
-	public void setdataemissnota(Date dataemissnota) {
-		this.dataemissnota = dataemissnota;
+	public void setdataemissnota(LocalDate localDate) {
+		this.dataemissnota = localDate;
 	}
-	public Date getdatamvto() {
+	public LocalDate getdatamvto() {
 		return datamvto;
 	}
-	public void setdatamvto(Date datamvto) {
+	public void setdatamvto(LocalDate datamvto) {
 		this.datamvto = datamvto;
 	}
 	public Integer getveic_codigo() {
@@ -56,11 +57,11 @@ public class Movimentos implements Serializable{
 	public void setveickm(Integer veickm) {
 		this.veickm = veickm;
 	}
-	public Integer getmanu_codigo() {
-		return manu_codigo;
+	public Integer getcodmanutencao() {
+		return codmanutencao;
 	}
-	public void setmanu_codigo(Integer manu_codigo) {
-		this.manu_codigo = manu_codigo;
+	public void setcodmanutencao(Integer codmanutencao) {
+		this.codmanutencao = codmanutencao;
 	}
 	public Double getquantidade() {
 		return quantidade;
@@ -87,13 +88,13 @@ public class Movimentos implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = -262038540164446134L;
-	private Integer forn_codigo;
+	private Integer codigo;
 	private Integer numeronota;
-	private Date    dataemissnota;
-    private Date    datamvto;
+	private LocalDate    dataemissnota;
+    private LocalDate    datamvto;
 	private Integer veic_codigo;
 	private Integer veickm;
-	private Integer manu_codigo;
+	private Integer codmanutencao;
 	private Double  quantidade;
 	private String  valor;
 	private String  observacao;

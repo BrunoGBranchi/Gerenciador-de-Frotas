@@ -16,7 +16,7 @@ public class UsuariosJDBC implements UsuariosDAO {
 	@Override
 	public void inserir(Usuarios dado) {
 		try {
-			String sql = "insert into usuarios values (?,?,?,?,?)";
+			String sql = "insert into usuarios (nome, senha, usuario, datacad) values (?,?,?,?)";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setString(1, dado.getnome());
 			statement.setString(2, dado.getsenha());
@@ -58,7 +58,7 @@ public class UsuariosJDBC implements UsuariosDAO {
 	@Override
 	public void excluir(Usuarios dado) {
 		try {
-			String sql = "delete from area where idarea = ?";
+			String sql = "delete from usuarios where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setInt(1, dado.getcodigo());
 			statement.executeUpdate();
@@ -99,18 +99,5 @@ public class UsuariosJDBC implements UsuariosDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	@Override
-	public void logar(Usuarios dado) {
-		try {
-			Connection connection = (Connection) ConexaoUtil.getConn();
-			Statement stmt = connection.createStatement();
-			ResultSet rs = stmt.executeQuery("select Login, Senha from usuario");
-			rs.first();
-			
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}    
 	}
-}

@@ -99,12 +99,6 @@ public class FuncionarioJDBC implements FuncionarioDAO{
 	}
 
 	@Override
-	public void logar(Funcionarios dado) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public List<Funcionarios> listar() {
 		List<Funcionarios> func = new ArrayList<>();
 		try {

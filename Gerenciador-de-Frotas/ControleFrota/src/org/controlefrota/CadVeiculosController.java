@@ -2,7 +2,7 @@ package org.controlefrota;
 
 import java.util.Date;
 
-import org.controlefrota.dao.VeiculosArquivo;
+import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.VeiculosDAO;
 import org.controlefrota.model.t_Veiculos;
 
@@ -91,7 +91,7 @@ public class CadVeiculosController {
 	
 	String categoria;
 	
-	private VeiculosDAO VeiculosDao = new VeiculosArquivo();
+	private VeiculosDAO VeiculosDao = AbstractFactory.get().veiculosDao();
 
 	private t_Veiculos veiculo;
 	

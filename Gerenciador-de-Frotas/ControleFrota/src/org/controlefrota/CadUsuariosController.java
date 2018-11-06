@@ -1,5 +1,7 @@
 package org.controlefrota;
 
+import java.time.LocalDate;
+
 import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.UsuariosDAO;
 import org.controlefrota.model.Usuarios;
@@ -18,7 +20,10 @@ import javafx.scene.input.MouseEvent;
 //OK - Edit
 
 public class CadUsuariosController {
-
+	
+	@FXML
+    private TextField tfCodigo;
+	
     @FXML
     private PasswordField pfSenha;
 
@@ -63,8 +68,6 @@ public class CadUsuariosController {
     private Usuarios usuario;
     
     private boolean editando;
-    
-    private Integer novocodigo;
     
 	public void initialize() {
 		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
@@ -121,12 +124,10 @@ public class CadUsuariosController {
     }
     
     public void populaUsuario() {
-    	novocodigo=Usuarios.getNextcodigo();
-		usuario.setcodigo(Integer.valueOf(novocodigo));
 		usuario.setnome(tfNome.getText());
 		usuario.setusuario(tfUsuario.getText());
 		usuario.setsenha(pfSenha.getText());
-	//	usuario.setdatacad(LocalDate.now());
+		usuario.setdatacad(java.sql.Date.valueOf(LocalDate.now()));
     }
     
     public void populaTela(Usuarios usuario) {
