@@ -7,21 +7,23 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal.png/');" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.CadUsuariosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="600.0" prefHeight="450.0" prefWidth="600.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal.png/');" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.CadUsuariosController">
    <children>
-      <Label layoutX="136.0" layoutY="28.0" text="Nome:" />
-      <TextField fx:id="tfNome" layoutX="181.0" layoutY="24.0" prefHeight="25.0" prefWidth="245.0" />
-      <TextField fx:id="tfUsuario" layoutX="181.0" layoutY="55.0" prefHeight="25.0" prefWidth="245.0" />
-      <Label layoutX="129.0" layoutY="59.0" text="Usuario:" />
-      <Label layoutX="137.0" layoutY="89.0" text="Senha:" />
-      <Label layoutX="83.0" layoutY="119.0" text="Confirmar senha:" />
-      <PasswordField fx:id="pfSenha" layoutX="181.0" layoutY="85.0" prefHeight="25.0" prefWidth="245.0" />
-      <PasswordField fx:id="pfSenhaConf" layoutX="181.0" layoutY="115.0" prefHeight="25.0" prefWidth="245.0" />
-      <Button fx:id="btnCadastrar" layoutX="208.0" layoutY="164.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar" />
-      <Button fx:id="btnExcluir" layoutX="280.0" layoutY="164.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
-      <Button fx:id="btnCancelar" layoutX="334.0" layoutY="164.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
-      <TableView fx:id="tblUsuarios" layoutX="95.0" layoutY="200.0" onMouseClicked="#selecionaUsuario" prefHeight="200.0" prefWidth="422.0">
+      <Label layoutX="136.0" layoutY="53.0" text="Nome:" />
+      <TextField fx:id="tfNome" layoutX="181.0" layoutY="49.0" prefHeight="25.0" prefWidth="245.0" />
+      <TextField fx:id="tfUsuario" layoutX="181.0" layoutY="80.0" prefHeight="25.0" prefWidth="245.0" />
+      <Label layoutX="129.0" layoutY="84.0" text="Usuario:" />
+      <Label layoutX="137.0" layoutY="114.0" text="Senha:" />
+      <Label layoutX="83.0" layoutY="144.0" text="Confirmar senha:" />
+      <PasswordField fx:id="pfSenha" layoutX="181.0" layoutY="110.0" prefHeight="25.0" prefWidth="245.0" />
+      <PasswordField fx:id="pfSenhaConf" layoutX="181.0" layoutY="140.0" prefHeight="25.0" prefWidth="245.0" />
+      <Button fx:id="btnCadastrar" layoutX="208.0" layoutY="189.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar" />
+      <Button fx:id="btnExcluir" layoutX="280.0" layoutY="189.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+      <Button fx:id="btnCancelar" layoutX="334.0" layoutY="189.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <TableView fx:id="tblUsuarios" layoutX="95.0" layoutY="225.0" onMouseClicked="#selecionaUsuario" prefHeight="200.0" prefWidth="422.0">
         <columns>
             <TableColumn fx:id="tbcCodigo" prefWidth="75.0" text="Codigo" />
           <TableColumn fx:id="tbcNome" prefWidth="75.0" text="Nome" />
@@ -32,5 +34,10 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <Text layoutX="233.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR USUARIOS">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

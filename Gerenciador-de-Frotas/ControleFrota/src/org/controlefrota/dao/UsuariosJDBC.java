@@ -16,11 +16,11 @@ public class UsuariosJDBC implements UsuariosDAO {
 	@Override
 	public void inserir(Usuarios dado) {
 		try {
-			String sql = "insert into usuarios (nome, senha, usuario, datacad) values (?,?,?,?)";
+			String sql = "insert into usuarios (nome, usuario, senha, datacad) values (?,?,?,?)";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setString(1, dado.getnome());
-			statement.setString(2, dado.getsenha());
-			statement.setString(3, dado.getusuario());
+			statement.setString(3, dado.getsenha());
+			statement.setString(2, dado.getusuario());
 			statement.setDate(4, dado.getdatacad());
 			statement.executeUpdate();
 			

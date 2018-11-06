@@ -1,12 +1,14 @@
 package org.controlefrota;
 
 import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -47,106 +49,73 @@ public class PrincipalController {
 
 	@FXML
 	void menuManutencao(ActionEvent event) {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("CadManutencao.fxml"));
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader();
-			fxmlLoader.setLocation(getClass().getResource("CadManutencao.fxml"));
-			Scene scene = new Scene(fxmlLoader.load());
-			Stage stage = new Stage();
-			stage.setTitle("Cadastro Manutenção");
-			stage.setResizable(false);
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setScene(scene);
-			stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
+			AnchorPane cursoView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(cursoView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}
 	}
 
 	@FXML
 	void menuEmpresa(ActionEvent event) {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("CadEmpresa.fxml"));
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader();
-			fxmlLoader.setLocation(getClass().getResource("CadEmpresa.fxml"));
-			Scene scene = new Scene(fxmlLoader.load());
-			Stage stage = new Stage();
-			stage.setTitle("Cadastro Empresa");
-			stage.setResizable(false);
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setScene(scene);
-			stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
+			AnchorPane cursoView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(cursoView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}
-	}
+	}	
 
 	@FXML
-	void menuFuncionarios(ActionEvent event) {
+	void menuFuncionarios(ActionEvent event) {	
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("ListarFuncionarios.fxml"));
 		try {
 			ListarFuncionariosController.edit=false;
-			FXMLLoader fxmlLoader = new FXMLLoader();
-			fxmlLoader.setLocation(getClass().getResource("ListarFuncionarios.fxml"));
-			Scene scene = new Scene(fxmlLoader.load());
-			Stage stage = new Stage();
-			stage.setTitle("Funcionarios");
-			stage.setResizable(false);
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setScene(scene);
-			stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
+			AnchorPane cursoView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(cursoView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}
 	}
 
 	@FXML
 	void menuMovimentos(ActionEvent event) {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("CadMovimentos.fxml"));
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader();
-			fxmlLoader.setLocation(getClass().getResource("CadMovimentos.fxml"));
-			Scene scene = new Scene(fxmlLoader.load());
-			Stage stage = new Stage();
-			stage.setTitle("Cadastro Peças");
-			stage.setResizable(false);
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setScene(scene);
-			stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+			AnchorPane cursoView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(cursoView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}	}
 
 	@FXML
 	void menuUsuarios(ActionEvent event) {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("CadUsuarios.fxml"));
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader();
-			fxmlLoader.setLocation(getClass().getResource("CadUsuarios.fxml"));
-			Scene scene = new Scene(fxmlLoader.load());
-			Stage stage = new Stage();
-			stage.setTitle("Cadastro Usuarios");
-			stage.setResizable(false);
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setScene(scene);
-			stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+			AnchorPane cursoView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(cursoView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}	}
 
 	@FXML
 	void menuVeiculos(ActionEvent event) {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("CadVeiculos.fxml"));
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader();
-			fxmlLoader.setLocation(getClass().getResource("CadVeiculos.fxml"));
-			Scene scene = new Scene(fxmlLoader.load());
-			Stage stage = new Stage();
-			stage.setTitle("Cadastro Veiculos");
-			stage.setResizable(false);
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setScene(scene);
-			stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+			AnchorPane cursoView = (AnchorPane) loader.load();
+			bpPrincipal.setCenter(cursoView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}	}
 
 	@FXML
 	void mncad(ActionEvent event) {

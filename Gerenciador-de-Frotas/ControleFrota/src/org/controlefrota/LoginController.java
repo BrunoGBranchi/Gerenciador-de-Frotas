@@ -68,30 +68,26 @@ public class LoginController {
 	}
 	
 	@FXML
-	private void logar(ActionEvent event) {
+	private void logar(ActionEvent event) throws IOException {
 		try {
 		
 		Connection con = ConexaoUtil.getConn();
-		String sql = "select usuario, senha from usuarios";
+		String usua = tfusuario.getText();
+		String sen = pfsenha.getText();
+		String sql = "select usuario, senha from usuarios where usuario='"+usua+"'and senha='"+sen+"'";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		ResultSet rs = stmt.executeQuery();
-		rs.first();
 		if (tfusuario.getText().equals("") || (pfsenha.getText().equals(""))) {
 			JOptionPane.showMessageDialog(null, "Campos não podem ser nulos.");
 		}
-		if (tfusuario.getText().equals(rs.getString("usuario"))
-				&& (pfsenha.getText().equals(rs.getString("senha")))) {
+		if (rs.next()) {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("Principal.fxml"));
 			try {
-				FXMLLoader fxmlLoader = new FXMLLoader();
-				fxmlLoader.setLocation(getClass().getResource("Principal.fxml"));
-				Scene scene = new Scene(fxmlLoader.load());
-				Stage stage = new Stage();
-				stage.setTitle("Teste");
-				stage.setResizable(false);
-				stage.setScene(scene);
-				stage.show();
-			} catch (IOException e) {
-				e.printStackTrace();
+				BorderPane cursoView = (BorderPane) loader.load();
+				bpPrincipal.setCenter(cursoView);
+			} catch (IOException e1) {
+				e1.printStackTrace();
 			}
 
 		} else {

@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.ListarFuncionariosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.ListarFuncionariosController">
    <children>
-      <Button fx:id="btnIncluir" layoutX="138.0" layoutY="27.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
-      <Button fx:id="btnExcluir" layoutX="195.0" layoutY="27.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
-      <Button fx:id="btnEditCad" layoutX="253.0" layoutY="27.0" mnemonicParsing="false" onAction="#editarCadastro" text="Editar cadastro" />
-      <Button fx:id="btAtualizar" layoutX="357.0" layoutY="27.0" mnemonicParsing="false" onAction="#atualizar" text="Atualizar" />
-      <Button fx:id="btnVoltar" layoutX="427.0" layoutY="27.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
-      <ScrollPane layoutY="85.0" prefHeight="313.0" prefWidth="600.0">
+      <Button fx:id="btnIncluir" layoutX="138.0" layoutY="72.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
+      <Button fx:id="btnExcluir" layoutX="195.0" layoutY="72.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+      <Button fx:id="btnEditCad" layoutX="253.0" layoutY="72.0" mnemonicParsing="false" onAction="#editarCadastro" text="Editar cadastro" />
+      <Button fx:id="btAtualizar" layoutX="357.0" layoutY="72.0" mnemonicParsing="false" onAction="#atualizar" text="Atualizar" />
+      <Button fx:id="btnVoltar" layoutX="427.0" layoutY="72.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <ScrollPane layoutY="130.0" prefHeight="313.0" prefWidth="600.0">
          <content>
             <TableView fx:id="tblFuncionarios" onMouseClicked="#SelecionaFuncionario" prefHeight="313.0" prefWidth="598.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal2.png/'); -fx-background-position: center; -fx-background-size: auto;">
               <columns>
@@ -23,5 +26,10 @@
             </TableView>
          </content>
       </ScrollPane>
+      <Text layoutX="257.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FUNCIONARIOS">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

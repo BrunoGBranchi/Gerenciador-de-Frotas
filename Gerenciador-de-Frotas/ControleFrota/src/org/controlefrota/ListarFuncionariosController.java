@@ -69,14 +69,10 @@ public class ListarFuncionariosController {
 	}
 
 	@FXML
-
 	void incluir(ActionEvent event) {
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader();
 			fxmlLoader.setLocation(getClass().getResource("CadFuncionarios.fxml"));
-
-			ListarFuncionariosController cadastro = fxmlLoader.getController();
-			cadastro.setGerenciadorController(this);
 			
 			Scene scene = new Scene(fxmlLoader.load());
 			Stage stage = new Stage();
@@ -88,11 +84,6 @@ public class ListarFuncionariosController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	private void setGerenciadorController(ListarFuncionariosController listarFuncionariosController) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@FXML

@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="apPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal.png/'); -fx-background-position: center; -fx-background-size: auto;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.CadEmpresaController">
+<AnchorPane fx:id="apPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal.png/'); -fx-background-position: center; -fx-background-size: auto;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.CadEmpresaController">
    <children>
-      <Label layoutX="361.0" layoutY="33.0" text="Razão Social: " />
-      <TextField fx:id="tfRazao" layoutX="361.0" layoutY="50.0" prefHeight="25.0" prefWidth="383.0" />
-      <Label layoutX="361.0" layoutY="75.0" text="Nome Fantasia:" />
-      <TextField fx:id="tfFantasia" layoutX="361.0" layoutY="91.0" prefHeight="25.0" prefWidth="383.0" />
-      <Label layoutX="361.0" layoutY="122.0" text="CNPJ:" />
-      <TextField fx:id="tfCNPJ" layoutX="361.0" layoutY="139.0" prefHeight="25.0" prefWidth="383.0" />
-      <Label layoutX="361.0" layoutY="168.0" text="Endereço:" />
-      <TextField fx:id="tfRua" layoutX="361.0" layoutY="185.0" prefHeight="25.0" prefWidth="314.0" />
-      <Label layoutX="683.0" layoutY="167.0" text="Numero:" />
-      <TextField fx:id="tfNum" layoutX="681.0" layoutY="185.0" prefHeight="25.0" prefWidth="62.0" />
-      <Label layoutX="361.0" layoutY="215.0" text="Bairro:" />
-      <TextField fx:id="tfBairro" layoutX="361.0" layoutY="235.0" prefHeight="25.0" prefWidth="383.0" />
-      <Label layoutX="361.0" layoutY="267.0" text="CEP:" />
-      <TextField fx:id="tfCEP" layoutX="361.0" layoutY="287.0" prefHeight="25.0" prefWidth="82.0" />
-      <Label layoutX="450.0" layoutY="266.0" text="Cidade:" />
-      <TextField fx:id="tfCidade" layoutX="449.0" layoutY="287.0" prefHeight="25.0" prefWidth="225.0" />
-      <ComboBox fx:id="cbxUF" layoutX="681.0" layoutY="287.0" prefHeight="25.0" prefWidth="62.0" promptText="UF" />
-      <Button fx:id="btnCad" layoutX="441.0" layoutY="359.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25.0" prefWidth="72.0" text="Cadastrar" />
-      <Button fx:id="btnExcluir" layoutX="517.0" layoutY="359.0" mnemonicParsing="false" onAction="#excluir" prefHeight="25.0" prefWidth="72.0" text="Excluir" />
-      <Button fx:id="btnCancel" layoutX="592.0" layoutY="359.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="25.0" prefWidth="72.0" text="Cancelar" />
-      <TableView fx:id="tblEmpresa" layoutX="52.0" layoutY="432.0" onMouseClicked="#selecionarEmpresa" prefHeight="80.0" prefWidth="1001.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal2.png/'); -fx-background-position: center; -fx-background-size: auto;">
+      <Label layoutX="359.0" layoutY="105.0" text="Razão Social: " />
+      <TextField fx:id="tfRazao" layoutX="359.0" layoutY="122.0" prefHeight="25.0" prefWidth="383.0" />
+      <Label layoutX="359.0" layoutY="147.0" text="Nome Fantasia:" />
+      <TextField fx:id="tfFantasia" layoutX="359.0" layoutY="163.0" prefHeight="25.0" prefWidth="383.0" />
+      <Label layoutX="359.0" layoutY="194.0" text="CNPJ:" />
+      <TextField fx:id="tfCNPJ" layoutX="359.0" layoutY="211.0" prefHeight="25.0" prefWidth="383.0" />
+      <Label layoutX="359.0" layoutY="240.0" text="Endereço:" />
+      <TextField fx:id="tfRua" layoutX="359.0" layoutY="257.0" prefHeight="25.0" prefWidth="314.0" />
+      <Label layoutX="681.0" layoutY="239.0" text="Numero:" />
+      <TextField fx:id="tfNum" layoutX="679.0" layoutY="257.0" prefHeight="25.0" prefWidth="62.0" />
+      <Label layoutX="359.0" layoutY="287.0" text="Bairro:" />
+      <TextField fx:id="tfBairro" layoutX="359.0" layoutY="307.0" prefHeight="25.0" prefWidth="383.0" />
+      <Label layoutX="359.0" layoutY="339.0" text="CEP:" />
+      <TextField fx:id="tfCEP" layoutX="359.0" layoutY="359.0" prefHeight="25.0" prefWidth="82.0" />
+      <Label layoutX="448.0" layoutY="338.0" text="Cidade:" />
+      <TextField fx:id="tfCidade" layoutX="447.0" layoutY="359.0" prefHeight="25.0" prefWidth="225.0" />
+      <ComboBox fx:id="cbxUF" layoutX="679.0" layoutY="359.0" prefHeight="25.0" prefWidth="62.0" promptText="UF" />
+      <Button fx:id="btnCad" layoutX="432.0" layoutY="431.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25.0" prefWidth="72.0" text="Cadastrar" />
+      <Button fx:id="btnExcluir" layoutX="515.0" layoutY="431.0" mnemonicParsing="false" onAction="#excluir" prefHeight="25.0" prefWidth="72.0" text="Excluir" />
+      <Button fx:id="btnCancel" layoutX="597.0" layoutY="431.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="25.0" prefWidth="72.0" text="Cancelar" />
+      <TableView fx:id="tblEmpresa" layoutX="50.0" layoutY="504.0" onMouseClicked="#selecionarEmpresa" prefHeight="80.0" prefWidth="1001.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal2.png/'); -fx-background-position: center; -fx-background-size: auto;">
          <columns>
             <TableColumn fx:id="tbcCodigo" prefWidth="50.0" text="Codigo" />
             <TableColumn fx:id="tbcCNPJ" prefWidth="171.0" text="CNPJ" />
@@ -47,6 +50,11 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <Text layoutX="454.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR EMPRESA" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
    <padding>
       <Insets left="50.0" top="50.0" />
