@@ -75,4 +75,8 @@ use frotas;
 insert into usuarios (nome, senha, usuario, datacad) values ('Administrador', 'admin', 'admin', now());
 insert into usuarios (nome, senha, usuario, datacad) values('Bruno', 'bruno', '09021999', now());
 insert into usuarios values('Administrador', 'admin', 'admin', now());
+<<<<<<< HEAD
 select * from usuarios;
+=======
+select * from usuarios;
+>>>>>>> branch 'master' of https://github.com/BrunoGBranchi/Gerenciador-de-Frotas
