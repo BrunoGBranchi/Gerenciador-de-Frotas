@@ -1,5 +1,7 @@
 package org.controlefrota;
 
+import java.io.IOException;
+
 import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.EmpresaDAO;
 import org.controlefrota.model.Empresa;
@@ -7,6 +9,9 @@ import org.controlefrota.model.Empresa;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -15,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 //OK - Edit
 public class CadEmpresaController {
@@ -100,8 +106,7 @@ public class CadEmpresaController {
 	
 	private EmpresaDAO empresaDao = AbstractFactory.get().empresaDao();
 	
-	private Integer novocodigo;
-	
+	@FXML
 	public void initialize() {
 		
 		cbxUF.getItems().addAll("AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA",
@@ -114,11 +119,10 @@ public class CadEmpresaController {
 		tbcBairro.setCellValueFactory(new PropertyValueFactory<>("bairro"));
 		tbcNumero.setCellValueFactory(new PropertyValueFactory<>("numero"));
 		tbcCEP.setCellValueFactory(new PropertyValueFactory<>("cep"));
-		tbcCidade.setCellValueFactory(new PropertyValueFactory<>("muni_codigo"));
-		tbcUF.setCellValueFactory(new PropertyValueFactory<>("muni_uf"));
+		tbcCidade.setCellValueFactory(new PropertyValueFactory<>("municipio"));
+		tbcUF.setCellValueFactory(new PropertyValueFactory<>("uf"));
 		
 		novaEmpresa();
-
 	}
 
 	@FXML
@@ -138,7 +142,20 @@ public class CadEmpresaController {
 
 	@FXML
 	void cancelar(ActionEvent event) {
-		btnCancel.getScene().getWindow().hide();
+		Stage stage = new Stage();  
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Gerenciador de Frotas - V1.1 Alpha");
+            stage.show();
+            stage.setMaximized(true);
+        }catch(IOException e){
+            e.printStackTrace();
+        }finally{
+            stage = (Stage) btnCancel.getScene().getWindow();
+            stage.close(); //fecha a pagina atual antes de sair
+        }
 	}
 
 	@FXML
@@ -177,35 +194,33 @@ public class CadEmpresaController {
 	}
 
 	public void populaEmpresa() {
-		novocodigo=Empresa.getNextcodigo();
-		empresa.setcodigo(Integer.valueOf(novocodigo));
-		empresa.setrazaoSocial(tfRazao.getText());
-		empresa.setnomeFantasia(tfFantasia.getText());
-		empresa.setcnpj(tfCNPJ.getText());
-		empresa.setendereco(tfRua.getText());
-		empresa.setnumero(tfNum.getText());
-		empresa.setbairro(tfBairro.getText());
-		empresa.setmuni_codigo(tfCidade.getText());
-		empresa.setmuni_uf(cbxUF.getSelectionModel().getSelectedItem().toString());
-		empresa.setcep(tfCEP.getText());
+		empresa.setRazaoSocial(tfRazao.getText());
+		empresa.setNomeFantasia(tfFantasia.getText());
+		empresa.setCnpj(tfCNPJ.getText());
+		empresa.setEndereco(tfRua.getText());
+		empresa.setNumero(tfNum.getText());
+		empresa.setBairro(tfBairro.getText());
+		empresa.setMunicipio(tfCidade.getText());
+		empresa.setCep(tfCEP.getText());
+		empresa.setUf(cbxUF.getSelectionModel().getSelectedItem().toString());
 	}
 	
-	//private void populaCombo(){
-		//for(Empresa empresa: empresaDao.listar()){
-			//cbxUF.getItems().add(empresa.getmuni_uf());
-		//}
-	//}
+	private void populaCombo(){
+		for(Empresa empresa: empresaDao.listar()){
+			cbxUF.getItems().add(empresa.getUf());
+		}
+	}
 	
 	public void populaTela(Empresa empresa) {
-		tfRazao.setText(empresa.getrazaoSocial());
-		tfFantasia.setText(empresa.getnomeFantasia());
-		tfCNPJ.setText(empresa.getcnpj());
-		tfRua.setText(empresa.getendereco());
-		tfNum.setText(empresa.getnumero());
-		tfBairro.setText(empresa.getbairro());
-		tfCidade.setText(empresa.getmuni_codigo());
-		tfCEP.setText(empresa.getcep());
-		cbxUF.getSelectionModel().select(empresa.getmuni_uf());
+		tfRazao.setText(empresa.getRazaoSocial());
+		tfFantasia.setText(empresa.getNomeFantasia());
+		tfCNPJ.setText(empresa.getCnpj());
+		tfRua.setText(empresa.getEndereco());
+		tfNum.setText(empresa.getNumero());
+		tfBairro.setText(empresa.getBairro());
+		tfCidade.setText(empresa.getMunicipio());
+		tfCEP.setText(empresa.getCep());
+		cbxUF.getSelectionModel().select(empresa.getUf());
 		System.out.println("Popula");
 	}
 }

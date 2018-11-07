@@ -16,17 +16,17 @@ public class EmpresaJDBC implements EmpresaDAO {
 	@Override
 	public void inserir(Empresa dado) {
 		try {
-		String sql =" insert into empresa values(?,?,?,?,?,?,?,?,?)";
+		String sql ="insert into empresa (razaoSocial, nomeFantasia, CNPJ, endereco, numero, bairro, cep, municipio, uf) values (?,?,?,?,?,?,?,?,?)";
 		PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
-		statement.setString(1, dado.getrazaoSocial());
-		statement.setString(2,dado.getnomeFantasia());
-		statement.setString(3, dado.getcnpj());
-		statement.setString(4, dado.getendereco());
-		statement.setString(5, dado.getnumero());
-		statement.setString(6, dado.getbairro());
-		statement.setString(7,dado.getcep());
-		statement.setString(8,dado.getmuni_codigo());
-		statement.setString(9, dado.getmuni_uf());
+		statement.setString(1, dado.getRazaoSocial());
+		statement.setString(2, dado.getNomeFantasia());
+		statement.setString(3, dado.getCnpj());
+		statement.setString(4, dado.getEndereco());
+		statement.setString(5, dado.getNumero());
+		statement.setString(6, dado.getBairro());
+		statement.setString(7, dado.getCep());
+		statement.setString(8, dado.getMunicipio());
+		statement.setString(9, dado.getUf().toString());
 		statement.executeUpdate();
 		
 		}catch (Exception e) {
@@ -37,18 +37,19 @@ public class EmpresaJDBC implements EmpresaDAO {
 	@Override
 	public void alterar(Empresa dado) {
 		try {
-			String sql = " update  empresa set razaoSocial = ?,nomeFantasia = ?,cnpj = ?"
-					+ " endereco = ?, numero = ?, bairro = ?,cep = ?,muni_codigo = ?,muni_uf = ? where codigo = ?";
+			String sql = "update  empresa set razaoSocial = ?,nomeFantasia = ?,cnpj = ?,"
+					+ " endereco = ?, numero = ?, bairro = ?,cep = ?,municipio = ?,uf = ? where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
-			statement.setString(1, dado.getrazaoSocial());
-			statement.setString(2,dado.getnomeFantasia());
-			statement.setString(3, dado.getcnpj());
-			statement.setString(4, dado.getendereco());
-			statement.setString(5, dado.getnumero());
-			statement.setString(6, dado.getbairro());
-			statement.setString(7,dado.getcep());
-			statement.setString(8,dado.getmuni_codigo());
-			statement.setString(9, dado.getmuni_uf());
+			statement.setString(1, dado.getRazaoSocial());
+			statement.setString(2, dado.getNomeFantasia());
+			statement.setString(3, dado.getCnpj());
+			statement.setString(4, dado.getEndereco());
+			statement.setString(5, dado.getNumero());
+			statement.setString(6, dado.getBairro());
+			statement.setString(7, dado.getCep());
+			statement.setString(8, dado.getMunicipio());
+			statement.setString(9, dado.getUf().toString());
+			statement.setInt(10, dado.getCodigo());
 			statement.executeUpdate();
 			
 			
@@ -63,10 +64,10 @@ public class EmpresaJDBC implements EmpresaDAO {
 	@Override
 	public void excluir(Empresa dado) {
 		try {
-			String sql = "delete empresa from codigo = ? ";
+			String sql = "delete from empresa where codigo = ? ";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 			
-			statement.setInt(1,dado.getcodigo());  
+			statement.setInt(1, dado.getCodigo());  
 			statement.executeUpdate();
 			
 		}catch (Exception e) {
@@ -88,20 +89,20 @@ public class EmpresaJDBC implements EmpresaDAO {
 	List<Empresa> emp = new ArrayList();
 	try {
 		Statement statement = ConexaoUtil.getConn().createStatement();
-		ResultSet rs = statement.executeQuery("select *from empresa");
+		ResultSet rs = statement.executeQuery("select * from empresa");
 		while(rs.next()) {
 			Empresa empresa = new Empresa();
 			
-			empresa.setcodigo(rs.getInt("codigo"));
-			empresa.setrazaoSocial(rs.getString("razaoSocial"));
-			empresa.setnomeFantasia(rs.getString("nomeFantasia"));
-			empresa.setcnpj(rs.getString("cnpj"));
-			empresa.setendereco(rs.getString("endereco"));
-			empresa.setnumero(rs.getString("numero"));
-			empresa.setbairro(rs.getString("bairro"));
-			empresa.setcep(rs.getString("cep"));
-			empresa.setmuni_codigo(rs.getString("muni_codi"));
-			empresa.setmuni_uf(rs.getString("muni_uf"));
+			empresa.setCodigo(rs.getInt("codigo"));
+			empresa.setRazaoSocial(rs.getString("razaoSocial"));
+			empresa.setNomeFantasia(rs.getString("nomeFantasia"));
+			empresa.setCnpj(rs.getString("cnpj"));
+			empresa.setEndereco(rs.getString("endereco"));
+			empresa.setNumero(rs.getString("numero"));
+			empresa.setBairro(rs.getString("bairro"));
+			empresa.setCep(rs.getString("cep"));
+			empresa.setMunicipio(rs.getString("municipio"));
+			empresa.setUf(rs.getString("uf"));
 			emp.add(empresa);
 		}
 		

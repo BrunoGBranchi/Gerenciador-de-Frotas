@@ -20,7 +20,7 @@ public class Main extends Application {
 			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Login.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setTitle("Gerenciador de Frotas - V1.0 Beta");
+			primaryStage.setTitle("Gerenciador de Frotas - V1.1 Alpha");
 			primaryStage.setMinWidth(450);
 		    primaryStage.setMinHeight(300);
 		    primaryStage.getIcons().clear();
