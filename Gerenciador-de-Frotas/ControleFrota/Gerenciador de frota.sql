@@ -12,8 +12,8 @@ endereco varchar(100),
 numero varchar(100),
 bairro varchar(100),
 cep varchar(100),
-muni_codigo varchar(100),
-muni_uf varchar(100)
+municipio varchar(100),
+uf varchar(100)
 );
 
 
