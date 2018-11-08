@@ -1,11 +1,26 @@
 package org.controlefrota.model;
 
 import java.io.Serializable;
+import java.sql.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(of="codigo")
+@ToString(of={"codigo"})
 
 public class t_Veiculos implements Serializable {
 
 	private static final long serialVersionUID = -2170492535821015905L;
+	private Integer codigo;
 	private Integer renavam;
 	private String marca;
 	private String modelo;
@@ -13,133 +28,65 @@ public class t_Veiculos implements Serializable {
 	private String motor;
 	private String chassi;
 	private String categoria;
-	public Integer getrenavam() {
+	private Date datacad;
+	
+	public Integer getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
+	public Integer getRenavam() {
 		return renavam;
 	}
-	public void setrenavam(Integer renavam) {
+	public void setRenavam(Integer renavam) {
 		this.renavam = renavam;
 	}
-	public String getmarca() {
+	public String getMarca() {
 		return marca;
 	}
-	public void setmarca(String marca) {
+	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	public String getmodelo() {
+	public String getModelo() {
 		return modelo;
 	}
-	public void setmodelo(String modelo) {
+	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
-	public String getplaca() {
+	public String getPlaca() {
 		return placa;
 	}
-	public void setplaca(String placa) {
+	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
-	public String getmotor() {
+	public String getMotor() {
 		return motor;
 	}
-	public void setmotor(String motor) {
+	public void setMotor(String motor) {
 		this.motor = motor;
 	}
-	public String getchassi() {
+	public String getChassi() {
 		return chassi;
 	}
-	public void setchassi(String chassi) {
+	public void setChassi(String chassi) {
 		this.chassi = chassi;
 	}
-	public String getcategoria() {
+	public String getCategoria() {
 		return categoria;
 	}
-	public void setcategoria(String categoria) {
+	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((categoria == null) ? 0 : categoria.hashCode());
-		result = prime * result + ((chassi == null) ? 0 : chassi.hashCode());
-		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
-		result = prime * result + ((modelo == null) ? 0 : modelo.hashCode());
-		result = prime * result + ((motor == null) ? 0 : motor.hashCode());
-		result = prime * result + ((placa == null) ? 0 : placa.hashCode());
-		result = prime * result + ((renavam == null) ? 0 : renavam.hashCode());
-		return result;
+	public Date getDatacad() {
+		return datacad;
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		t_Veiculos other = (t_Veiculos) obj;
-		if (categoria == null) {
-			if (other.categoria != null)
-				return false;
-		} else if (!categoria.equals(other.categoria))
-			return false;
-		if (chassi == null) {
-			if (other.chassi != null)
-				return false;
-		} else if (!chassi.equals(other.chassi))
-			return false;
-		if (marca == null) {
-			if (other.marca != null)
-				return false;
-		} else if (!marca.equals(other.marca))
-			return false;
-		if (modelo == null) {
-			if (other.modelo != null)
-				return false;
-		} else if (!modelo.equals(other.modelo))
-			return false;
-		if (motor == null) {
-			if (other.motor != null)
-				return false;
-		} else if (!motor.equals(other.motor))
-			return false;
-		if (placa == null) {
-			if (other.placa != null)
-				return false;
-		} else if (!placa.equals(other.placa))
-			return false;
-		if (renavam == null) {
-			if (other.renavam != null)
-				return false;
-		} else if (!renavam.equals(other.renavam))
-			return false;
-		return true;
+	public void setDatacad(Date datacad) {
+		this.datacad = datacad;
 	}
 	
-	@Override
-	public String toString() {
-	return renavam.toString(); 
-//		return "t_Veiculos [renavam=" + renavam + ", marca=" + marca + ", modelo="
-//				+ modelo + ", placa=" + placa + ", motor=" + motor + ", chassi="
-//				+ chassi + ", categoria=" + categoria + "]";
-	}
-	public t_Veiculos(Integer renavam, String marca, String modelo, String placa, String motor,
-			String chassi, String categoria) {
-		super();
-		this.renavam = renavam;
-		this.marca = marca;
-		this.modelo = modelo;
-		this.placa = placa;
-		this.motor = motor;
-		this.chassi = chassi;
-		this.categoria = categoria;
-	}
-	public t_Veiculos() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
+	
 }

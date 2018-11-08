@@ -14,6 +14,7 @@
    <children>
       <TableView fx:id="tblVeiculos" fixedCellSize="0.0" focusTraversable="false" layoutX="1.0" layoutY="235.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#selecionaVeiculo">
         <columns>
+            <TableColumn fx:id="tbcCodigo" prefWidth="75.0" text="Codigo" />
           <TableColumn fx:id="tbcMarca" prefWidth="100.0" resizable="false" text="Marca" />
             <TableColumn fx:id="tbcModelo" prefWidth="93.0" text="Modelo" />
             <TableColumn fx:id="tbcMotor" prefWidth="93.0" text="Motor" />

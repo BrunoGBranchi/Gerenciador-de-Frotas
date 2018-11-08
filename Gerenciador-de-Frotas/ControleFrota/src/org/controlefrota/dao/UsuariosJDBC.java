@@ -1,6 +1,5 @@
 package org.controlefrota.dao;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,9 +43,9 @@ public class UsuariosJDBC implements UsuariosDAO {
 						+ " where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setString(1, dado.getnome());
-			statement.setInt(2, dado.getcodigo());
+			statement.setString(2, dado.getusuario());
 			statement.setString(3, dado.getsenha());
-			statement.setString(4, dado.getusuario());
+			statement.setInt(4, dado.getcodigo());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -84,7 +83,10 @@ public class UsuariosJDBC implements UsuariosDAO {
 			while (rs.next()) {
 				Usuarios usuario = new Usuarios();
 				usuario.setnome(rs.getString("nome"));
+				usuario.setusuario(rs.getString("usuario"));
 				usuario.setcodigo(rs.getInt("codigo"));
+				usuario.setsenha(rs.getString("senha"));
+				usuario.setdatacad(rs.getDate("datacad"));
 				usuarios.add(usuario);
 			}
 		} catch (SQLException e) {

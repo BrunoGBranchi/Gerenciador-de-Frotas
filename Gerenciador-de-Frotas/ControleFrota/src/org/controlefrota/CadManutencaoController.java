@@ -11,6 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -65,15 +66,15 @@ public class CadManutencaoController {
     
     @FXML
     private TableView<Manutencao> tblManutencao;
-
+    
+    @FXML
+    private DatePicker dtdata;
     
     ManutencaoDAO manutencaoDao = AbstractFactory.get().manutencaoDao();
     
     private boolean editando;
     
     private Manutencao manutencao;
-    
-    private Integer novocodigo;
     
     @FXML
     public void initialize() {	
@@ -124,13 +125,11 @@ public class CadManutencaoController {
     }
     
     public void populaManutencao() {
-    	novocodigo = manutencao.getnextcodigo();
-    	manutencao.setcodigo(Integer.valueOf(novocodigo));
     	manutencao.setdescricao(tfDesc.getText());
     	manutencao.settipo(tfTipo.getText());
     	manutencao.setmarca(tfMarca.getText());
     	manutencao.setaplicacao(tfAplica.getText());
-    	manutencao.setdatacad(LocalDate.now());
+    	manutencao.setdatacad(java.sql.Date.valueOf(LocalDate.now()));
     }
     
     public void populaTela(Manutencao manutencao) {

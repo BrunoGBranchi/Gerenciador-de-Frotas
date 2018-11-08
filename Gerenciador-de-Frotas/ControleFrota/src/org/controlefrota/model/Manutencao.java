@@ -1,6 +1,7 @@
 package org.controlefrota.model;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Manutencao  implements Serializable{
@@ -12,7 +13,7 @@ public class Manutencao  implements Serializable{
 	private String    tipo;
 	private String    marca;
 	private String    aplicacao;
-	private LocalDate datacad;  
+	private Date datacad;  
 	
 	public Integer getnextcodigo() {
 		nextcodigo += 1;
@@ -67,11 +68,11 @@ public class Manutencao  implements Serializable{
 		this.aplicacao = aplicacao;
 	}
 
-	public LocalDate getdatacad() {
+	public Date getdatacad() {
 		return datacad;
 	}
 
-	public void setdatacad(LocalDate datacad) {
+	public void setdatacad(Date datacad) {
 		this.datacad = datacad;
 	}
 
@@ -142,7 +143,7 @@ public class Manutencao  implements Serializable{
 	}
 
 	public Manutencao(Integer codigo, String descricao, String tipo, String marca,
-			String aplicacao, LocalDate datacad) {
+			String aplicacao, Date datacad) {
 		super();
 		this.codigo = codigo;
 		this.descricao = descricao;

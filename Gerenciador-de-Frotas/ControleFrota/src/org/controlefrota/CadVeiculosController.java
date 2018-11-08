@@ -1,5 +1,7 @@
 package org.controlefrota;
 
+import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.controlefrota.dao.AbstractFactory;
@@ -9,6 +11,9 @@ import org.controlefrota.model.t_Veiculos;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -16,9 +21,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class CadVeiculosController {
-
+	
+	@FXML
+	private TableView<t_Veiculos> tblVeiculos;
+	
 	@FXML
 	private TableColumn<t_Veiculos, String> tbcMarca;
 
@@ -32,13 +41,13 @@ public class CadVeiculosController {
 	private TableColumn<t_Veiculos, String> tbcChassi;
 
 	@FXML
-	private TableColumn<t_Veiculos, String> tbcRenavam;
+	private TableColumn<t_Veiculos, Integer> tbcRenavam;
 
 	@FXML
 	private TableColumn<t_Veiculos, String> tbcMotor;
 
 	@FXML
-	private TableColumn<t_Veiculos, String> tbcCodigo;
+	private TableColumn<t_Veiculos, Integer> tbcCodigo;
 
 	@FXML
 	private TableColumn<t_Veiculos, Date> tbcData;
@@ -82,9 +91,6 @@ public class CadVeiculosController {
 	@FXML
 	private Button btnLimpar;
 
-	@FXML
-	private TableView<t_Veiculos> tblVeiculos;
-
 	//private Calendar datacad = Calendar.getInstance();
 	
 	//SimpleDateFormat formatar = new SimpleDateFormat("dd-MM-yyyy");
@@ -95,9 +101,11 @@ public class CadVeiculosController {
 
 	private t_Veiculos veiculo;
 	
+	@FXML
 	public void initialize() {
         btnExcluir.isDisable();
 		cbxCategoria.getItems().addAll("Passeio", "Convencional", "Executivo", "Leito", "Semi-Leito", "Urbano"); 
+		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
 		tbcMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
 		tbcModelo.setCellValueFactory(new PropertyValueFactory<>("modelo"));
 		tbcPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
@@ -106,6 +114,7 @@ public class CadVeiculosController {
 		tbcRenavam.setCellValueFactory(new PropertyValueFactory<>("renavam"));
 		tbcCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
 		tbcData.setCellValueFactory(new PropertyValueFactory<>("datacad"));
+		
 		novoVeiculo();
 	}
 		
@@ -152,34 +161,48 @@ public class CadVeiculosController {
 
 	@FXML
 	void fechar(ActionEvent event) {
-		btnFechar.getScene().getWindow().hide();
+		Stage stage = new Stage();  
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Gerenciador de Frotas - V1.1 Alpha");
+            stage.show();
+            stage.setMaximized(true);
+        }catch(IOException e){
+            e.printStackTrace();
+        }finally{
+            stage = (Stage) btnFechar.getScene().getWindow();
+            stage.close(); //fecha a pagina atual antes de sair
+        }
 	}
 	
 	public void populaBox() {
 		
 	}
 	
+	@FXML
 	public void populaVeiculo() {
-		veiculo.setmarca(tfMarca.getText());
-		veiculo.setmodelo(tfModelo.getText());
-		veiculo.setchassi(tfChassi.getText());
-		veiculo.setmotor(tfMotor.getText());
-		veiculo.setplaca(tfPlaca.getText());
-		veiculo.setcategoria(cbxCategoria.getSelectionModel().getSelectedItem());
-		veiculo.setrenavam(Integer.valueOf(tfRenavam.getText()));
-//		veiculo.setdatacad(LocalDate.now());
+		veiculo.setMarca(tfMarca.getText());
+		veiculo.setModelo(tfModelo.getText());
+		veiculo.setChassi(tfChassi.getText());
+		veiculo.setMotor(tfMotor.getText());
+		veiculo.setPlaca(tfPlaca.getText());
+		veiculo.setCategoria(cbxCategoria.getSelectionModel().getSelectedItem());
+		veiculo.setRenavam(Integer.valueOf(tfRenavam.getText()));
+		veiculo.setDatacad(java.sql.Date.valueOf(LocalDate.now()));
 		
 		}
 
 	
 	public void populaTela(t_Veiculos veiculo) {
-		tfModelo.setText(veiculo.getmodelo());
-		tfMarca.setText(veiculo.getmarca());
-		tfChassi.setText(veiculo.getchassi());
-		tfMotor.setText(veiculo.getmotor());
-		tfPlaca.setText(veiculo.getplaca());
-		tfRenavam.setText(veiculo.getrenavam().toString());
-		cbxCategoria.getSelectionModel().select(veiculo.getcategoria());;
+		tfModelo.setText(veiculo.getModelo());
+		tfMarca.setText(veiculo.getMarca());
+		tfChassi.setText(veiculo.getChassi());
+		tfMotor.setText(veiculo.getMotor());
+		tfPlaca.setText(veiculo.getPlaca());
+		tfRenavam.setText(veiculo.getRenavam().toString());
+		cbxCategoria.getSelectionModel().select(veiculo.getCategoria());;
 	}
 
 	void novoVeiculo() {

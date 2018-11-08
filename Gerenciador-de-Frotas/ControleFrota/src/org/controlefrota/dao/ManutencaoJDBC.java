@@ -21,7 +21,7 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 			statement.setString(2, dado.gettipo());
 			statement.setString(3, dado.getmarca());
 			statement.setString(4, dado.getaplicacao());
-			statement.setDate(5, java.sql.Date.valueOf(dado.getdatacad()));
+			statement.setDate(5, (dado.getdatacad()));
 			statement.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -39,7 +39,7 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 			statement.setString(2, dado.gettipo());
 			statement.setString(3, dado.getmarca());
 			statement.setString(4, dado.getaplicacao());
-			statement.setDate(5, java.sql.Date.valueOf(dado.getdatacad()));
+			statement.setDate(5, (dado.getdatacad()));
 			statement.executeUpdate();
 
 		} catch (Exception e) {
@@ -79,7 +79,7 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 				manutencao.settipo(rs.getString("tipo"));
 				manutencao.setmarca(rs.getString("marca"));
 				manutencao.setaplicacao(rs.getString("aplicacao"));
-				manutencao.setdatacad(rs.getDate("datacad").toLocalDate());
+				manutencao.setdatacad(rs.getDate("datacad"));
 				manu.add(manutencao);			}
 		} catch (Exception e) {
 			e.printStackTrace();
