@@ -28,7 +28,7 @@
             <TableColumn fx:id="tbcCodigo" prefWidth="75.0" text="Codigo" />
           <TableColumn fx:id="tbcNome" prefWidth="75.0" text="Nome" />
           <TableColumn fx:id="tbcUsuario" prefWidth="75.0" text="Usuario" />
-            <TableColumn fx:id="tbcSenha" prefWidth="75.0" text="Senha"/>
+            <TableColumn fx:id="tbcSenha" prefWidth="75.0" text="Senha" />
             <TableColumn fx:id="tbcDatacad" prefWidth="75.0" text="Data Cad." />
         </columns>
          <columnResizePolicy>
