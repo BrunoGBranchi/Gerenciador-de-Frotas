@@ -1,6 +1,7 @@
 package org.controlefrota;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.time.LocalDate;
 
 import org.controlefrota.dao.AbstractFactory;
@@ -26,7 +27,25 @@ import javafx.stage.Stage;
 
 public class CadUsuariosController {
 	
-	@FXML
+    @FXML
+    private TableView<Usuarios> tblUsuarios;
+   
+    @FXML
+    private TableColumn<Usuarios, String> tbcUsuario;
+    
+    @FXML
+    private TableColumn<Usuarios, String> tbcNome;
+    
+    @FXML
+    private TableColumn<Usuarios, Integer> tbcCodigo;
+    
+    @FXML
+    private TableColumn<Usuarios, Date> tbcDatacad;
+    
+    @FXML
+    private TableColumn<Usuarios, String> tbcSenha;
+
+    @FXML
     private TextField tfCodigo;
 	
     @FXML
@@ -50,29 +69,11 @@ public class CadUsuariosController {
     @FXML
     private Button btnExcluir;
     
-    @FXML
-    private TableColumn<Usuarios, String> tbcUsuario;
-    
-    @FXML
-    private TableColumn<Usuarios, String> tbcNome;
-    
-    @FXML
-    private TableColumn<Usuarios, Integer> tbcCodigo;
-    
-    @FXML
-    private TableColumn<Usuarios, String> tbcDatacad;
-    
-    @FXML
-    private TableColumn<Usuarios, String> tbcSenha;
-
-    @FXML
-    private TableView<Usuarios> tblUsuarios;
+    private boolean editando;
     
     private UsuariosDAO usuariosDao = AbstractFactory.get().usuariosDao();
     
     private Usuarios usuario;
-    
-    private boolean editando;
     
     @FXML
 	public void initialize() {
@@ -81,7 +82,7 @@ public class CadUsuariosController {
 		tbcUsuario.setCellValueFactory(new PropertyValueFactory<>("usuario"));
 		tbcSenha.setCellValueFactory(new PropertyValueFactory<>("senha"));
 		tbcDatacad.setCellValueFactory(new PropertyValueFactory<>("datacad"));
-		tblUsuarios.setItems(FXCollections.observableArrayList(usuariosDao.listar()));
+		//tblUsuarios.setItems(FXCollections.observableArrayList(usuariosDao.listar()));
 		novoUsuario();
 	}
 
@@ -128,21 +129,10 @@ public class CadUsuariosController {
 		if (tblUsuarios.getSelectionModel().getSelectedItem() != null) {
 			usuario = tblUsuarios.getSelectionModel().getSelectedItem();
 			populaTela(usuario);
-			editando = true;
-			
+			editando = true;			
 		}
 	}
-    
-    public void novoUsuario() {
-    	tfUsuario.clear();
-		tfNome.clear();
-		pfSenha.clear();
-		pfSenhaConf.clear();
-		usuario = new Usuarios();
-		editando = false;
-		tblUsuarios.setItems(FXCollections.observableArrayList(usuariosDao.listar()));
-    }
-    
+
     @FXML
     public void populaUsuario() {
 		usuario.setnome(tfNome.getText());
@@ -158,4 +148,15 @@ public class CadUsuariosController {
 		pfSenha.setText(usuario.getsenha());
 		pfSenhaConf.setText(usuario.getsenha());
 	}
+        
+    void novoUsuario() {
+    	tfUsuario.clear();
+		tfNome.clear();
+		pfSenha.clear();
+		pfSenhaConf.clear();
+		usuario = new Usuarios();
+		editando = false;
+		tblUsuarios.setItems(FXCollections.observableArrayList(usuariosDao.listar()));
+    }
+    
 }

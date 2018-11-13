@@ -86,12 +86,13 @@ public class CadFuncionariosController {
 
 	//private PrincipalController edit = new PrincipalController(); 
 	
-//	ListarFuncionariosController ListaFunc = new ListarFuncionariosController();
+	//ListarFuncionariosController listaFunc = new ListarFuncionariosController();
 	
-//	private boolean editando;
+	//private boolean editando;
 	
 	//private ListarFuncionariosController listfnc = new ListarFuncionariosController();
     
+	@FXML
 	public void initialize() { 
 		cbxUF.getItems().addAll("AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA",
 				"PB", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO");
@@ -112,9 +113,9 @@ public class CadFuncionariosController {
 			dtpAdmissao.setValue((ListarFuncionariosController.dtadmissao));
 			tfDtNasc.setText(ListarFuncionariosController.dtnasc);
 			tfEndereco.setText(ListarFuncionariosController.endereco);
-			tfNumero.setText(ListarFuncionariosController.endnumero.toString());
-			tfCidade.setText(ListarFuncionariosController.muni_codigo);
-			cbxUF.getSelectionModel().select(ListarFuncionariosController.muni_uf);
+			tfNumero.setText(ListarFuncionariosController.endnumero);
+			tfCidade.setText(ListarFuncionariosController.municipio);
+			cbxUF.getSelectionModel().select(ListarFuncionariosController.uf);
 			tfNomeFunc.setText(ListarFuncionariosController.nome);
 			tfRG.setText(ListarFuncionariosController.rg);
 			tfSalario.setText(ListarFuncionariosController.salario.toString());
@@ -122,11 +123,8 @@ public class CadFuncionariosController {
 			
 			};
 	} 
-
+	@FXML
 	public void populaFuncionario() {
-		//novocodigo=funcionario.getnextcodigo();
-		//funcionario.setcodigo(Integer.valueOf(novocodigo));
-		funcionario.setcodigo(123);
 		funcionario.setagencia(tfAgencia.getText());
 		funcionario.setbairro(tfBairro.getText());
 		funcionario.setbanco(tfBanco.getText());
@@ -141,8 +139,8 @@ public class CadFuncionariosController {
 		funcionario.setdtnasc(tfDtNasc.getText());
 		funcionario.setendereco(tfEndereco.getText());
 		funcionario.setendnumero(tfNumero.getText());
-		funcionario.setmuni_codigo(tfCidade.getText());
-		funcionario.setmuni_uf(cbxUF.getSelectionModel().getSelectedItem());
+		funcionario.setmunicipio(tfCidade.getText());
+		funcionario.setuf(cbxUF.getSelectionModel().getSelectedItem());
 		funcionario.setnome(tfNomeFunc.getText());
 		funcionario.setrg(tfRG.getText());
 		funcionario.setsalario(Double.valueOf(tfSalario.getText()));
@@ -158,6 +156,7 @@ public class CadFuncionariosController {
 		} else {
             funcionariosDao.inserir(funcionario);
 		}
+    	
     }
 
 	@FXML
@@ -173,7 +172,7 @@ public class CadFuncionariosController {
 		tfCPF.setText(funcionarios.getcpf());
 		tfNomeFunc.setText(funcionarios.getnome());
 		tfCargo.setText(funcionarios.getcargo());
-		cbxUF.getSelectionModel().select(funcionarios.getmuni_uf());
+		cbxUF.getSelectionModel().select(funcionarios.getuf());
 	}
 
 }

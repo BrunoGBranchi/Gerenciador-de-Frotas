@@ -3,32 +3,45 @@ package org.controlefrota.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(of="codigo")
+@ToString(of={"codigo"})
 
 public class Funcionarios  implements Serializable{
 
 	private static final long serialVersionUID = 269601728039247486L;
 
-	private Integer   codigo;
-	private String    nome;
-	private String    cpf;
-	private String    rg;
-	private String    ctps;
-	private String    dtnasc;
-	private String    endereco;
-	private String    endnumero;
-	private String    bairro;
-	private String    cep;
-    private String    muni_codigo;
-	private String    muni_uf;
-	private String    cargo;
-	private Double    salario;
+	private Integer codigo;
+	private String nome;
+	private String cpf;
+	private String rg;
+	private String ctps;
+	private String dtnasc;
+	private String endereco;
+	private String endnumero;
+	private String bairro;
+	private String cep;
+    private String municipio;
+	private String uf;
+	private String cargo;
+	private Double salario;
 	private LocalDate dtadmissao;
-	private String    cargahoraria;
-	private String    banco;
-	private String    agencia;
-	private String    conta;
+	private String cargahoraria;
+	private String banco;
+	private String agencia;
+	private String conta;
 	private LocalDate datacad;
+	
 	public Integer getcodigo() {
 		return codigo;
 	}
@@ -89,17 +102,17 @@ public class Funcionarios  implements Serializable{
 	public void setcep(String cep) {
 		this.cep = cep;
 	}
-	public String getmuni_codigo() {
-		return muni_codigo;
+	public String getmunicipio() {
+		return municipio;
 	}
-	public void setmuni_codigo(String muni_codigo) {
-		this.muni_codigo = muni_codigo;
+	public void setmunicipio(String municipio) {
+		this.municipio = municipio;
 	}
-	public String getmuni_uf() {
-		return muni_uf;
+	public String getuf() {
+		return uf;
 	}
-	public void setmuni_uf(String muni_uf) {
-		this.muni_uf = muni_uf;
+	public void setuf(String uf) {
+		this.uf = uf;
 	}
 	public String getcargo() {
 		return cargo;
@@ -171,8 +184,8 @@ public class Funcionarios  implements Serializable{
 		result = prime * result + ((dtnasc == null) ? 0 : dtnasc.hashCode());
 		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + ((endnumero == null) ? 0 : endnumero.hashCode());
-		result = prime * result + ((muni_codigo == null) ? 0 : muni_codigo.hashCode());
-		result = prime * result + ((muni_uf == null) ? 0 : muni_uf.hashCode());
+		result = prime * result + ((municipio == null) ? 0 : municipio.hashCode());
+		result = prime * result + ((uf == null) ? 0 : uf.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((rg == null) ? 0 : rg.hashCode());
 		result = prime * result + ((salario == null) ? 0 : salario.hashCode());
@@ -262,15 +275,15 @@ public class Funcionarios  implements Serializable{
 				return false;
 		} else if (!endnumero.equals(other.endnumero))
 			return false;
-		if (muni_codigo == null) {
-			if (other.muni_codigo != null)
+		if (municipio == null) {
+			if (other.municipio != null)
 				return false;
-		} else if (!muni_codigo.equals(other.muni_codigo))
+		} else if (!municipio.equals(other.municipio))
 			return false;
-		if (muni_uf == null) {
-			if (other.muni_uf != null)
+		if (uf == null) {
+			if (other.uf != null)
 				return false;
-		} else if (!muni_uf.equals(other.muni_uf))
+		} else if (!uf.equals(other.uf))
 			return false;
 		if (nome == null) {
 			if (other.nome != null)
@@ -295,15 +308,15 @@ public class Funcionarios  implements Serializable{
 //				return "Funcionarios [codigo=" + codigo + ", nome=" + nome + ", cpf=" + cpf
 //				+ ", rg=" + rg + ", ctps=" + ctps + ", dtnasc=" + dtnasc
 //				+ ", endereco=" + endereco + ", endnumero=" + endnumero + ", bairro="
-//				+ bairro + ", cep=" + cep + ", muni_codigo=" + muni_codigo + ", muni_uf="
-//				+ muni_uf + ", cargo=" + cargo + ", salario=" + salario + ", dtadmissao="
+//				+ bairro + ", cep=" + cep + ", municipio=" + municipio + ", uf="
+//				+ uf + ", cargo=" + cargo + ", salario=" + salario + ", dtadmissao="
 //				+ dtadmissao + ", cargahoraria=" + cargahoraria + ", banco=" + banco/
 //				+ ", agencia=" + agencia + ", conta=" + conta + ", datacad=" + datacad
 //				+ "]";
 	}
 	public Funcionarios(Integer codigo, String nome, String cpf, String rg, String ctps,
 			String dtnasc, String endereco, String endnumero, String bairro, String cep,
-			String muni_codigo, String muni_uf, String cargo, Double salario,
+			String municipio, String uf, String cargo, Double salario,
 			LocalDate dtadmissao, String cargahoraria, String banco, String agencia,
 			String conta, LocalDate datacad) {
 		super();
@@ -317,8 +330,8 @@ public class Funcionarios  implements Serializable{
 		this.endnumero = endnumero;
 		this.bairro = bairro;
 		this.cep = cep;
-		this.muni_codigo = muni_codigo;
-		this.muni_uf = muni_uf;
+		this.municipio = municipio;
+		this.uf = uf;
 		this.cargo = cargo;
 		this.salario = salario;
 		this.dtadmissao = dtadmissao;

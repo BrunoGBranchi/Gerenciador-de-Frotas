@@ -34,8 +34,8 @@ endereco varchar(100),
 endnumero varchar(100),
 bairro varchar(100),
 cep varchar(100),
-muni_codigo varchar(100),
-muni_uf varchar(100),
+municipio varchar(100),
+uf varchar(100),
 cargo varchar(100),
 salario double,
 dtadmissao datetime,
@@ -46,6 +46,13 @@ conta varchar(100),
 datacad datetime
 );
 
+drop table funcionarios;
+
+insert into funcionarios (nome, CPF, RG, CTPS, DTNASC, endereco, bairro, cep, municipio, uf, cargo, salario, dtadmissao, cargahoraria, canco, agencia, conta, datacad) values (?,?,?,?,?,?,?,?,?);
+
+insert into funcionarios (nome) values ('teste');
+delete from funcionarios where codigo =1;
+select * from funcionarios;
 	
 create table manutencao(
 codigo bigint(20) not null auto_increment primary key,

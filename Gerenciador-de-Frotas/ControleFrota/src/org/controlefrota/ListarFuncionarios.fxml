@@ -19,9 +19,10 @@
          <content>
             <TableView fx:id="tblFuncionarios" onMouseClicked="#SelecionaFuncionario" prefHeight="313.0" prefWidth="598.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal2.png/'); -fx-background-position: center; -fx-background-size: auto;">
               <columns>
+                  <TableColumn fx:id="tbcCodigo" prefWidth="75.0" text="Codigo" />
                 <TableColumn fx:id="tbcCPF" prefWidth="126.0" text="CPF" />
-                <TableColumn fx:id="tbcNome" prefWidth="339.0" text="Nome Funcionario" />
-                  <TableColumn fx:id="tbcCargo" prefWidth="132.0" text="Cargo" />
+                <TableColumn fx:id="tbcNome" prefWidth="256.00001525878906" text="Nome Funcionario" />
+                  <TableColumn fx:id="tbcCargo" prefWidth="139.99993896484375" text="Cargo" />
               </columns>
             </TableView>
          </content>

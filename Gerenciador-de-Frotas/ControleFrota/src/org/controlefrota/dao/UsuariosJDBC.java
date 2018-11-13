@@ -76,23 +76,23 @@ public class UsuariosJDBC implements UsuariosDAO {
 
 	@Override
 	public List<Usuarios> listar() {
-		List<Usuarios> usuarios = new ArrayList<>();
+		List<Usuarios> usua = new ArrayList<>();
 		try {
 			Statement statement = ConexaoUtil.getConn().createStatement();
 			ResultSet rs = statement.executeQuery("select * from usuarios");
 			while (rs.next()) {
 				Usuarios usuario = new Usuarios();
+				usuario.setcodigo(rs.getInt("codigo"));
 				usuario.setnome(rs.getString("nome"));
 				usuario.setusuario(rs.getString("usuario"));
-				usuario.setcodigo(rs.getInt("codigo"));
 				usuario.setsenha(rs.getString("senha"));
 				usuario.setdatacad(rs.getDate("datacad"));
-				usuarios.add(usuario);
+				usua.add(usuario);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return usuarios;
+		return usua;
 
 	}
 

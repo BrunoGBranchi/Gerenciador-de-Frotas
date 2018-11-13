@@ -83,7 +83,7 @@ public class VeiculoJDBC implements VeiculosDAO {
 		List<t_Veiculos> vec = new ArrayList<>();
 		try {
 		Statement state = ConexaoUtil.getConn().createStatement();
-		ResultSet rs = state.executeQuery("select*from veiculos");
+		ResultSet rs = state.executeQuery("select * from veiculos");
 		while(rs.next()) {
 		t_Veiculos veiculo = new t_Veiculos();
 		veiculo.setCodigo(rs.getInt("codigo"));

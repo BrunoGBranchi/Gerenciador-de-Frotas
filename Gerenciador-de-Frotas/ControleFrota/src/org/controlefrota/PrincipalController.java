@@ -122,7 +122,7 @@ public class PrincipalController {
 
 	}
 	
-//	public static boolean edit=false;
-//	public static String nome = "";
+	public static boolean edit=false;
+	public static String nome = "";
 
 }

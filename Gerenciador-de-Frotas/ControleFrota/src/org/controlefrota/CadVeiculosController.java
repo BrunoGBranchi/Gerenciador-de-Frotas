@@ -113,8 +113,7 @@ public class CadVeiculosController {
 		tbcChassi.setCellValueFactory(new PropertyValueFactory<>("chassi"));
 		tbcRenavam.setCellValueFactory(new PropertyValueFactory<>("renavam"));
 		tbcCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
-		tbcData.setCellValueFactory(new PropertyValueFactory<>("datacad"));
-		
+		tbcData.setCellValueFactory(new PropertyValueFactory<>("datacad"));		
 		novoVeiculo();
 	}
 		

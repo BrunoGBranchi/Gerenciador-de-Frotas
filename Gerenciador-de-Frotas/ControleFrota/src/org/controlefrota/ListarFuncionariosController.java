@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.FuncionarioDAO;
 import org.controlefrota.model.Funcionarios;
-//import org.controlefrota.CadFuncionariosController;
+import org.controlefrota.CadFuncionariosController;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -48,24 +48,30 @@ public class ListarFuncionariosController {
 
 	@FXML
 	private TableColumn<Funcionarios, String> tbcCargo;
-
+	
+	@FXML
+	private TableColumn<Funcionarios, Number> tbcCodigo;
+	
 	@FXML
 	public TableView<Funcionarios> tblFuncionarios;
 
-	// private CadFuncionariosController fncControl = new
-	// CadFuncionariosController();
+	 //private CadFuncionariosController fncControl = new
+	 //CadFuncionariosController();
 
-	// private boolean editando;
+	private boolean editando;
 
 	private FuncionarioDAO funcionarioDao = AbstractFactory.get().funcionariosDao();
 
 	private Funcionarios funcionario;
-
+	
+	@FXML
 	public void initialize() {
-		tbcCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+		tbcCPF.setCellValueFactory(new PropertyValueFactory<>("CPF"));
 		tbcNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		tbcCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
 		tblFuncionarios.setItems(FXCollections.observableArrayList(funcionarioDao.listar()));
+		funcionario = new Funcionarios();
 	}
 
 	@FXML
@@ -91,9 +97,9 @@ public class ListarFuncionariosController {
 		if (tblFuncionarios.getSelectionModel().getSelectedItem() != null) {
 
 			funcionario = tblFuncionarios.getSelectionModel().getSelectedItem();
-			// fncControl.populaTela(funcionario);
-			// PrincipalController.edit = true;
-			// PrincipalController.nome=funcionario.getnome();
+			//fncControl.populaTela(funcionario);
+			//PrincipalController.edit = true;
+			//PrincipalController.nome = funcionario.getnome();
 
 			codigo = funcionario.getcodigo();
 			agencia = funcionario.getagencia();
@@ -105,13 +111,13 @@ public class ListarFuncionariosController {
 			conta = funcionario.getconta();
 			cpf = funcionario.getcpf();
 			ctps = funcionario.getctps();
-			datacad = funcionario.getdatacad().toString();
+			//datacad = funcionario.getdatacad().toString();
 			dtadmissao = funcionario.getdtadmissao();
 			dtnasc = funcionario.getdtnasc();
 			endereco = funcionario.getendnumero();
 			endnumero = funcionario.getendnumero();
-			muni_codigo = funcionario.getmuni_codigo();
-			muni_uf = funcionario.getmuni_uf();
+			municipio = funcionario.getmunicipio();
+			uf = funcionario.getuf();
 			nome = funcionario.getnome();
 			rg = funcionario.getrg();
 			salario = funcionario.getsalario().toString();
@@ -146,9 +152,9 @@ public class ListarFuncionariosController {
 		// void SelecionaFuncionario(MouseEvent event) {
 		if (tblFuncionarios.getSelectionModel().getSelectedItem() != null) {
 			funcionario = tblFuncionarios.getSelectionModel().getSelectedItem();
-			// fncControl.populaTela(funcionario);
-			// PrincipalController.edit = false;
-			// PrincipalController.nome=funcionario.getnome();
+			//fncControl.populaTela(funcionario);
+			//PrincipalController.edit = false;
+			//PrincipalController.nome=funcionario.getnome();
 			edit = false;
 			tblFuncionarios.refresh();
 		}
@@ -182,8 +188,8 @@ public class ListarFuncionariosController {
 	public static String dtnasc = "";
 	public static String endereco = "";
 	public static String endnumero = "";
-	public static String muni_codigo = "";
-	public static String muni_uf = "";
+	public static String municipio = "";
+	public static String uf = "";
 	public static String nome = "";
 	public static String rg = "";
 	public static String salario = "";
