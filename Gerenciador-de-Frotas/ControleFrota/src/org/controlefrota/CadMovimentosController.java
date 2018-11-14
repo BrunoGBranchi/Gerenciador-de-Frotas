@@ -1,21 +1,26 @@
 package org.controlefrota;
 
+import java.io.IOException;
 import java.util.Date;
 
 import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.MovimentosDAO;
 import org.controlefrota.model.Movimentos;
-import org.controlefrota.model.t_Veiculos;
+import org.controlefrota.model.Veiculos;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 //OK Edit
 
@@ -169,6 +174,19 @@ public class CadMovimentosController {
     
     @FXML
     void fechar(ActionEvent event) {
-    	btnFechar.getScene().getWindow().hide();
+    	Stage stage = new Stage();  
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Gerenciador de Frotas - V1.1 Alpha");
+            stage.show();
+            stage.setMaximized(true);
+        }catch(IOException e){
+            e.printStackTrace();
+        }finally{
+            stage = (Stage) btnFechar.getScene().getWindow();
+            stage.close(); //fecha a pagina atual antes de sair
+        }
     }
 }

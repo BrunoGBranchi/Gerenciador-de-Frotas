@@ -8,20 +8,22 @@ import java.util.List;
 
 import org.controlefrota.conexao.ConexaoUtil;
 import org.controlefrota.model.Manutencao;
+import org.controlefrota.model.Veiculos;
 
 public class ManutencaoJDBC implements ManutencaoDAO {
 
 	@Override
 	public void inserir(Manutencao dado) {
 		try {
-			String sql = "insert into manutencao values(?,?,?,?,?)";
+			String sql = "insert into manutencao (descricao, tipo, marca, aplicacao, valor, cod_veiculo, datacad) values(?,?,?,?,?,?,?)";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
-
-			statement.setString(1, dado.getdescricao());
-			statement.setString(2, dado.gettipo());
-			statement.setString(3, dado.getmarca());
-			statement.setString(4, dado.getaplicacao());
-			statement.setDate(5, (dado.getdatacad()));
+			statement.setString(1, dado.getDescricao());
+			statement.setString(2, dado.getTipo());
+			statement.setString(3, dado.getMarca());
+			statement.setString(4, dado.getAplicacao());
+			statement.setDouble(5, dado.getValor());
+			statement.setString(6, dado.getVeiculo().getCodigo().toString());
+			statement.setDate(7, (dado.getDatacad()));
 			statement.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -33,13 +35,15 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 	public void alterar(Manutencao dado) {
 		try {
 			String sql = "update manutencao set descricao = ?, tipo = ?, marca = ?, "
-					+ "aplicacao = ?, datacad = ? where codigo = ?";
+					+ "aplicacao = ?, valor=?, cod_veiculo=? datacad = ? where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
-			statement.setString(1, dado.getdescricao());
-			statement.setString(2, dado.gettipo());
-			statement.setString(3, dado.getmarca());
-			statement.setString(4, dado.getaplicacao());
-			statement.setDate(5, (dado.getdatacad()));
+			statement.setString(1, dado.getDescricao());
+			statement.setString(2, dado.getTipo());
+			statement.setString(3, dado.getMarca());
+			statement.setString(4, dado.getAplicacao());
+			statement.setDouble(5, dado.getValor());
+			statement.setString(6, dado.getVeiculo().getCodigo().toString());
+			statement.setDate(7, (dado.getDatacad()));
 			statement.executeUpdate();
 
 		} catch (Exception e) {
@@ -53,7 +57,7 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 		try {
 			String sql = "delete from manutencao where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
-			statement.setInt(1, dado.getcodigo());
+			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -72,14 +76,19 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 		List<Manutencao> manu = new ArrayList<>();
 		try {
 			Statement statement = ConexaoUtil.getConn().createStatement();
-			ResultSet rs = statement.executeQuery("select*from manutencao");
+			ResultSet rs = statement.executeQuery("select * from manutencao");
 			while (rs.next()) {
 				Manutencao manutencao = new Manutencao();
-				manutencao.setdescricao(rs.getString("descricao"));
-				manutencao.settipo(rs.getString("tipo"));
-				manutencao.setmarca(rs.getString("marca"));
-				manutencao.setaplicacao(rs.getString("aplicacao"));
-				manutencao.setdatacad(rs.getDate("datacad"));
+				manutencao.setCodigo(rs.getInt("codigo"));
+				manutencao.setDescricao(rs.getString("descricao"));
+				manutencao.setTipo(rs.getString("tipo"));
+				manutencao.setMarca(rs.getString("marca"));
+				manutencao.setAplicacao(rs.getString("aplicacao"));
+				manutencao.setDatacad(rs.getDate("datacad"));
+				manutencao.setValor(rs.getDouble("valor"));
+				Veiculos veiculo = new Veiculos();
+				veiculo.setCodigo(rs.getInt(("cod_veiculo")));
+				manutencao.setVeiculo(veiculo);
 				manu.add(manutencao);			}
 		} catch (Exception e) {
 			e.printStackTrace();

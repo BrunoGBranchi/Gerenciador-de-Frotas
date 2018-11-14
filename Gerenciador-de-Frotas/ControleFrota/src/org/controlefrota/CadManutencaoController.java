@@ -1,22 +1,30 @@
 package org.controlefrota;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Date;
 
 import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.ManutencaoDAO;
+import org.controlefrota.dao.VeiculosDAO;
 import org.controlefrota.model.Manutencao;
+import org.controlefrota.model.Veiculos;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 //OK - Edit
 
@@ -47,10 +55,19 @@ public class CadManutencaoController {
     private Button btnLimpar;
     
     @FXML
+    private ComboBox<Veiculos> CbxVeiculo;
+
+    @FXML
+    private TextField tfValor;
+    
+    @FXML
     private TableColumn<Manutencao, Date> tbcDataCad;
     
     @FXML
-    private TableColumn<Manutencao, String> tbcCodigo;
+    private TableColumn<Manutencao, Number> tbcCodigo;
+    
+    @FXML
+    private TableColumn<Manutencao, String> tbcVeiculo;
     
     @FXML
     private TableColumn<Manutencao, String> tbcMarcaPeca;
@@ -62,6 +79,9 @@ public class CadManutencaoController {
     private TableColumn<Manutencao, String> tbcTipoPeca;
     
     @FXML
+    private TableColumn<Manutencao, Number> tbcValor;
+    
+    @FXML
     private TableColumn<Manutencao, String> tbcDescricao;
     
     @FXML
@@ -70,7 +90,9 @@ public class CadManutencaoController {
     @FXML
     private DatePicker dtdata;
     
-    ManutencaoDAO manutencaoDao = AbstractFactory.get().manutencaoDao();
+    private ManutencaoDAO manutencaoDao = AbstractFactory.get().manutencaoDao();
+    
+    private VeiculosDAO veiculosDao = AbstractFactory.get().veiculosDao();
     
     private boolean editando;
     
@@ -80,12 +102,23 @@ public class CadManutencaoController {
     public void initialize() {	
     	tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
     	tbcDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+    	tbcVeiculo.setCellValueFactory(new PropertyValueFactory<>("veiculo"));
+    	tbcValor.setCellValueFactory(new PropertyValueFactory<>("valor"));
     	tbcTipoPeca.setCellValueFactory(new PropertyValueFactory<>("tipo"));
     	tbcMarcaPeca.setCellValueFactory(new PropertyValueFactory<>("marca"));
     	tbcAplicacao.setCellValueFactory(new PropertyValueFactory<>("aplicacao"));
     	tbcDataCad.setCellValueFactory(new PropertyValueFactory<>("datacad"));
+    	
+    	populaCombo();
     	novaManutencao();
     }
+    
+    private void populaCombo(){
+		CbxVeiculo.getItems().clear();
+		for(Veiculos veiculo: veiculosDao.listar()){
+			CbxVeiculo.getItems().add(veiculo);
+		}
+	}
     
     @FXML
     void incluir(ActionEvent event) {
@@ -112,7 +145,20 @@ public class CadManutencaoController {
 
     @FXML
     void fechar(ActionEvent event) {
-    	btnFechar.getScene().getWindow().hide();
+    	Stage stage = new Stage();  
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Gerenciador de Frotas - V1.1 Alpha");
+            stage.show();
+            stage.setMaximized(true);
+        }catch(IOException e){
+            e.printStackTrace();
+        }finally{
+            stage = (Stage) btnFechar.getScene().getWindow();
+            stage.close(); //fecha a pagina atual antes de sair
+        }
     }
     
     @FXML
@@ -125,18 +171,23 @@ public class CadManutencaoController {
     }
     
     public void populaManutencao() {
-    	manutencao.setdescricao(tfDesc.getText());
-    	manutencao.settipo(tfTipo.getText());
-    	manutencao.setmarca(tfMarca.getText());
-    	manutencao.setaplicacao(tfAplica.getText());
-    	manutencao.setdatacad(java.sql.Date.valueOf(LocalDate.now()));
+    	manutencao.setDescricao(tfDesc.getText());
+    	manutencao.setTipo(tfTipo.getText());
+    	manutencao.setMarca(tfMarca.getText());
+    	manutencao.setAplicacao(tfAplica.getText());
+    	manutencao.setValor(Double.valueOf(tfValor.getText()));
+    	manutencao.setVeiculo(CbxVeiculo.getSelectionModel().getSelectedItem());
+    	manutencao.setDatacad(java.sql.Date.valueOf(LocalDate.now()));
     }
     
     public void populaTela(Manutencao manutencao) {
-    	tfDesc.setText(manutencao.getdescricao());
-    	tfTipo.setText(manutencao.gettipo());
-    	tfMarca.setText(manutencao.getmarca());
-    	tfAplica.setText(manutencao.getaplicacao());
+    	tfDesc.setText(manutencao.getDescricao());
+    	tfTipo.setText(manutencao.getTipo());
+    	tfMarca.setText(manutencao.getMarca());
+    	tfAplica.setText(manutencao.getAplicacao());
+    	tfValor.setText(String.valueOf(manutencao.getValor()));
+    	CbxVeiculo.getSelectionModel().select(manutencao.getVeiculo());
+    	dtdata.isDisabled();
     }
     
     public void novaManutencao() {
@@ -144,6 +195,8 @@ public class CadManutencaoController {
     	tfDesc.clear();
     	tfMarca.clear();
     	tfTipo.clear();
+    	tfValor.clear();
+    	CbxVeiculo.getSelectionModel().clearSelection();
     	manutencao = new Manutencao();
     	editando = false;
     	tblManutencao.setItems(FXCollections.observableArrayList(manutencaoDao.listar()));

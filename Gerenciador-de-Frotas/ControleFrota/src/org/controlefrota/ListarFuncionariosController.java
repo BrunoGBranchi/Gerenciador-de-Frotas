@@ -67,7 +67,7 @@ public class ListarFuncionariosController {
 	@FXML
 	public void initialize() {
 		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
-		tbcCPF.setCellValueFactory(new PropertyValueFactory<>("CPF"));
+		tbcCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 		tbcNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		tbcCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
 		tblFuncionarios.setItems(FXCollections.observableArrayList(funcionarioDao.listar()));
@@ -101,26 +101,26 @@ public class ListarFuncionariosController {
 			//PrincipalController.edit = true;
 			//PrincipalController.nome = funcionario.getnome();
 
-			codigo = funcionario.getcodigo();
-			agencia = funcionario.getagencia();
-			bairro = funcionario.getbairro();
-			banco = funcionario.getbanco();
-			cargahoraria = funcionario.getcargahoraria();
-			cargo = funcionario.getcargo();
-			cep = funcionario.getcep();
-			conta = funcionario.getconta();
-			cpf = funcionario.getcpf();
-			ctps = funcionario.getctps();
+			codigo = funcionario.getCodigo();
+			agencia = funcionario.getAgencia();
+			bairro = funcionario.getBairro();
+			banco = funcionario.getBanco();
+			cargahoraria = funcionario.getCargahoraria();
+			cargo = funcionario.getCargo();
+			cep = funcionario.getCep();
+			conta = funcionario.getConta();
+			cpf = funcionario.getCpf();
+			ctps = funcionario.getCtps();
 			//datacad = funcionario.getdatacad().toString();
-			dtadmissao = funcionario.getdtadmissao();
-			dtnasc = funcionario.getdtnasc();
-			endereco = funcionario.getendnumero();
-			endnumero = funcionario.getendnumero();
-			municipio = funcionario.getmunicipio();
-			uf = funcionario.getuf();
-			nome = funcionario.getnome();
-			rg = funcionario.getrg();
-			salario = funcionario.getsalario().toString();
+			dtadmissao = funcionario.getDtadmissao();
+			dtnasc = funcionario.getDtnasc();
+			endereco = funcionario.getEndereco();
+			endnumero = funcionario.getEndnumero();
+			municipio = funcionario.getMunicipio();
+			uf = funcionario.getUf();
+			nome = funcionario.getNome();
+			rg = funcionario.getRg();
+			salario = funcionario.getSalario().toString();
 			edit = true;
 			try {
 				FXMLLoader fxmlLoader = new FXMLLoader();

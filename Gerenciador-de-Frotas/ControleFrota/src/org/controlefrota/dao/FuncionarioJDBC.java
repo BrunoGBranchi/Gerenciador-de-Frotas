@@ -17,24 +17,24 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 + "(nome, CPF, RG, CTPS, DTNASC, endereco, endnumero, bairro, cep, municipio, uf, cargo, salario, dtadmissao, cargahoraria, banco, agencia, conta)"
 					+ "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
-			statement.setString(1, dado.getnome());
-			statement.setString(2, dado.getcpf());
-			statement.setString(3, dado.getrg());
-			statement.setString(4, dado.getctps());
-			statement.setString(5, dado.getdtnasc());
-			statement.setString(6, dado.getendereco());
-			statement.setString(7, dado.getendnumero());
-			statement.setString(8, dado.getbairro());
-			statement.setString(9, dado.getcep());
-			statement.setString(10, dado.getmunicipio());
-			statement.setString(11, dado.getuf());
-			statement.setString(12, dado.getcargo());
-			statement.setDouble(13, dado.getsalario());
-			statement.setDate(14, java.sql.Date.valueOf(dado.getdtadmissao()));
-			statement.setString(15, dado.getcargahoraria());
-			statement.setString(16, dado.getbanco());
-			statement.setString(17, dado.getagencia());
-			statement.setString(18, dado.getconta());
+			statement.setString(1, dado.getNome());
+			statement.setString(2, dado.getCpf());
+			statement.setString(3, dado.getRg());
+			statement.setString(4, dado.getCtps());
+			statement.setString(5, dado.getDtnasc());
+			statement.setString(6, dado.getEndereco());
+			statement.setString(7, dado.getEndnumero());
+			statement.setString(8, dado.getBairro());
+			statement.setString(9, dado.getCep());
+			statement.setString(10, dado.getMunicipio());
+			statement.setString(11, dado.getUf());
+			statement.setString(12, dado.getCargo());
+			statement.setDouble(13, dado.getSalario());
+			statement.setDate(14, java.sql.Date.valueOf(dado.getDtadmissao()));
+			statement.setString(15, dado.getCargahoraria());
+			statement.setString(16, dado.getBairro());
+			statement.setString(17, dado.getAgencia());
+			statement.setString(18, dado.getConta());
 			//statement.setDate(19, java.sql.Date.valueOf(dado.getdatacad()));
 			statement.executeUpdate();
 		} catch (Exception e) {
@@ -52,25 +52,25 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 					+ "conta = ? ,datacad = ? where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 
-			statement.setString(1, dado.getnome());
-			statement.setString(2, dado.getcpf());
-			statement.setString(3, dado.getrg());
-			statement.setString(4, dado.getctps());
-			statement.setString(5, dado.getdtnasc());
-			statement.setString(6, dado.getendereco());
-			statement.setString(7, dado.getendnumero());
-			statement.setString(8, dado.getbairro());
-			statement.setString(9, dado.getcep());
-			statement.setString(10, dado.getmunicipio());
-			statement.setString(11, dado.getuf());
-			statement.setString(12, dado.getcargo());
-			statement.setDouble(13, dado.getsalario());
-			statement.setDate(14, java.sql.Date.valueOf(dado.getdtadmissao()));
-			statement.setString(15, dado.getcargahoraria());
-			statement.setString(16, dado.getbanco());
-			statement.setString(17, dado.getagencia());
-			statement.setString(18, dado.getconta());
-			statement.setDate(19, java.sql.Date.valueOf(dado.getdatacad()));
+			statement.setString(1, dado.getNome());
+			statement.setString(2, dado.getCpf());
+			statement.setString(3, dado.getRg());
+			statement.setString(4, dado.getCtps());
+			statement.setString(5, dado.getDtnasc());
+			statement.setString(6, dado.getEndereco());
+			statement.setString(7, dado.getEndnumero());
+			statement.setString(8, dado.getBairro());
+			statement.setString(9, dado.getCep());
+			statement.setString(10, dado.getMunicipio());
+			statement.setString(11, dado.getUf());
+			statement.setString(12, dado.getCargo());
+			statement.setDouble(13, dado.getSalario());
+			statement.setDate(14, java.sql.Date.valueOf(dado.getDtadmissao()));
+			statement.setString(15, dado.getCargahoraria());
+			statement.setString(16, dado.getBairro());
+			statement.setString(17, dado.getAgencia());
+			statement.setString(18, dado.getConta());
+			statement.setDate(19, java.sql.Date.valueOf(dado.getDatacad()));
 			statement.executeUpdate();
 
 		} catch (Exception e) {
@@ -85,7 +85,7 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 		try {
 			String sql = "delete from funcionarios where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
-			statement.setInt(1, dado.getcodigo());
+			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
 
 		} catch (Exception e) {
@@ -108,25 +108,25 @@ public class FuncionarioJDBC implements FuncionarioDAO {
 			ResultSet rs = statement.executeQuery("select * from funcionarios");
 			while (rs.next()) {
 				Funcionarios funcionario = new Funcionarios();
-				funcionario.setnome(rs.getString("nome"));
-				funcionario.setcpf(rs.getString("CPF"));
-				funcionario.setrg(rs.getString("RG"));
-				funcionario.setctps(rs.getString("CTPS"));
-				funcionario.setdtnasc(rs.getString("DTNASC"));
-				funcionario.setendereco(rs.getString("endereco"));
-				funcionario.setendnumero(rs.getString("endnumero"));
-				funcionario.setbairro(rs.getString("bairro"));
-				funcionario.setcep(rs.getString("cep"));
-				funcionario.setendnumero(rs.getString("endnumero"));
-				funcionario.setmunicipio(rs.getString("municipio"));
-				funcionario.setuf(rs.getString("uf"));
-				funcionario.setcargo(rs.getString("cargo"));
-				funcionario.setsalario(rs.getDouble("salario"));
-				funcionario.setdtadmissao(rs.getDate("dtadmissao").toLocalDate());
-				funcionario.setcargahoraria(rs.getString("cargaHoraria"));
-				funcionario.setbanco(rs.getString("banco"));
-				funcionario.setagencia(rs.getString("agencia"));
-				funcionario.setconta(rs.getString("conta"));
+				funcionario.setCodigo(rs.getInt("codigo"));
+				funcionario.setNome(rs.getString("nome"));
+				funcionario.setCpf(rs.getString("CPF"));
+				funcionario.setRg(rs.getString("RG"));
+				funcionario.setCtps(rs.getString("CTPS"));
+				funcionario.setDtnasc(rs.getString("DTNASC"));
+				funcionario.setEndereco(rs.getString("endereco"));
+				funcionario.setEndnumero(rs.getString("endnumero"));
+				funcionario.setBairro(rs.getString("bairro"));
+				funcionario.setCep(rs.getString("cep"));
+				funcionario.setMunicipio(rs.getString("municipio"));
+				funcionario.setUf(rs.getString("uf"));
+				funcionario.setCargo(rs.getString("cargo"));
+				funcionario.setSalario(rs.getDouble("salario"));
+				funcionario.setDtadmissao(rs.getDate("dtadmissao").toLocalDate());
+				funcionario.setCargahoraria(rs.getString("cargaHoraria"));
+				funcionario.setBanco(rs.getString("banco"));
+				funcionario.setAgencia(rs.getString("agencia"));
+				funcionario.setConta(rs.getString("conta"));
 				//funcionario.setdatacad(rs.getDate("datacad").toLocalDate());
 				func.add(funcionario);
 			}

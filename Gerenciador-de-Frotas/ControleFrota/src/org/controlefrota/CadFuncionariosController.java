@@ -1,6 +1,7 @@
 package org.controlefrota;
 
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 import org.controlefrota.dao.AbstractFactory;
@@ -9,10 +10,14 @@ import org.controlefrota.model.Funcionarios;
 import org.controlefrota.ListarFuncionariosController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 
 public class CadFuncionariosController {
@@ -125,25 +130,25 @@ public class CadFuncionariosController {
 	} 
 	@FXML
 	public void populaFuncionario() {
-		funcionario.setagencia(tfAgencia.getText());
-		funcionario.setbairro(tfBairro.getText());
-		funcionario.setbanco(tfBanco.getText());
-		funcionario.setcargahoraria(tfCargHoraria.getText());
-		funcionario.setcargo(tfCargo.getText());
-		funcionario.setcep(tfCEP.getText());
-		funcionario.setconta(tfCBancaria.getText());
-		funcionario.setcpf(tfCPF.getText());
-		funcionario.setctps(tfCTPS.getText());
-		funcionario.setdatacad(LocalDate.now());
-		funcionario.setdtadmissao(funcionario.getdatacad());
-		funcionario.setdtnasc(tfDtNasc.getText());
-		funcionario.setendereco(tfEndereco.getText());
-		funcionario.setendnumero(tfNumero.getText());
-		funcionario.setmunicipio(tfCidade.getText());
-		funcionario.setuf(cbxUF.getSelectionModel().getSelectedItem());
-		funcionario.setnome(tfNomeFunc.getText());
-		funcionario.setrg(tfRG.getText());
-		funcionario.setsalario(Double.valueOf(tfSalario.getText()));
+		funcionario.setAgencia(tfAgencia.getText());
+		funcionario.setBairro(tfBairro.getText());
+		funcionario.setBanco(tfBanco.getText());
+		funcionario.setCargahoraria(tfCargHoraria.getText());
+		funcionario.setCargo(tfCargo.getText());
+		funcionario.setCep(tfCEP.getText());
+		funcionario.setConta(tfCBancaria.getText());
+		funcionario.setCpf(tfCPF.getText());
+		funcionario.setCtps(tfCTPS.getText());
+		funcionario.setDatacad(LocalDate.now());
+		funcionario.setDtadmissao(funcionario.getDatacad());
+		funcionario.setDtnasc(tfDtNasc.getText());
+		funcionario.setEndereco(tfEndereco.getText());
+		funcionario.setEndnumero(tfNumero.getText());
+		funcionario.setMunicipio(tfCidade.getText());
+		funcionario.setUf(cbxUF.getSelectionModel().getSelectedItem());
+		funcionario.setNome(tfNomeFunc.getText());
+		funcionario.setRg(tfRG.getText());
+		funcionario.setSalario(Double.valueOf(tfSalario.getText()));
 		
 		}
 
@@ -161,7 +166,20 @@ public class CadFuncionariosController {
 
 	@FXML
 	void cancelar(ActionEvent event) {
-		btnCancelar.getScene().getWindow().hide();
+		Stage stage = new Stage();  
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Gerenciador de Frotas - V1.1 Alpha");
+            stage.show();
+            stage.setMaximized(true);
+        }catch(IOException e){
+            e.printStackTrace();
+        }finally{
+            stage = (Stage) btnCancelar.getScene().getWindow();
+            stage.close(); //fecha a pagina atual antes de sair
+        }
 	}
 
 	@FXML
@@ -169,10 +187,10 @@ public class CadFuncionariosController {
 	}
 
 	public void populaTela(Funcionarios funcionarios) {
-		tfCPF.setText(funcionarios.getcpf());
-		tfNomeFunc.setText(funcionarios.getnome());
-		tfCargo.setText(funcionarios.getcargo());
-		cbxUF.getSelectionModel().select(funcionarios.getuf());
+		tfCPF.setText(funcionarios.getCpf());
+		tfNomeFunc.setText(funcionarios.getNome());
+		tfCargo.setText(funcionarios.getCargo());
+		cbxUF.getSelectionModel().select(funcionarios.getUf());
 	}
 
 }

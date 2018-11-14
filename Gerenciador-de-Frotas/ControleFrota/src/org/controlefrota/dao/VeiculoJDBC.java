@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.controlefrota.conexao.ConexaoUtil;
-import org.controlefrota.model.t_Veiculos;
+import org.controlefrota.model.Veiculos;
 
 public class VeiculoJDBC implements VeiculosDAO {
 
 	@Override
-	public void inserir(t_Veiculos dado) {
+	public void inserir(Veiculos dado) {
 		try {
 			String sql = "insert into veiculos (renavam, marca, modelo, placa, motor, chassi, categoria, datacad) values(?,?,?,?,?,?,?,?)";
 		PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
@@ -34,7 +34,7 @@ public class VeiculoJDBC implements VeiculosDAO {
 	}
 
 	@Override
-	public void alterar(t_Veiculos dado) {
+	public void alterar(Veiculos dado) {
 		try {
 			String sql = "update veiculos set renavam=?, marca=?, modelo=?, placa=?, motor=?, chassi=?, categoria=?,  where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
@@ -58,7 +58,7 @@ public class VeiculoJDBC implements VeiculosDAO {
 	}
 
 	@Override
-	public void excluir(t_Veiculos dado) {
+	public void excluir(Veiculos dado) {
 		try {
 			String sql = "delete from veiculos where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
@@ -73,19 +73,19 @@ public class VeiculoJDBC implements VeiculosDAO {
 	}
 		
 	@Override
-	public void tabelas(t_Veiculos dado) {
+	public void tabelas(Veiculos dado) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<t_Veiculos> listar() {
-		List<t_Veiculos> vec = new ArrayList<>();
+	public List<Veiculos> listar() {
+		List<Veiculos> vec = new ArrayList<>();
 		try {
 		Statement state = ConexaoUtil.getConn().createStatement();
 		ResultSet rs = state.executeQuery("select * from veiculos");
 		while(rs.next()) {
-		t_Veiculos veiculo = new t_Veiculos();
+		Veiculos veiculo = new Veiculos();
 		veiculo.setCodigo(rs.getInt("codigo"));
 		veiculo.setRenavam(rs.getInt("renavam"));
 		veiculo.setMarca(rs.getString("marca"));
@@ -105,7 +105,7 @@ public class VeiculoJDBC implements VeiculosDAO {
 	}
 
 	@Override
-	public Integer comparaigual(t_Veiculos dado) {
+	public Integer comparaigual(Veiculos dado) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -17,10 +17,10 @@ public class UsuariosJDBC implements UsuariosDAO {
 		try {
 			String sql = "insert into usuarios (nome, usuario, senha, datacad) values (?,?,?,?)";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
-			statement.setString(1, dado.getnome());
-			statement.setString(3, dado.getsenha());
-			statement.setString(2, dado.getusuario());
-			statement.setDate(4, dado.getdatacad());
+			statement.setString(1, dado.getNome());
+			statement.setString(3, dado.getSenha());
+			statement.setString(2, dado.getUsuario());
+			statement.setDate(4, dado.getDatacad());
 			statement.executeUpdate();
 			
 			// Popular o objeto com o código gerado.
@@ -42,10 +42,10 @@ public class UsuariosJDBC implements UsuariosDAO {
 			String sql = "update usuarios set nome = ?, usuario = ?, senha = ? " 
 						+ " where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
-			statement.setString(1, dado.getnome());
-			statement.setString(2, dado.getusuario());
-			statement.setString(3, dado.getsenha());
-			statement.setInt(4, dado.getcodigo());
+			statement.setString(1, dado.getNome());
+			statement.setString(2, dado.getUsuario());
+			statement.setString(3, dado.getSenha());
+			statement.setInt(4, dado.getCodigo());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -59,7 +59,7 @@ public class UsuariosJDBC implements UsuariosDAO {
 		try {
 			String sql = "delete from usuarios where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
-			statement.setInt(1, dado.getcodigo());
+			statement.setInt(1, dado.getCodigo());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -82,11 +82,11 @@ public class UsuariosJDBC implements UsuariosDAO {
 			ResultSet rs = statement.executeQuery("select * from usuarios");
 			while (rs.next()) {
 				Usuarios usuario = new Usuarios();
-				usuario.setcodigo(rs.getInt("codigo"));
-				usuario.setnome(rs.getString("nome"));
-				usuario.setusuario(rs.getString("usuario"));
-				usuario.setsenha(rs.getString("senha"));
-				usuario.setdatacad(rs.getDate("datacad"));
+				usuario.setCodigo(rs.getInt("codigo"));
+				usuario.setNome(rs.getString("nome"));
+				usuario.setUsuario(rs.getString("usuario"));
+				usuario.setSenha(rs.getString("senha"));
+				usuario.setDatacad(rs.getDate("datacad"));
 				usua.add(usuario);
 			}
 		} catch (SQLException e) {

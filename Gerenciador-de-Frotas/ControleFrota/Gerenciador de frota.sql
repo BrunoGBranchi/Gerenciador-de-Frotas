@@ -57,11 +57,19 @@ select * from funcionarios;
 create table manutencao(
 codigo bigint(20) not null auto_increment primary key,
 descricao varchar(100),
+valor double,
 tipo varchar(100),
 marca varchar(100),
 aplicacao varchar(100),
-datacad datetime  
+datacad datetime,
+cod_veiculo bigint,
+
+foreign key (cod_veiculo) references veiculos(codigo)
 );
+
+select * from manutencao;
+
+drop table manutencao;
 
 	drop table veiculos;
 create table veiculos(

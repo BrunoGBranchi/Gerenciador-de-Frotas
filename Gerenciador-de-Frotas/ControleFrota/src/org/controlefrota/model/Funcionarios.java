@@ -17,6 +17,10 @@ import lombok.ToString;
 @EqualsAndHashCode(of="codigo")
 @ToString(of={"codigo"})
 
+
+/*LOMBOK QUE TAVA FAZENDO A BOSTA DE NÃO RENDERIZAR A TABELA, CRIA GET E SET MANUALMENTE (PELO ALT+SHIFT+S) BJS*/
+
+
 public class Funcionarios  implements Serializable{
 
 	private static final long serialVersionUID = 269601728039247486L;
@@ -42,124 +46,125 @@ public class Funcionarios  implements Serializable{
 	private String conta;
 	private LocalDate datacad;
 	
-	public Integer getcodigo() {
+	
+	public Integer getCodigo() {
 		return codigo;
 	}
-	public void setcodigo(Integer codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
-	public String getnome() {
+	public String getNome() {
 		return nome;
 	}
-	public void setnome(String nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getcpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setcpf(String cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public String getrg() {
+	public String getRg() {
 		return rg;
 	}
-	public void setrg(String rg) {
+	public void setRg(String rg) {
 		this.rg = rg;
 	}
-	public String getctps() {
+	public String getCtps() {
 		return ctps;
 	}
-	public void setctps(String ctps) {
+	public void setCtps(String ctps) {
 		this.ctps = ctps;
 	}
-	public String getdtnasc() {
+	public String getDtnasc() {
 		return dtnasc;
 	}
-	public void setdtnasc(String dtnasc) {
+	public void setDtnasc(String dtnasc) {
 		this.dtnasc = dtnasc;
 	}
-	public String getendereco() {
+	public String getEndereco() {
 		return endereco;
 	}
-	public void setendereco(String endereco) {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	public String getendnumero() {
+	public String getEndnumero() {
 		return endnumero;
 	}
-	public void setendnumero(String endnumero) {
+	public void setEndnumero(String endnumero) {
 		this.endnumero = endnumero;
 	}
-	public String getbairro() {
+	public String getBairro() {
 		return bairro;
 	}
-	public void setbairro(String bairro) {
+	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	public String getcep() {
+	public String getCep() {
 		return cep;
 	}
-	public void setcep(String cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	public String getmunicipio() {
+	public String getMunicipio() {
 		return municipio;
 	}
-	public void setmunicipio(String municipio) {
+	public void setMunicipio(String municipio) {
 		this.municipio = municipio;
 	}
-	public String getuf() {
+	public String getUf() {
 		return uf;
 	}
-	public void setuf(String uf) {
+	public void setUf(String uf) {
 		this.uf = uf;
 	}
-	public String getcargo() {
+	public String getCargo() {
 		return cargo;
 	}
-	public void setcargo(String cargo) {
+	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public Double getsalario() {
+	public Double getSalario() {
 		return salario;
 	}
-	public void setsalario(Double salario) {
+	public void setSalario(Double salario) {
 		this.salario = salario;
 	}
-	public LocalDate getdtadmissao() {
+	public LocalDate getDtadmissao() {
 		return dtadmissao;
 	}
-	public void setdtadmissao(LocalDate dtadmissao) {
+	public void setDtadmissao(LocalDate dtadmissao) {
 		this.dtadmissao = dtadmissao;
 	}
-	public String getcargahoraria() {
+	public String getCargahoraria() {
 		return cargahoraria;
 	}
-	public void setcargahoraria(String cargahoraria) {
+	public void setCargahoraria(String cargahoraria) {
 		this.cargahoraria = cargahoraria;
 	}
-	public String getbanco() {
+	public String getBanco() {
 		return banco;
 	}
-	public void setbanco(String banco) {
+	public void setBanco(String banco) {
 		this.banco = banco;
 	}
-	public String getagencia() {
+	public String getAgencia() {
 		return agencia;
 	}
-	public void setagencia(String agencia) {
+	public void setAgencia(String agencia) {
 		this.agencia = agencia;
 	}
-	public String getconta() {
+	public String getConta() {
 		return conta;
 	}
-	public void setconta(String conta) {
+	public void setConta(String conta) {
 		this.conta = conta;
 	}
-	public LocalDate getdatacad() {
+	public LocalDate getDatacad() {
 		return datacad;
 	}
-	public void setdatacad(LocalDate datacad) {
+	public void setDatacad(LocalDate datacad) {
 		this.datacad = datacad;
 	}
 	public static long getSerialversionuid() {

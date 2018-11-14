@@ -2,84 +2,101 @@ package org.controlefrota.model;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.time.LocalDate;
+
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(of = "codigo")
+@ToString(of = { "codigo", "nome" })
 
 public class Manutencao  implements Serializable{
 
 	private static final long serialVersionUID = -438531982840090109L;
-	public static Integer nextcodigo = 0;
-	private Integer	  codigo;
-	private String    descricao;
-	private String    tipo;
-	private String    marca;
-	private String    aplicacao;
-	private Date datacad;  
-	
-	public Integer getnextcodigo() {
-		nextcodigo += 1;
-		return nextcodigo;
-	}
-
-	public static Integer getNextcodigo() {
-		return nextcodigo;
-	}
-
-	public static void setNextcodigo(Integer nextcodigo) {
-		Manutencao.nextcodigo = nextcodigo;
-	}
-
-	public Integer getcodigo() {
+	private Integer codigo;
+	private String descricao;
+	private String tipo;
+	private String marca;
+	private Veiculos veiculo;
+	private double valor;
+	private String aplicacao;
+	private Date datacad;
+	public Integer getCodigo() {
 		return codigo;
 	}
-
-	public void setcodigo(Integer codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
-
-	public String getdescricao() {
+	public String getDescricao() {
 		return descricao;
 	}
-
-	public void setdescricao(String descricao) {
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
-	public String gettipo() {
+	public String getTipo() {
 		return tipo;
 	}
-
-	public void settipo(String tipo) {
+	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-
-	public String getmarca() {
+	public String getMarca() {
 		return marca;
 	}
-
-	public void setmarca(String marca) {
+	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-
-	public String getaplicacao() {
+	public Veiculos getVeiculo() {
+		return veiculo;
+	}
+	public void setVeiculo(Veiculos veiculo) {
+		this.veiculo = veiculo;
+	}
+	public double getValor() {
+		return valor;
+	}
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+	public String getAplicacao() {
 		return aplicacao;
 	}
-
-	public void setaplicacao(String aplicacao) {
+	public void setAplicacao(String aplicacao) {
 		this.aplicacao = aplicacao;
 	}
-
-	public Date getdatacad() {
+	public Date getDatacad() {
 		return datacad;
 	}
-
-	public void setdatacad(Date datacad) {
+	public void setDatacad(Date datacad) {
 		this.datacad = datacad;
 	}
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
+	@Override
+	public String toString() {
+		return "Manutencao [codigo=" + codigo + ", descricao=" + descricao + ", tipo=" + tipo + ", marca=" + marca
+				+ ", veiculo=" + veiculo + ", valor=" + valor + ", aplicacao=" + aplicacao + ", datacad=" + datacad
+				+ "]";
+	}
+	public Manutencao(Integer codigo, String descricao, String tipo, String marca, Veiculos veiculo, double valor,
+			String aplicacao, Date datacad) {
+		super();
+		this.codigo = codigo;
+		this.descricao = descricao;
+		this.tipo = tipo;
+		this.marca = marca;
+		this.veiculo = veiculo;
+		this.valor = valor;
+		this.aplicacao = aplicacao;
+		this.datacad = datacad;
+	}
+	public Manutencao() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -90,9 +107,12 @@ public class Manutencao  implements Serializable{
 		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
 		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(valor);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((veiculo == null) ? 0 : veiculo.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -132,30 +152,16 @@ public class Manutencao  implements Serializable{
 				return false;
 		} else if (!tipo.equals(other.tipo))
 			return false;
+		if (Double.doubleToLongBits(valor) != Double.doubleToLongBits(other.valor))
+			return false;
+		if (veiculo == null) {
+			if (other.veiculo != null)
+				return false;
+		} else if (!veiculo.equals(other.veiculo))
+			return false;
 		return true;
-	}
+	}  
 
-	@Override
-	public String toString() {
-		return "Manutencao [codigo=" + codigo + ", descricao=" + descricao + ", tipo="
-				+ tipo + ", marca=" + marca + ", aplicacao=" + aplicacao + ", datacad="
-				+ datacad + "]";
-	}
-
-	public Manutencao(Integer codigo, String descricao, String tipo, String marca,
-			String aplicacao, Date datacad) {
-		super();
-		this.codigo = codigo;
-		this.descricao = descricao;
-		this.tipo = tipo;
-		this.marca = marca;
-		this.aplicacao = aplicacao;
-		this.datacad = datacad;
-	}
-
-	public Manutencao() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	 
 	
 }

@@ -6,7 +6,7 @@ import java.util.Date;
 
 import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.VeiculosDAO;
-import org.controlefrota.model.t_Veiculos;
+import org.controlefrota.model.Veiculos;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -26,34 +26,34 @@ import javafx.stage.Stage;
 public class CadVeiculosController {
 	
 	@FXML
-	private TableView<t_Veiculos> tblVeiculos;
+	private TableView<Veiculos> tblVeiculos;
 	
 	@FXML
-	private TableColumn<t_Veiculos, String> tbcMarca;
+	private TableColumn<Veiculos, String> tbcMarca;
 
 	@FXML
-	private TableColumn<t_Veiculos, String> tbcCategoria;
+	private TableColumn<Veiculos, String> tbcCategoria;
 
 	@FXML
-	private TableColumn<t_Veiculos, String> tbcModelo;
+	private TableColumn<Veiculos, String> tbcModelo;
 
 	@FXML
-	private TableColumn<t_Veiculos, String> tbcChassi;
+	private TableColumn<Veiculos, String> tbcChassi;
 
 	@FXML
-	private TableColumn<t_Veiculos, Integer> tbcRenavam;
+	private TableColumn<Veiculos, Integer> tbcRenavam;
 
 	@FXML
-	private TableColumn<t_Veiculos, String> tbcMotor;
+	private TableColumn<Veiculos, String> tbcMotor;
 
 	@FXML
-	private TableColumn<t_Veiculos, Integer> tbcCodigo;
+	private TableColumn<Veiculos, Integer> tbcCodigo;
 
 	@FXML
-	private TableColumn<t_Veiculos, Date> tbcData;
+	private TableColumn<Veiculos, Date> tbcData;
 
 	@FXML
-	private TableColumn<t_Veiculos, String> tbcPlaca;
+	private TableColumn<Veiculos, String> tbcPlaca;
 
 	@FXML
 	private TextField tfMarca;
@@ -99,7 +99,7 @@ public class CadVeiculosController {
 	
 	private VeiculosDAO VeiculosDao = AbstractFactory.get().veiculosDao();
 
-	private t_Veiculos veiculo;
+	private Veiculos veiculo;
 	
 	@FXML
 	public void initialize() {
@@ -194,7 +194,7 @@ public class CadVeiculosController {
 		}
 
 	
-	public void populaTela(t_Veiculos veiculo) {
+	public void populaTela(Veiculos veiculo) {
 		tfModelo.setText(veiculo.getModelo());
 		tfMarca.setText(veiculo.getMarca());
 		tfChassi.setText(veiculo.getChassi());
@@ -211,7 +211,7 @@ public class CadVeiculosController {
 		tfMotor.clear();
 		tfPlaca.clear();
 		tfRenavam.clear();
-		veiculo = new t_Veiculos();
+		veiculo = new Veiculos();
 		cbxCategoria.getSelectionModel().clearSelection();
 		tblVeiculos.setItems(FXCollections.observableArrayList(VeiculosDao.listar()));
 	}

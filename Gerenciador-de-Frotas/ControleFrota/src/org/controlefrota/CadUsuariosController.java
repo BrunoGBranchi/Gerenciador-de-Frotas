@@ -135,18 +135,18 @@ public class CadUsuariosController {
 
     @FXML
     public void populaUsuario() {
-		usuario.setnome(tfNome.getText());
-		usuario.setusuario(tfUsuario.getText());
-		usuario.setsenha(pfSenha.getText());
-		usuario.setdatacad(java.sql.Date.valueOf(LocalDate.now()));
+		usuario.setNome(tfNome.getText());
+		usuario.setUsuario(tfUsuario.getText());
+		usuario.setSenha(pfSenha.getText());
+		usuario.setDatacad(java.sql.Date.valueOf(LocalDate.now()));
     }
     
     
     public void populaTela(Usuarios usuario) {
-		tfNome.setText(usuario.getnome());
-		tfUsuario.setText(usuario.getusuario());
-		pfSenha.setText(usuario.getsenha());
-		pfSenhaConf.setText(usuario.getsenha());
+		tfNome.setText(usuario.getNome());
+		tfUsuario.setText(usuario.getUsuario());
+		pfSenha.setText(usuario.getSenha());
+		pfSenhaConf.setText(usuario.getSenha());
 	}
         
     void novoUsuario() {

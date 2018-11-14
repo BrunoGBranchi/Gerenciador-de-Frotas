@@ -17,7 +17,7 @@ import lombok.ToString;
 @EqualsAndHashCode(of="codigo")
 @ToString(of={"codigo"})
 
-public class t_Veiculos implements Serializable {
+public class Veiculos implements Serializable {
 
 	private static final long serialVersionUID = -2170492535821015905L;
 	private Integer codigo;
@@ -29,6 +29,11 @@ public class t_Veiculos implements Serializable {
 	private String chassi;
 	private String categoria;
 	private Date datacad;
+	
+	@Override
+	public String toString() {
+		return ""+ codigo;
+	}
 	
 	public Integer getCodigo() {
 		return codigo;
