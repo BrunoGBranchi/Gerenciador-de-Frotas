@@ -95,10 +95,44 @@ nome varchar(100),
 senha varchar(100),
 usuario varchar(100),
 datacad datetime
-);   
+);
 
-insert into usuarios (nome, senha, usuario, datacad) values ('Administrador', 'admin', 'admin', now());
-insert into usuarios (nome, senha, usuario, datacad) values('Bruno', 'bruno', '09021999', now());
-insert into usuarios values('Administrador', 'admin', 'admin', now());
-select * from usuarios;
-select * from empresa ;
+create view view_manutencao_nome as
+	select m.codigo as codigo, m.descricao as descricao, m.tipo as tipo, m.marca as marca, m.aplicacao as aplicacao, m.datacad as datacad, m.valor as valor, 
+		v.modelo as nomeveiculo, m.cod_veiculo as codVeic
+			from manutencao m join veiculos v on m.cod_veiculo = v.codigo;
+
+drop view view_manutencao_nome;
+
+select * from view_manutencao_nome;
+
+create table movimentos(
+codigo bigint(20) not null auto_increment primary key,
+observacao varchar(100),
+valor double,
+cod_manutencao bigint(20),
+numeronota bigint(20),
+veickm bigint(20),
+datamvto datetime,
+datanota datetime,
+cod_veiculo bigint,
+quantidade double,
+
+
+foreign key (cod_veiculo) references veiculos(codigo),
+foreign key (cod_manutencao) references manutencao(codigo)
+);
+drop table movimentos;
+
+insert into movimentos (observacao, valor, cod_manutencao, numeronota, veickm, datamvto, datanota, cod_veiculo) values (?,?,?,?,?,?,?,?);
+update movimentos set observacao=?, valor=?, cod_manutencao=?, numeronota=?, veickm=?, datamvto=?, datanota=?, cod_veiculo=? where codigo=?;
+
+drop view view_movimento_nome;
+
+create view view_movimento_nome as
+	select m.codigo as codigo, m.observacao as observacao, m.valor as valor, m.cod_manutencao as CodManu, m.numeronota as NumNota, m.veickm as KM, m.datamvto as datamvto, 
+		m.datanota as datanota, m.cod_veiculo as codVeic, m.quantidade as quantidade
+			from movimentos m join veiculos v on m.cod_veiculo = v.codigo
+				join manutencao man on m.cod_manutencao = man.codigo;
+                
+select * from view_movimento_nome;

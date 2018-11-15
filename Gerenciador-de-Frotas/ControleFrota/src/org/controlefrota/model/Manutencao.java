@@ -77,10 +77,10 @@ public class Manutencao  implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Manutencao [codigo=" + codigo + ", descricao=" + descricao + ", tipo=" + tipo + ", marca=" + marca
-				+ ", veiculo=" + veiculo + ", valor=" + valor + ", aplicacao=" + aplicacao + ", datacad=" + datacad
-				+ "]";
+		return ""+ codigo;
 	}
+
+	
 	public Manutencao(Integer codigo, String descricao, String tipo, String marca, Veiculos veiculo, double valor,
 			String aplicacao, Date datacad) {
 		super();

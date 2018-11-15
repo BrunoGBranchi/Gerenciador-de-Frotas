@@ -21,82 +21,109 @@ import lombok.ToString;
 
 public class Movimentos implements Serializable{
 
-	public Integer getcodigo() {
+	
+	private static final long serialVersionUID = -262038540164446134L;
+	private Integer codigo;
+	private Integer numeronota;
+	private Date dataemissnota;
+    private Date datamvto;
+	private Integer veickm;
+	private Double  quantidade;
+	private Double  valor;
+	private String  observacao;
+	private Veiculos veiculo;
+	private Manutencao manutencao;
+	
+	public Integer getCodigo() {
 		return codigo;
 	}
-	public void setcodigo(Integer codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
-	public Integer getnumeronota() {
+	public Integer getNumeronota() {
 		return numeronota;
 	}
-	public void setnumeronota(Integer numeronota) {
+	public void setNumeronota(Integer numeronota) {
 		this.numeronota = numeronota;
 	}
-	public LocalDate getdataemissnota() {
+	public Date getDataemissnota() {
 		return dataemissnota;
 	}
-	public void setdataemissnota(LocalDate localDate) {
-		this.dataemissnota = localDate;
+	public void setDataemissnota(Date dataemissnota) {
+		this.dataemissnota = dataemissnota;
 	}
-	public LocalDate getdatamvto() {
+	public Date getDatamvto() {
 		return datamvto;
 	}
-	public void setdatamvto(LocalDate datamvto) {
+	public void setDatamvto(Date datamvto) {
 		this.datamvto = datamvto;
 	}
-	public Integer getveic_codigo() {
-		return veic_codigo;
-	}
-	public void setveic_codigo(Integer veic_codigo) {
-		this.veic_codigo = veic_codigo;
-	}
-	public Integer getveickm() {
+	public Integer getVeickm() {
 		return veickm;
 	}
-	public void setveickm(Integer veickm) {
+	public void setVeickm(Integer veickm) {
 		this.veickm = veickm;
 	}
-	public Integer getcodmanutencao() {
-		return codmanutencao;
-	}
-	public void setcodmanutencao(Integer codmanutencao) {
-		this.codmanutencao = codmanutencao;
-	}
-	public Double getquantidade() {
+	public Double getQuantidade() {
 		return quantidade;
 	}
-	public void setquantidade(Double quantidade) {
+	public void setQuantidade(Double quantidade) {
 		this.quantidade = quantidade;
 	}
-	public String getvalor() {
+	public Double getValor() {
 		return valor;
 	}
-	public void setvalor(String valor) {
+	public void setValor(Double valor) {
 		this.valor = valor;
 	}
-	public String getobservacao() {
+	public String getObservacao() {
 		return observacao;
 	}
-	public void setobservacao(String observacao) {
+	public void setObservacao(String observacao) {
 		this.observacao = observacao;
+	}
+	public Veiculos getVeiculo() {
+		return veiculo;
+	}
+	public void setVeiculo(Veiculos veiculo) {
+		this.veiculo = veiculo;
+	}
+	public Manutencao getManutencao() {
+		return manutencao;
+	}
+	public void setManutencao(Manutencao manutencao) {
+		this.manutencao = manutencao;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -262038540164446134L;
-	private Integer codigo;
-	private Integer numeronota;
-	private LocalDate    dataemissnota;
-    private LocalDate    datamvto;
-	private Integer veic_codigo;
-	private Integer veickm;
-	private Integer codmanutencao;
-	private Double  quantidade;
-	private String  valor;
-	private String  observacao;
-
+	@Override
+	public String toString() {
+		return "Movimentos [codigo=" + codigo + ", numeronota=" + numeronota + ", dataemissnota=" + dataemissnota
+				+ ", datamvto=" + datamvto + ", veickm=" + veickm + ", quantidade="
+				+ quantidade + ", valor=" + valor + ", observacao=" + observacao + ", veiculo=" + veiculo
+				+ ", manutencao=" + manutencao + "]";
+	}
+	public Movimentos(Integer codigo, Integer numeronota, Date dataemissnota, Date datamvto, Integer veickm,
+			Integer codmanutencao, Double quantidade, Double valor, String observacao, Veiculos veiculo,
+			Manutencao manutencao) {
+		super();
+		this.codigo = codigo;
+		this.numeronota = numeronota;
+		this.dataemissnota = dataemissnota;
+		this.datamvto = datamvto;
+		this.veickm = veickm;
+		this.quantidade = quantidade;
+		this.valor = valor;
+		this.observacao = observacao;
+		this.veiculo = veiculo;
+		this.manutencao = manutencao;
+	}
+	public Movimentos() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+		
+	
 }

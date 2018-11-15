@@ -187,7 +187,6 @@ public class CadManutencaoController {
     	tfAplica.setText(manutencao.getAplicacao());
     	tfValor.setText(String.valueOf(manutencao.getValor()));
     	CbxVeiculo.getSelectionModel().select(manutencao.getVeiculo());
-    	dtdata.isDisabled();
     }
     
     public void novaManutencao() {
