@@ -25,7 +25,6 @@
                         <TableColumn fx:id="tbcCodVeiculo" prefWidth="84.0" text="Cod. Veiculo" />
                         <TableColumn fx:id="tbcCodManutencao" prefWidth="108.0" text="Cod. Manutencao" />
                         <TableColumn fx:id="tbcKmVeiculo" prefWidth="108.0" text="KM Veiculo" />
-                        <TableColumn fx:id="tbcQuantidade" prefWidth="108.0" text="Quantidade" />
                         <TableColumn fx:id="tbcValor" prefWidth="75.33331298828125" text="Valor" />
                         <TableColumn fx:id="tbcDtEmissao" prefWidth="103.66668701171875" text="Data de Emissão " />
                         <TableColumn fx:id="tbcDtMovimento" prefWidth="100.66668701171875" text="Data Movimento" />
@@ -46,10 +45,8 @@
       <Label layoutX="444.0" layoutY="48.0" text="KM Veiculo:" />
       <TextField fx:id="tfKmVeiculo" layoutX="515.0" layoutY="45.0" prefHeight="25.0" prefWidth="158.0" />
       <Label layoutX="413.0" layoutY="79.0" text="Cod.Manutenção:" />
-      <Label layoutX="441.0" layoutY="109.0" text="Quantidade:" />
-      <TextField fx:id="tfQuantidade" layoutX="516.0" layoutY="106.0" prefHeight="25.0" prefWidth="158.0" />
-      <Label layoutX="475.0" layoutY="139.0" text="Valor:" />
-      <TextField fx:id="tfValor" layoutX="516.0" layoutY="137.0" prefHeight="25.0" prefWidth="158.0" />
+      <Label layoutX="475.0" layoutY="110.0" text="Valor:" />
+      <TextField fx:id="tfValor" layoutX="516.0" layoutY="108.0" prefHeight="25.0" prefWidth="158.0" />
       <Label layoutX="149.0" layoutY="175.0" text="Observação:" />
       <TextField fx:id="tfObservacao" layoutX="220.0" layoutY="171.0" prefHeight="25.0" prefWidth="454.0" />
       <Button fx:id="btnIncluir" layoutX="278.0" layoutY="236.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />

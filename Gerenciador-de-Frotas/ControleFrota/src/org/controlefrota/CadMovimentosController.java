@@ -41,9 +41,6 @@ public class CadMovimentosController {
 	private TextField tfKmVeiculo;
 
 	@FXML
-	private TableColumn<Movimentos, Number> tbcQuantidade;
-
-	@FXML
 	private TableColumn<Manutencao, Number> tbcCodManutencao;
 
 	@FXML
@@ -99,9 +96,6 @@ public class CadMovimentosController {
 
 	@FXML
 	private TableColumn<Veiculos, Number> tbcCodVeiculo;
-
-	@FXML
-	private TextField tfQuantidade;
 	
 	@FXML
     private ComboBox<Manutencao> CbxManutencao;
@@ -132,7 +126,6 @@ public class CadMovimentosController {
 		tbcCodVeiculo.setCellValueFactory(new PropertyValueFactory<>("veiculo"));
 		tbcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
 		tbcKmVeiculo.setCellValueFactory(new PropertyValueFactory<>("veickm"));
-		tbcQuantidade.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
 		tbcValor.setCellValueFactory(new PropertyValueFactory<>("valor"));
 		tbcObservacao.setCellValueFactory(new PropertyValueFactory<>("observacao"));
 		tbcCodManutencao.setCellValueFactory(new PropertyValueFactory<>("manutencao"));
@@ -183,7 +176,6 @@ public class CadMovimentosController {
 		tfKmVeiculo.clear();
 		tfNumNota.clear();
 		tfObservacao.clear();
-		tfQuantidade.clear();
 		tfValor.clear();
 		movimento = new Movimentos();
 		editando = false;
@@ -209,7 +201,6 @@ public class CadMovimentosController {
 		movimento.setDatamvto(java.sql.Date.valueOf(LocalDate.now()));
 		movimento.setNumeronota(Integer.valueOf(tfNumNota.getText()));
 		movimento.setObservacao(tfObservacao.getText());
-		movimento.setQuantidade(Double.valueOf(tfQuantidade.getText()));
 		movimento.setVeickm(Integer.valueOf(tfKmVeiculo.getText()));
 		movimento.setValor(Double.valueOf(tfValor.getText()));
 	}
@@ -220,7 +211,6 @@ public class CadMovimentosController {
 		tfKmVeiculo.setText(movimento.getVeickm().toString());
 		tfNumNota.setText(movimento.getNumeronota().toString());
 		tfObservacao.setText(movimento.getObservacao());
-		tfQuantidade.setText(movimento.getQuantidade().toString());
 		tfValor.setText(String.valueOf(movimento.getValor()));
 	}
 
