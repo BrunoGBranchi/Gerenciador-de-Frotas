@@ -108,6 +108,9 @@ public class CadMovimentosController {
 
     @FXML
     private ComboBox<Veiculos> CbxVeiculo;
+    
+    @FXML
+    private Button btnRelatorio;
 
 
 	private MovimentosDAO movimentosDao = AbstractFactory.get().movimentosDao();
@@ -159,7 +162,12 @@ public class CadMovimentosController {
 	void limpar(ActionEvent event) {
 		novoMovimento();
 	}
+	
+	@FXML
+    void relatorio(ActionEvent event) {
 
+    }
+	
 	@FXML
 	void selecionaMovimento(ActionEvent event) {
 		if (tblMovimentos.getSelectionModel().getSelectedItem() != null) {

@@ -55,7 +55,7 @@
       <Button fx:id="btnIncluir" layoutX="278.0" layoutY="236.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
       <Button fx:id="btnExcluir" layoutX="335.0" layoutY="236.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
       <Button fx:id="btnLimpar" layoutX="395.0" layoutY="236.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
-      <Button fx:id="btnFechar" layoutX="457.0" layoutY="236.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" />
+      <Button fx:id="btnFechar" layoutX="532.0" layoutY="236.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" />
       <Text layoutX="384.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MOVIMENTOS">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -63,5 +63,6 @@
       </Text>
       <ComboBox fx:id="CbxManutencao" layoutX="515.0" layoutY="76.0" prefHeight="26.0" prefWidth="158.0" />
       <ComboBox fx:id="CbxVeiculo" layoutX="220.0" layoutY="138.0" prefHeight="26.0" prefWidth="158.0" />
+      <Button fx:id="btnRelatorio" layoutX="458.0" layoutY="236.0" mnemonicParsing="false" onAction="#relatorio" text="Relatorio" />
    </children>
 </AnchorPane>

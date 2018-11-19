@@ -86,9 +86,6 @@ public class CadVeiculosController {
 	private Button btnExcluir;
 
 	@FXML
-	private Button btnRelatorio;
-
-	@FXML
 	private Button btnLimpar;
 
 	//private Calendar datacad = Calendar.getInstance();
@@ -151,11 +148,6 @@ public class CadVeiculosController {
 	@FXML
 	void limpar(ActionEvent event) {
 		novoVeiculo();
-	}
-
-	@FXML
-	void relatorio(ActionEvent event) {
-
 	}
 
 	@FXML

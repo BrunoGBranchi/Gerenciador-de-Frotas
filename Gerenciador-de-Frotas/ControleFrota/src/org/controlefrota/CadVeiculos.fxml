@@ -42,12 +42,11 @@
       <TextField fx:id="tfPlaca" layoutX="533.0" layoutY="93.0" />
       <ComboBox fx:id="cbxCategoria" layoutX="533.0" layoutY="124.0" prefWidth="150.0" promptText="Selecionar" />
       <Label layoutX="475.0" layoutY="97.0" text="Placa:" />
-      <Button fx:id="btnIncluir" layoutX="106.0" layoutY="192.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
-      <Button fx:id="btnAlterar" layoutX="202.0" layoutY="192.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#alterar" text="Alterar" />
-      <Button fx:id="btnExcluir" layoutX="302.0" layoutY="192.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
-      <Button fx:id="btnLimpar" layoutX="407.0" layoutY="192.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
-      <Button fx:id="btnRelatorio" layoutX="511.0" layoutY="192.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#relatorio" text="Relatório" />
-      <Button fx:id="btnFechar" layoutX="608.0" layoutY="192.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" />
+      <Button fx:id="btnIncluir" layoutX="175.0" layoutY="191.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
+      <Button fx:id="btnAlterar" layoutX="271.0" layoutY="191.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#alterar" text="Alterar" />
+      <Button fx:id="btnExcluir" layoutX="371.0" layoutY="191.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+      <Button fx:id="btnLimpar" layoutX="476.0" layoutY="191.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+      <Button fx:id="btnFechar" layoutX="582.0" layoutY="191.0" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" />
       <Text layoutX="351.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR VEICULOS">
          <font>
             <Font name="System Bold" size="12.0" />
