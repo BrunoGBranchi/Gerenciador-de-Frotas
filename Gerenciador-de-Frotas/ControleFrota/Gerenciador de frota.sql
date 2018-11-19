@@ -1,6 +1,8 @@
 create database Frotas;
 use Frotas;
 
+drop database frotas;
+
 drop table empresa;
 
 insert into empresa (razaoSocial, nomeFantasia, CNPJ, endereco, numero, bairro, cep, municipio, uf) values
@@ -62,7 +64,7 @@ tipo varchar(100),
 marca varchar(100),
 aplicacao varchar(100),
 datacad datetime,
-cod_veiculo bigint,
+cod_veiculo bigint(20),
 
 foreign key (cod_veiculo) references veiculos(codigo)
 );
@@ -86,7 +88,7 @@ datacad datetime
 
 select * from veiculos;
 delete from veiculos where codigo = 3;
-insert into veiculos (renavam, marca, modelo, placa, motor, chassi, categoria) values(?,?,?,?,?,?,?);
+insert into veiculos (renavam, marca, modelo, placa, motor, chassi, categoria,datacad) values(1,'Chevrolet','azul','12A1S3','280 cavalos','não sei','chata',now());
 
 drop table usuarios;
 create table usuarios(
@@ -116,8 +118,6 @@ veickm bigint(20),
 datamvto datetime,
 datanota datetime,
 cod_veiculo bigint,
-quantidade double,
-
 
 foreign key (cod_veiculo) references veiculos(codigo),
 foreign key (cod_manutencao) references manutencao(codigo)
@@ -136,3 +136,87 @@ create view view_movimento_nome as
 				join manutencao man on m.cod_manutencao = man.codigo;
                 
 select * from view_movimento_nome;
+
+delimiter $
+create trigger cria_Movimento after insert on manutencao for each row
+begin 
+    
+insert into movimentos(observacao,valor,cod_manutencao,numeronota,veickm,datamvto,datanota,cod_veiculo) 
+values(new.descricao,new.valor,new.codigo,0,new.km,now(),now(),new.cod_veiculo);    
+    
+
+
+end$
+delimiter ;
+
+drop trigger cria_Movimento;
+
+create table manutencao(
+codigo bigint(20) not null auto_increment primary key,
+descricao varchar(100),
+valor double,
+tipo varchar(100),
+marca varchar(100),
+aplicacao varchar(100),
+datacad datetime,
+cod_veiculo bigint(20),
+km integer,
+foreign key (cod_veiculo) references veiculos(codigo)
+);
+
+drop table movimentos;
+drop table manutencao;
+drop table veiculos;
+
+select*from movimentos;
+
+select*from manutencao;
+
+insert into manutencao(descricao,valor,tipo,marca,aplicacao,datacad,cod_veiculo) values('XD',100.00,'cara','Chevrolet','rapida',now(),1);
+
+
+
+
+
+	create view view_manutencao_nome as
+	select m.codigo as codigo, m.descricao as descricao, m.tipo as tipo, m.marca as marca, m.aplicacao as aplicacao, m.datacad as datacad, m.valor as valor, 
+		v.modelo as nomeveiculo, m.cod_veiculo as codVeic
+			from manutencao m join veiculos v on m.cod_veiculo = v.codigo;
+ 
+ 
+ 
+ select * from view_manutencao_nome;
+ 
+ 
+ 
+ 
+update movimentos set observacao=?, valor=?, cod_manutencao=?, numeronota=?, veickm=?, datamvto=?, datanota=?, cod_veiculo=? where codigo=?;
+
+ 
+ 
+ 
+ insert into usuarios (nome, senha, usuario, datacad) values ('Administrador', 'admin', 'admin', now());
+ 
+ create view view_movimento_nome as select m.codigo as codigo, m.observacao as observacao, m.valor as valor, m.cod_manutencao as CodManu,
+ m.numeronota as NumNota, m.veickm as KM, m.datamvto as datamvto,m.datanota as 
+ datanota, m.cod_veiculo as codVeic from movimentos m join veiculos v 
+ on m.cod_veiculo = v.codigo
+ join manutencao man on m.cod_manutencao = man.codigo;
+ 
+ 
+insert into movimentos (observacao, valor, cod_manutencao, numeronota, veickm, datamvto, datanota, cod_veiculo) values (?,?,?,?,?,?,?,?);
+insert into usuarios (nome, senha, usuario, datacad) values('Bruno', 'bruno', '09021999', now());
+insert into usuarios values('Administrador', 'admin', 'admin', now());			
+update movimentos set observacao=?, valor=?, cod_manutencao=?, numeronota=?, veickm=?, datamvto=?, datanota=?, cod_veiculo=? where codigo=?;
+
+
+select * from usuarios;				
+select * from empresa ; 					
+                
+select * from view_movimento_nome; 
+
+drop view view_movimento_nome;
+drop view view_manutencao_nome;
+
+
+    -- modifiquei a tabela movimento e manutenção com campo km e remoção do campo quantidade
