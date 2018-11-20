@@ -99,6 +99,10 @@ usuario varchar(100),
 datacad datetime
 );
 
+insert into usuarios (nome, senha, usuario, datacad) values ('Bruno', '0902', 'bruno', now());
+
+select * from usuarios;
+
 create view view_manutencao_nome as
 	select m.codigo as codigo, m.descricao as descricao, m.tipo as tipo, m.marca as marca, m.aplicacao as aplicacao, m.datacad as datacad, m.valor as valor, 
 		v.modelo as nomeveiculo, m.cod_veiculo as codVeic
@@ -131,7 +135,7 @@ drop view view_movimento_nome;
 
 create view view_movimento_nome as
 	select m.codigo as codigo, m.observacao as observacao, m.valor as valor, m.cod_manutencao as CodManu, m.numeronota as NumNota, m.veickm as KM, m.datamvto as datamvto, 
-		m.datanota as datanota, m.cod_veiculo as codVeic, m.quantidade as quantidade
+		m.datanota as datanota, m.cod_veiculo as codVeic
 			from movimentos m join veiculos v on m.cod_veiculo = v.codigo
 				join manutencao man on m.cod_manutencao = man.codigo;
                 
@@ -172,7 +176,7 @@ select*from movimentos;
 
 select*from manutencao;
 
-insert into manutencao(descricao,valor,tipo,marca,aplicacao,datacad,cod_veiculo) values('XD',100.00,'cara','Chevrolet','rapida',now(),1);
+insert into manutencao(descricao,valor,tipo,marca,aplicacao,datacad,cod_veiculo, km) values('XD',100.00,'cara','Chevrolet','rapida',now(),1, 123);
 
 
 
@@ -180,14 +184,14 @@ insert into manutencao(descricao,valor,tipo,marca,aplicacao,datacad,cod_veiculo)
 
 	create view view_manutencao_nome as
 	select m.codigo as codigo, m.descricao as descricao, m.tipo as tipo, m.marca as marca, m.aplicacao as aplicacao, m.datacad as datacad, m.valor as valor, 
-		v.modelo as nomeveiculo, m.cod_veiculo as codVeic
+		v.modelo as nomeveiculo, m.cod_veiculo as codVeic, m.km as km 
 			from manutencao m join veiculos v on m.cod_veiculo = v.codigo;
  
  
  
  select * from view_manutencao_nome;
  
- 
+ delete from movimentos where codigo = 1;
  
  
 update movimentos set observacao=?, valor=?, cod_manutencao=?, numeronota=?, veickm=?, datamvto=?, datanota=?, cod_veiculo=? where codigo=?;
