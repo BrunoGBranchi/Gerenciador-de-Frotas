@@ -26,6 +26,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
+import org.controlefrota.conexao.ConexaoUtil;
 
 //OK Edit
 
@@ -158,7 +163,16 @@ public class CadMovimentosController {
 	
 	@FXML
     void relatorio(ActionEvent event) {
-
+		try {
+			JasperPrint jasperPrint = JasperFillManager
+					 .fillReport(
+							 "relatorios/MovimentosRelatorio.jasper",
+							 null,
+							 ConexaoUtil.getConn());
+			JasperViewer.viewReport(jasperPrint);
+		} catch (JRException e) {
+			e.printStackTrace();
+		}
     }
 	
 	@FXML

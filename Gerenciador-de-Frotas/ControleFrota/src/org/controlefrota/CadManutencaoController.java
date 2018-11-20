@@ -186,6 +186,7 @@ public class CadManutencaoController {
     	manutencao.setValor(Double.valueOf(tfValor.getText()));
     	manutencao.setVeiculo(CbxVeiculo.getSelectionModel().getSelectedItem());
     	manutencao.setDatacad(java.sql.Date.valueOf(LocalDate.now()));
+    	manutencao.setKm(Integer.valueOf(tfKmVeiculo.getText()));
     	
     }
     
@@ -196,6 +197,7 @@ public class CadManutencaoController {
     	tfAplica.setText(manutencao.getAplicacao());
     	tfValor.setText(String.valueOf(manutencao.getValor()));
     	CbxVeiculo.getSelectionModel().select(manutencao.getVeiculo());
+    	tfKmVeiculo.setText(String.valueOf(manutencao.getKm()));
     }
     
     public void novaManutencao() {
@@ -204,6 +206,7 @@ public class CadManutencaoController {
     	tfMarca.clear();
     	tfTipo.clear();
     	tfValor.clear();
+    	tfKmVeiculo.clear();
     	CbxVeiculo.getSelectionModel().clearSelection();
     	manutencao = new Manutencao();
     	editando = false;
