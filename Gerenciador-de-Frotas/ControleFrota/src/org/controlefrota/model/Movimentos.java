@@ -28,7 +28,6 @@ public class Movimentos implements Serializable{
 	private Date dataemissnota;
     private Date datamvto;
 	private Integer veickm;
-	private Double  quantidade;
 	private Double  valor;
 	private String  observacao;
 	private Veiculos veiculo;
@@ -64,12 +63,6 @@ public class Movimentos implements Serializable{
 	public void setVeickm(Integer veickm) {
 		this.veickm = veickm;
 	}
-	public Double getQuantidade() {
-		return quantidade;
-	}
-	public void setQuantidade(Double quantidade) {
-		this.quantidade = quantidade;
-	}
 	public Double getValor() {
 		return valor;
 	}
@@ -100,12 +93,12 @@ public class Movimentos implements Serializable{
 	@Override
 	public String toString() {
 		return "Movimentos [codigo=" + codigo + ", numeronota=" + numeronota + ", dataemissnota=" + dataemissnota
-				+ ", datamvto=" + datamvto + ", veickm=" + veickm + ", quantidade="
-				+ quantidade + ", valor=" + valor + ", observacao=" + observacao + ", veiculo=" + veiculo
+				+ ", datamvto=" + datamvto + ", veickm=" + veickm 
+				 + ", valor=" + valor + ", observacao=" + observacao + ", veiculo=" + veiculo
 				+ ", manutencao=" + manutencao + "]";
 	}
 	public Movimentos(Integer codigo, Integer numeronota, Date dataemissnota, Date datamvto, Integer veickm,
-			Integer codmanutencao, Double quantidade, Double valor, String observacao, Veiculos veiculo,
+			Integer codmanutencao,  Double valor, String observacao, Veiculos veiculo,
 			Manutencao manutencao) {
 		super();
 		this.codigo = codigo;
@@ -113,16 +106,15 @@ public class Movimentos implements Serializable{
 		this.dataemissnota = dataemissnota;
 		this.datamvto = datamvto;
 		this.veickm = veickm;
-		this.quantidade = quantidade;
 		this.valor = valor;
 		this.observacao = observacao;
 		this.veiculo = veiculo;
 		this.manutencao = manutencao;
 	}
-	public Movimentos() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+//	public Movimentos() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}
 	
 		
 	

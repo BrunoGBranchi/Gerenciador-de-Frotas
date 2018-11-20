@@ -15,7 +15,7 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 	@Override
 	public void inserir(Manutencao dado) {
 		try {
-			String sql = "insert into manutencao (descricao, tipo, marca, aplicacao, valor, cod_veiculo, datacad) values(?,?,?,?,?,?,?)";
+			String sql = "insert into manutencao (descricao, tipo, marca, aplicacao, valor, cod_veiculo, datacad,km) values(?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setString(1, dado.getDescricao());
 			statement.setString(2, dado.getTipo());
@@ -24,6 +24,7 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 			statement.setDouble(5, dado.getValor());
 			statement.setString(6, dado.getVeiculo().getCodigo().toString());
 			statement.setDate(7, (dado.getDatacad()));
+			statement.setInt(8, dado.getKm());
 			statement.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -35,7 +36,7 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 	public void alterar(Manutencao dado) {
 		try {
 			String sql = "update manutencao set descricao = ?, tipo = ?, marca = ?, "
-					+ "aplicacao = ?, valor=?, cod_veiculo=?, datacad = ? where codigo = ?";
+					+ "aplicacao = ?, valor=?, cod_veiculo=?, datacad = ?,km = ? where codigo = ?";
 			PreparedStatement statement = ConexaoUtil.getConn().prepareStatement(sql);
 			statement.setString(1, dado.getDescricao());
 			statement.setString(2, dado.getTipo());
@@ -44,7 +45,8 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 			statement.setDouble(5, dado.getValor());
 			statement.setString(6, dado.getVeiculo().getCodigo().toString());
 			statement.setDate(7, (dado.getDatacad()));
-			statement.setInt(8, dado.getCodigo());
+			statement.setInt(8,dado.getKm());
+			statement.setInt(9, dado.getCodigo());
 			statement.executeUpdate();
 
 		} catch (Exception e) {
@@ -87,6 +89,7 @@ public class ManutencaoJDBC implements ManutencaoDAO {
 				manutencao.setAplicacao(rs.getString("aplicacao"));
 				manutencao.setDatacad(rs.getDate("datacad"));
 				manutencao.setValor(rs.getDouble("valor"));
+				manutencao.setKm(rs.getInt("km"));
 				Veiculos veiculo = new Veiculos();
 				veiculo.setCodigo(rs.getInt(("codVeic")));
 				veiculo.setModelo(rs.getString("nomeveiculo"));

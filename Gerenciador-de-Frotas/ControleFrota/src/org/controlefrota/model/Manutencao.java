@@ -24,6 +24,8 @@ public class Manutencao  implements Serializable{
 	private double valor;
 	private String aplicacao;
 	private Date datacad;
+	private Integer km;
+	
 	public Integer getCodigo() {
 		return codigo;
 	}
@@ -71,6 +73,11 @@ public class Manutencao  implements Serializable{
 	}
 	public void setDatacad(Date datacad) {
 		this.datacad = datacad;
+	}public Integer getKm() {
+		return km;
+	}
+	public void setKm(Integer km) {
+		this.km = km;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -79,40 +86,29 @@ public class Manutencao  implements Serializable{
 	public String toString() {
 		return ""+ codigo;
 	}
+	
+	  
+//	public Manutencao(Integer codigo, String descricao, String tipo, String marca, Veiculos veiculo, double valor,
+//			String aplicacao, Date datacad, Integer km) {
+//		super();
+//		this.codigo = codigo;
+//		this.descricao = descricao;
+//		this.tipo = tipo;
+//		this.marca = marca;
+//		this.veiculo = veiculo;
+//		this.valor = valor;
+//		this.aplicacao = aplicacao;
+//		this.datacad = datacad;
+//		this.km = km;
+//	}
+//	
 
 	
-	public Manutencao(Integer codigo, String descricao, String tipo, String marca, Veiculos veiculo, double valor,
-			String aplicacao, Date datacad) {
-		super();
-		this.codigo = codigo;
-		this.descricao = descricao;
-		this.tipo = tipo;
-		this.marca = marca;
-		this.veiculo = veiculo;
-		this.valor = valor;
-		this.aplicacao = aplicacao;
-		this.datacad = datacad;
-	}
-	public Manutencao() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((aplicacao == null) ? 0 : aplicacao.hashCode());
-		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
-		result = prime * result + ((datacad == null) ? 0 : datacad.hashCode());
-		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
-		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
-		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(valor);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((veiculo == null) ? 0 : veiculo.hashCode());
-		return result;
-	}
+//	public Manutencao() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}
+//	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -160,8 +156,7 @@ public class Manutencao  implements Serializable{
 		} else if (!veiculo.equals(other.veiculo))
 			return false;
 		return true;
-	}  
-
-	 
+	}
+		 
 	
 }

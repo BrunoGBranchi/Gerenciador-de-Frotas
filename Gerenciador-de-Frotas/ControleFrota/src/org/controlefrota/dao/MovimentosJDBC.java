@@ -92,7 +92,6 @@ public class MovimentosJDBC implements MovimentosDAO {
 				movimento.setDataemissnota(rs.getDate("datanota"));
 				movimento.setDatamvto(rs.getDate("datamvto"));
 				movimento.setVeickm(rs.getInt("KM"));
-				movimento.setQuantidade(rs.getDouble("quantidade"));
 				veiculo.setCodigo(rs.getInt(("codVeic")));
 				manutencao.setCodigo(rs.getInt("CodManu"));
 				movimento.setVeiculo(veiculo);

@@ -178,6 +178,7 @@ public class CadManutencaoController {
     	manutencao.setValor(Double.valueOf(tfValor.getText()));
     	manutencao.setVeiculo(CbxVeiculo.getSelectionModel().getSelectedItem());
     	manutencao.setDatacad(java.sql.Date.valueOf(LocalDate.now()));
+    	
     }
     
     public void populaTela(Manutencao manutencao) {
