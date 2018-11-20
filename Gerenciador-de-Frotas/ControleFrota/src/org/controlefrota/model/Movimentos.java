@@ -98,8 +98,7 @@ public class Movimentos implements Serializable{
 				+ ", manutencao=" + manutencao + "]";
 	}
 	public Movimentos(Integer codigo, Integer numeronota, Date dataemissnota, Date datamvto, Integer veickm,
-			Integer codmanutencao,  Double valor, String observacao, Veiculos veiculo,
-			Manutencao manutencao) {
+			Double valor, String observacao, Veiculos veiculo, Manutencao manutencao) {
 		super();
 		this.codigo = codigo;
 		this.numeronota = numeronota;
@@ -111,11 +110,11 @@ public class Movimentos implements Serializable{
 		this.veiculo = veiculo;
 		this.manutencao = manutencao;
 	}
-//	public Movimentos() {
-//		super();
-//		// TODO Auto-generated constructor stub
-//	}
-	
+	public Movimentos() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 		
 	
 }

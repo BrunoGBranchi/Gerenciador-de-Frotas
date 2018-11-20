@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="880.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal.png/'); -fx-background-position: center; -fx-background-size: cover;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.CadManutencaoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="880.0" style="-fx-background-image: url('file:/C:/Users/bruno/Desktop/Unoesc/ProgApl/ControleFrota/imgs/bgprincipal.png/'); -fx-background-position: center; -fx-background-size: cover;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controlefrota.CadManutencaoController">
    <children>
-      <ScrollPane layoutX="14.0" layoutY="346.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="850.0">
+      <ScrollPane layoutX="15.0" layoutY="392.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="850.0">
         <content>
           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="343.0" prefWidth="854.0">
                <children>
@@ -27,35 +27,38 @@
                         <TableColumn fx:id="tbcMarcaPeca" prefWidth="108.0" text="Marca Peça" />
                         <TableColumn fx:id="tbcAplicacao" prefWidth="129.60003662109375" text="Aplicação" />
                         <TableColumn fx:id="tbcValor" prefWidth="81.5999755859375" text="Valor" />
-                        <TableColumn fx:id="tbcDataCad" prefWidth="110.4000244140625" text="Data" />
+                        <TableColumn fx:id="tbcKmVeiculo" minWidth="20.0" prefWidth="91.199951171875" text="Km Veiculo" />
+                        <TableColumn fx:id="tbcDataCad" prefWidth="95.199951171875" text="Data" />
                     </columns>
                   </TableView>
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Label layoutX="271.0" layoutY="58.0" text="Descrição:" />
-      <TextField fx:id="tfDesc" layoutX="332.0" layoutY="52.0" prefHeight="26.0" prefWidth="218.0" />
-      <Label layoutX="270.0" layoutY="89.0" text="Tipo Peça:" />
-      <TextField fx:id="tfTipo" layoutX="332.0" layoutY="86.0" prefHeight="26.0" prefWidth="218.0" />
-      <Label layoutX="260.0" layoutY="120.0" text="Marca Peça:" />
-      <TextField fx:id="tfMarca" layoutX="332.0" layoutY="117.0" prefHeight="26.0" prefWidth="218.0" />
-      <Label layoutX="270.0" layoutY="151.0" text="Aplicação:" />
-      <TextField fx:id="tfAplica" layoutX="332.0" layoutY="148.0" prefHeight="26.0" prefWidth="218.0" />
-      <DatePicker fx:id="dtdata" layoutX="333.0" layoutY="181.0" prefHeight="26.0" prefWidth="218.0" />
-      <Label layoutX="294.0" layoutY="185.0" text="Data:" />
-      <Label layoutX="280.0" layoutY="219.0" text="Veiculo:" />
-      <ComboBox fx:id="CbxVeiculo" layoutX="333.0" layoutY="215.0" prefHeight="26.0" prefWidth="218.0" />
-      <Label layoutX="290.0" layoutY="256.0" text="Valor:" />
-      <TextField fx:id="tfValor" layoutX="333.0" layoutY="252.0" prefHeight="26.0" prefWidth="218.0" />
-      <Button fx:id="btnIncluir" layoutX="324.0" layoutY="300.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
-      <Button fx:id="btnExcluir" layoutX="381.0" layoutY="300.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
-      <Button fx:id="btnLimpar" layoutX="441.0" layoutY="300.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
-      <Button fx:id="btnFechar" layoutX="503.0" layoutY="300.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" />
-      <Text layoutX="394.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANUTENÇÕES">
+      <Label layoutX="272.0" layoutY="58.0" text="Descrição:" />
+      <TextField fx:id="tfDesc" layoutX="333.0" layoutY="52.0" prefHeight="26.0" prefWidth="218.0" />
+      <Label layoutX="271.0" layoutY="89.0" text="Tipo Peça:" />
+      <TextField fx:id="tfTipo" layoutX="333.0" layoutY="86.0" prefHeight="26.0" prefWidth="218.0" />
+      <Label layoutX="261.0" layoutY="120.0" text="Marca Peça:" />
+      <TextField fx:id="tfMarca" layoutX="333.0" layoutY="117.0" prefHeight="26.0" prefWidth="218.0" />
+      <Label layoutX="271.0" layoutY="151.0" text="Aplicação:" />
+      <TextField fx:id="tfAplica" layoutX="333.0" layoutY="148.0" prefHeight="26.0" prefWidth="218.0" />
+      <DatePicker fx:id="dtdata" layoutX="334.0" layoutY="215.0" prefHeight="26.0" prefWidth="218.0" />
+      <Label layoutX="295.0" layoutY="219.0" text="Data:" />
+      <Label layoutX="281.0" layoutY="253.0" text="Veiculo:" />
+      <ComboBox fx:id="CbxVeiculo" layoutX="334.0" layoutY="249.0" prefHeight="26.0" prefWidth="218.0" />
+      <Label layoutX="291.0" layoutY="290.0" text="Valor:" />
+      <TextField fx:id="tfValor" layoutX="334.0" layoutY="286.0" prefHeight="26.0" prefWidth="218.0" />
+      <Button fx:id="btnIncluir" layoutX="325.0" layoutY="346.0" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
+      <Button fx:id="btnExcluir" layoutX="382.0" layoutY="346.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+      <Button fx:id="btnLimpar" layoutX="442.0" layoutY="346.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+      <Button fx:id="btnFechar" layoutX="504.0" layoutY="346.0" mnemonicParsing="false" onAction="#fechar" text="Fechar" />
+      <Text layoutX="395.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANUTENÇÕES">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
+      <TextField fx:id="tfKmVeiculo" layoutX="333.0" layoutY="181.0" prefHeight="26.0" prefWidth="218.0" />
+      <Label layoutX="261.0" layoutY="185.0" text="Km Veiculo:" />
    </children>
 </AnchorPane>

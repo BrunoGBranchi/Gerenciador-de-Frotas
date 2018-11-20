@@ -8,6 +8,7 @@ import org.controlefrota.dao.AbstractFactory;
 import org.controlefrota.dao.ManutencaoDAO;
 import org.controlefrota.dao.VeiculosDAO;
 import org.controlefrota.model.Manutencao;
+import org.controlefrota.model.Movimentos;
 import org.controlefrota.model.Veiculos;
 
 import javafx.collections.FXCollections;
@@ -47,6 +48,9 @@ public class CadManutencaoController {
 
     @FXML
     private TextField tfDesc;
+    
+    @FXML
+	private TextField tfKmVeiculo;
 
     @FXML
     private Button btnExcluir;
@@ -85,6 +89,9 @@ public class CadManutencaoController {
     private TableColumn<Manutencao, String> tbcDescricao;
     
     @FXML
+	private TableColumn<Manutencao, Number> tbcKmVeiculo;
+    
+    @FXML
     private TableView<Manutencao> tblManutencao;
     
     @FXML
@@ -107,6 +114,7 @@ public class CadManutencaoController {
     	tbcTipoPeca.setCellValueFactory(new PropertyValueFactory<>("tipo"));
     	tbcMarcaPeca.setCellValueFactory(new PropertyValueFactory<>("marca"));
     	tbcAplicacao.setCellValueFactory(new PropertyValueFactory<>("aplicacao"));
+    	tbcKmVeiculo.setCellValueFactory(new PropertyValueFactory<>("km"));
     	tbcDataCad.setCellValueFactory(new PropertyValueFactory<>("datacad"));
     	
     	populaCombo();
